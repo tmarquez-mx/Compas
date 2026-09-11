@@ -34,6 +34,6 @@ Si guardas el respaldo en una carpeta sincronizada con la nube, ese archivo tamb
 Primero descarga el respaldo desde tu aplicación actual. Luego descarga la nueva versión de Compás, descomprímela y usa «Abrir respaldo». Esta versión puede abrir los respaldos de la versión 1.
 
 ## Video demo
-En la carpeta encontrarás Compas-demo.mp4: un recorrido de aproximadamente 3 minutos, con datos ficticios, acciones animadas, flechas, sonidos suaves de clic, voz sintética en español de México y subtítulos integrados.
+En la carpeta encontrarás Compas-demo.mp4: un recorrido de aproximadamente 3 minutos, con datos ficticios, acciones animadas, flechas, sonidos suaves de clic, voz sintética en español de México.
 
 Coordinación del Posgrado en Ciencias Sociales y Políticas - Ibero

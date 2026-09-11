@@ -14,7 +14,7 @@ Las rutas son referencias en borrador y las revisiones son registros del tesista
 
 ### Video demo actualizado
 
-Recorrido de 3 minutos y 4 segundos con acciones animadas, escritura en campos, flechas, sonidos suaves de clic, voz Dalia en español de México y subtítulos integrados. El ZIP y el video independiente incluyen esta nueva edición.
+Recorrido de 3 minutos y 4 segundos con acciones animadas, escritura en campos, flechas, sonidos suaves de clic, voz Dalia en español de México. El ZIP y el video independiente incluyen esta nueva edición.
 
 «Compás. Instrumento para mapear tu proceso de tesis .... y llegar a buen puerto»
 
