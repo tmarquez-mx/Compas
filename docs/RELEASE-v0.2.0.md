@@ -12,4 +12,10 @@ Descarga tu respaldo personal al terminar. Los reportes compartidos excluyen ToD
 
 Las rutas son referencias en borrador y las revisiones son registros del tesista, sin firma verificada.
 
+### Video demo actualizado
+
+Recorrido de 3 minutos y 4 segundos con acciones animadas, escritura en campos, flechas, sonidos suaves de clic, voz Dalia en español de México y subtítulos integrados. El ZIP y el video independiente incluyen esta nueva edición.
+
+«Compás. Instrumento para mapear tu proceso de tesis .... y llegar a buen puerto»
+
 Coordinación del Posgrado en Ciencias Sociales y Políticas - Ibero
