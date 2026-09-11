@@ -22,6 +22,8 @@ Recorrido de 3 minutos y 4 segundos con acciones animadas, escritura en campos, 
 
 El slogan «Instrumento para mapear tu proceso de tesis» aparece también al inicio. La sección «Tu proceso, en tu equipo» destaca decisiones y revisiones de avances con dos marcas de verificación animadas. El video se presenta sin subtítulos.
 
+La tarjeta «Tu proceso, en tu equipo» incluye taches animados junto a «Entrevistas», «Transcripciones» y «Bases de datos», bajo «No incluir en Compás». Al final, la ruta llega a un barquito rojo que se mece suavemente.
+
 «Compás. Instrumento para mapear tu proceso de tesis .... y llegar a buen puerto»
 
 Coordinación del Posgrado en Ciencias Sociales y Políticas - Ibero
