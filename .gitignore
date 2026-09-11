@@ -1,0 +1,11 @@
+.DS_Store
+.openai/
+paquetes/
+video-demo/
+*.mp4
+*.m4a
+*.wav
+IBERO-Manual_Identidad_2024.pdf
+*respaldo*.json
+*backup*.json
+!tests/fixtures/legacy-v1.json

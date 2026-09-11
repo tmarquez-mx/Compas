@@ -1,0 +1,183 @@
+{
+  "format": "compas-backup",
+  "version": 1,
+  "savedAt": "2026-09-11T02:29:56.235Z",
+  "data": {
+    "schemaVersion": 1,
+    "isDemo": true,
+    "project": {
+      "id": "c-f55a71f7-fc1b-4e24-bc2d-cd8824885908",
+      "title": "Redes vecinales y participación política juvenil",
+      "student": "Alex · ejemplo ficticio",
+      "program": "Maestría en Ciencias Sociales y Políticas",
+      "generation": "2026",
+      "semester": "3",
+      "director": "Dirección de tesis · ejemplo ficticio",
+      "line": "Instituciones y participación",
+      "question": "¿Cómo influyen las redes vecinales en la participación política de jóvenes en dos colonias de la Ciudad de México?",
+      "objectives": "Comprender las formas de participación juvenil.\nComparar el papel de las redes vecinales en dos contextos locales.",
+      "approach": "Estudio comparativo cualitativo con entrevistas semiestructuradas.",
+      "scope": "Dos colonias; participación en espacios comunitarios. Delimitación de casos por revisar.",
+      "milestone": "Revisar el diseño metodológico con la dirección",
+      "milestoneDate": "2026-09-20",
+      "privateNotes": "Recordatorio personal ficticio: necesito dejar tiempo entre lectura y escritura."
+    },
+    "sessions": [
+      {
+        "id": "ses-coloquio",
+        "type": "coloquio",
+        "date": "2026-08-23",
+        "title": "Coloquio de avances",
+        "participants": "Comité · ejemplo ficticio",
+        "presented": "Protocolo y primer apartado del marco conceptual",
+        "agenda": "Coherencia entre pregunta, conceptos y selección de casos.",
+        "advances": "Primera versión del marco conceptual y mapa de literatura.",
+        "summary": "Precisar el concepto de participación y justificar los casos comparados.",
+        "reviewed": "registrado",
+        "nextDate": "2026-12-09",
+        "presentsAgain": "si",
+        "privateNotes": "Reflexión privada ficticia sobre cómo viví la presentación."
+      },
+      {
+        "id": "ses-supervision",
+        "type": "supervision",
+        "date": "2026-09-05",
+        "title": "Revisión del diseño metodológico",
+        "participants": "Tesista y dirección · ejemplo ficticio",
+        "presented": "Matriz de selección de casos, versión 2",
+        "agenda": "Revisar el alcance de la comparación.\nAcordar los criterios de selección.",
+        "advances": "Se precisó la definición de participación y se identificaron criterios de contraste.",
+        "summary": "Comparar dos contextos y explicitar los límites de la selección.",
+        "reviewed": "revisado",
+        "nextDate": "2026-09-20",
+        "presentsAgain": "no",
+        "privateNotes": "Nota personal ficticia: preparar una sola pregunta central para la siguiente sesión."
+      }
+    ],
+    "actions": [
+      {
+        "id": "act-casos",
+        "sourceType": "supervision",
+        "sourceId": "ses-supervision",
+        "sourceLabel": "Revisión del diseño metodológico",
+        "date": "2026-09-05",
+        "updatedAt": "2026-09-08",
+        "commenter": "Dirección",
+        "category": "Metodológico",
+        "comment": "Explicitar por qué estos dos casos permiten una comparación relevante.",
+        "disposition": "incorporar",
+        "rationale": "El contraste territorial permite examinar distintas formas de articulación vecinal.",
+        "description": "Precisar y justificar el criterio de selección de casos",
+        "owner": "Tesista",
+        "due": "2026-09-17",
+        "priority": "alta",
+        "status": "en-proceso",
+        "evidence": "Matriz de selección de casos, versión 2.",
+        "response": "",
+        "privateNotes": ""
+      },
+      {
+        "id": "act-concepto",
+        "sourceType": "coloquio",
+        "sourceId": "ses-coloquio",
+        "sourceLabel": "Coloquio de avances",
+        "date": "2026-08-23",
+        "updatedAt": "2026-09-06",
+        "commenter": "Comité",
+        "category": "Teórico-conceptual",
+        "comment": "Distinguir participación comunitaria y participación política.",
+        "disposition": "incorporar",
+        "rationale": "La precisión conceptual hace explícito qué prácticas se analizarán.",
+        "description": "Precisar el concepto de participación en el marco analítico",
+        "owner": "Tesista",
+        "due": "2026-09-07",
+        "priority": "alta",
+        "status": "resuelto",
+        "evidence": "Capítulo 1, apartado 1.2, versión del 6 sep 2026.",
+        "response": "Se delimitó el concepto y se explicaron sus dimensiones.",
+        "privateNotes": ""
+      },
+      {
+        "id": "act-guia",
+        "sourceType": "supervision",
+        "sourceId": "ses-supervision",
+        "sourceLabel": "Revisión del diseño metodológico",
+        "date": "2026-09-05",
+        "updatedAt": "2026-09-05",
+        "commenter": "Dirección",
+        "category": "Metodológico",
+        "comment": "Vincular las preguntas de entrevista con los objetivos de la investigación.",
+        "disposition": "incorporar",
+        "rationale": "La guía debe producir información pertinente para responder la pregunta.",
+        "description": "Revisar la relación entre objetivos y guía de entrevista",
+        "owner": "Tesista",
+        "due": "2026-09-24",
+        "priority": "media",
+        "status": "pendiente",
+        "evidence": "",
+        "response": "",
+        "privateNotes": ""
+      }
+    ],
+    "decisions": [
+      {
+        "id": "dec-alcance",
+        "date": "2026-09-05",
+        "title": "Delimitar la comparación a dos contextos",
+        "previous": "Explorar cuatro colonias con criterios aún abiertos.",
+        "current": "Comparar dos colonias con criterios de contraste explícitos.",
+        "reason": "El acceso y el tiempo disponible permiten profundizar en dos contextos.",
+        "alternatives": "Mantener cuatro casos con menor profundidad; realizar un único estudio de caso.",
+        "impact": "Ajustar selección, cronograma y alcance de las conclusiones.",
+        "reviewDate": "2026-09-20",
+        "questionCheck": "La comparación permite examinar cómo intervienen distintas redes vecinales.",
+        "basisCheck": "Criterios de contraste y pertinencia teórica por desarrollar.",
+        "feasibilityCheck": "Confirmar acceso antes de cerrar la selección.",
+        "ethicsCheck": "Revisar condiciones de acceso y evitar información que identifique a participantes.",
+        "supersedes": "",
+        "privateNotes": ""
+      }
+    ],
+    "timeEntries": [
+      {
+        "id": "time-1",
+        "date": "2026-09-06",
+        "category": "Lectura",
+        "actionId": "act-casos",
+        "note": "Lectura sobre comparación cualitativa.",
+        "minutes": 90
+      },
+      {
+        "id": "time-2",
+        "date": "2026-09-07",
+        "category": "Escritura",
+        "actionId": "act-casos",
+        "note": "Redacción de criterios.",
+        "minutes": 120
+      },
+      {
+        "id": "time-3",
+        "date": "2026-09-08",
+        "category": "Supervisión",
+        "actionId": "",
+        "note": "Preparación de la próxima reunión.",
+        "minutes": 60
+      },
+      {
+        "id": "time-4",
+        "date": "2026-09-09",
+        "category": "Análisis de datos",
+        "actionId": "",
+        "note": "Ejercicio ficticio de organización analítica.",
+        "minutes": 75
+      }
+    ],
+    "reflections": [
+      {
+        "id": "ref-1",
+        "date": "2026-09-08",
+        "text": "Ejemplo privado: distinguir qué necesita más lectura y qué ya puedo empezar a escribir."
+      }
+    ]
+  }
+}
