@@ -1,6 +1,10 @@
 # Empezar con Compás
 Mapas del proceso de tesis · Versión 0.2.0
 
+## Importante: avisa que probarás Compás
+
+Después de descargar Compás, escribe a posgrado.sociales@ibero.mx e indica que lo descargaste y que lo probarás. Así, la Coordinación podrá avisarte por correo cuando haya una nueva versión para que actualices tu copia. Si no das este aviso, podrías quedarte con una versión desactualizada.
+
 ## 1. Abre tu aplicación
 Descomprime todo el ZIP. En Windows, usa «Extraer todo»; en Mac, abre el ZIP para extraer la carpeta. Después abre Compas.html en un navegador actualizado. Si se abre en un editor de texto, utiliza «Abrir con» y elige tu navegador. No trabajes dentro del ZIP.
 

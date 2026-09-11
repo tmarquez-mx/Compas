@@ -7,6 +7,10 @@ Una aplicación personal para organizar el proceso de tesis en maestría y docto
 
 ### [Descargar Compás para Windows y Mac (.zip)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
 
+## Importante: avisa que probarás Compás
+
+Después de descargar Compás, escribe a [posgrado.sociales@ibero.mx](mailto:posgrado.sociales@ibero.mx) e indica que lo descargaste y que lo probarás. Así, la Coordinación podrá avisarte por correo cuando haya una nueva versión para que actualices tu copia. Si no das este aviso, podrías quedarte con una versión desactualizada.
+
 1. Descarga el ZIP y **descomprímelo por completo**.
 2. Abre la carpeta **Compas** y lee **Empezar-aqui.html**.
 3. Abre **Compas.html** en un navegador actualizado.

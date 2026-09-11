@@ -1,5 +1,9 @@
 Primera distribución descargable de **Compás · Mapas del proceso de tesis**.
 
+### Importante: avisa que probarás Compás
+
+Después de descargar Compás, escribe a [posgrado.sociales@ibero.mx](mailto:posgrado.sociales@ibero.mx) e indica que lo descargaste y que lo probarás. Así, la Coordinación podrá avisarte por correo cuando haya una nueva versión para que actualices tu copia. Si no das este aviso, podrías quedarte con una versión desactualizada.
+
 ### Para empezar
 Descarga **Compas-para-tesistas.zip**, descomprímelo y abre **Empezar-aqui.html** dentro de la carpeta Compas. Después abre **Compas.html** en tu navegador.
 
