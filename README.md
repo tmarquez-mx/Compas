@@ -1,5 +1,5 @@
 # Compás
-**Mapas del proceso de tesis**
+**Instrumento para mapear el proceso de tesis**
 
 Una aplicación personal para organizar el proceso de tesis en maestría y doctorado: ruta por semestres, acuerdos, decisiones, supervisión, tareas y dedicación.
 
