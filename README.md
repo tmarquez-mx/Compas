@@ -3,6 +3,22 @@
 
 Una aplicación personal para organizar el proceso de tesis en maestría y doctorado: ruta por semestres, acuerdos, decisiones, supervisión, tareas y dedicación.
 
+## Compás en acción
+
+Dos recorridos animados con datos ficticios. Haz clic en cada imagen para verla a mayor tamaño.
+
+### Mi ruta: planea y conserva la historia de tus ajustes
+
+Explora los productos por semestre, ajusta las fechas de tu plan y registra el motivo del cambio. El historial te permite recuperar cómo y por qué fue cambiando tu ruta de tesis.
+
+[![Demostración de Mi ruta: consulta de semestres, ajuste de un producto e historial de cambios.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
+
+### Reportes: comparte los avances que tú eliges
+
+Selecciona los registros que quieres compartir, revisa la vista previa y genera un reporte en HTML, Excel o PDF mediante la impresión del navegador. Tus tareas ToDo, horas, reflexiones y notas privadas quedan fuera del reporte.
+
+[![Demostración de Reportes: selección de avances, vista previa y opciones para compartir.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
+
 ## Descargar y empezar
 
 ### [Descargar Compás para Windows y Mac (.zip)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
