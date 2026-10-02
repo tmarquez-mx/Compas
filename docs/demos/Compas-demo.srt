@@ -1,0 +1,174 @@
+1
+00:00:00,000 --> 00:00:00,611
+Compás.
+
+2
+00:00:00,611 --> 00:00:03,105
+Organiza y da seguimiento a tu tesis.
+
+3
+00:00:03,105 --> 00:00:08,652
+Esta pantalla comentada reúne sus siete módulos y los controles para
+conservar tu trabajo.
+
+4
+00:00:08,652 --> 00:00:12,457
+Brújula muestra tu rumbo, pasos para hoy y próximo hito.
+
+5
+00:00:12,457 --> 00:00:15,018
+Mi ruta conserva productos y versiones.
+
+6
+00:00:15,018 --> 00:00:17,061
+To Do organiza tareas privadas.
+
+7
+00:00:17,061 --> 00:00:21,190
+Coloquios y Supervisión conectan conversaciones con compromisos.
+
+8
+00:00:21,190 --> 00:00:24,717
+Dedicación registra tiempo y reflexiones personales.
+
+9
+00:00:24,717 --> 00:00:27,498
+Reportes comparte los avances que eliges.
+
+10
+00:00:27,498 --> 00:00:34,162
+Puedes personalizar tu espacio, abrir y descargar respaldos, recuperar
+copias y consultar ayuda.
+
+11
+00:00:34,162 --> 00:00:36,658
+Todo lo que verás es un ejemplo ficticio.
+
+12
+00:00:37,658 --> 00:00:39,516
+Primero, revisa tu ruta.
+
+13
+00:00:39,516 --> 00:00:43,935
+Consulta los productos por semestre y retoma el diseño metodológico.
+
+14
+00:00:43,935 --> 00:00:47,564
+Registra una nueva versión y describe el avance realizado.
+
+15
+00:00:47,564 --> 00:00:52,692
+Si necesitas mover una fecha, explica el motivo académico o de
+viabilidad.
+
+16
+00:00:52,692 --> 00:00:53,966
+Guarda los cambios.
+
+17
+00:00:53,966 --> 00:00:58,852
+El historial conserva la versión anterior y permite reconocer cómo
+cambió tu plan.
+
+18
+00:00:58,852 --> 00:01:05,234
+La ruta es una referencia en borrador: no calcula un porcentaje de
+avance ni verifica aprobaciones.
+
+19
+00:01:16,978 --> 00:01:23,349
+Ahora convierte ese producto en un paso pequeño: revisar dos párrafos
+sobre la selección de casos.
+
+20
+00:01:23,349 --> 00:01:27,376
+Asigna una fecha y, si lo necesitas, una prioridad.
+
+21
+00:01:27,376 --> 00:01:30,171
+El vínculo con el producto permanece visible.
+
+22
+00:01:30,171 --> 00:01:31,817
+Guarda la tarea y abre To Do.
+
+23
+00:01:31,817 --> 00:01:36,110
+Al terminar el paso, márcalo y consulta las tareas terminadas.
+
+24
+00:01:36,110 --> 00:01:40,065
+Completar una tarea no cierra el compromiso ni aprueba el producto.
+
+25
+00:01:40,065 --> 00:01:44,221
+También puedes importar tareas desde archivos CSV o ICS.
+
+26
+00:01:44,221 --> 00:01:47,457
+Las tareas son privadas y quedan fuera de los reportes.
+
+27
+00:01:49,318 --> 00:01:52,824
+Por último, prepara la conversación con tu dirección.
+
+28
+00:01:52,824 --> 00:02:01,694
+Pon un título al reporte y elige los registros pertinentes: en este
+ejemplo, un compromiso y el corte actual del diseño metodológico.
+
+29
+00:02:01,694 --> 00:02:05,082
+Decide si necesitas compartir los campos de nombres.
+
+30
+00:02:05,082 --> 00:02:09,319
+Prepara la vista previa y revisa la copia que recibirá la otra
+persona.
+
+31
+00:02:09,319 --> 00:02:11,778
+Después descarga el panel de consulta.
+
+32
+00:02:11,778 --> 00:02:15,446
+También puedes descargar Excel o imprimir y guardar PDF.
+
+33
+00:02:15,446 --> 00:02:18,799
+El reporte contiene una selección con fecha de corte.
+
+34
+00:02:18,799 --> 00:02:23,126
+Las tareas, horas, reflexiones y notas privadas quedan fuera.
+
+35
+00:02:26,158 --> 00:02:28,329
+Tu trayectoria permanece contigo.
+
+36
+00:02:28,329 --> 00:02:32,413
+Descarga un respaldo personal para conservar todos los módulos.
+
+37
+00:02:32,413 --> 00:02:35,347
+Localiza el archivo y confirma que lo guardaste.
+
+38
+00:02:35,347 --> 00:02:40,488
+El respaldo permite continuar trabajando; el reporte comparte una
+selección.
+
+39
+00:02:40,488 --> 00:02:43,315
+Registra decisiones y revisiones de avance.
+
+40
+00:02:43,315 --> 00:02:48,129
+Conserva entrevistas, transcripciones y bases de datos fuera de
+Compás.
+
+41
+00:02:48,129 --> 00:02:53,025
+Compás: organiza y da seguimiento a tu tesis, para llegar a buen
+puerto.

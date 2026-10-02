@@ -7,19 +7,33 @@ Una aplicación personal para organizar el proceso de tesis en maestría y docto
 
 ## Compás en acción
 
-Dos recorridos animados con datos ficticios de la interfaz anterior. La versión 0.3.6 conserva estos módulos y renueva su apariencia. Haz clic en cada imagen para verla a mayor tamaño.
+La interfaz actual, comentada y en tres recorridos con datos ficticios. Haz clic en las imágenes para verlas a mayor tamaño.
 
-### Mi ruta: planea y conserva la historia de tus ajustes
+### Conoce todas las funciones
 
-Explora los productos por semestre, ajusta las fechas de tu plan y registra el motivo del cambio. El historial te permite recuperar cómo y por qué fue cambiando tu ruta de tesis.
+El mapa señala los siete módulos, las herramientas de respaldo y recuperación, Personalizar y Ayuda. Brújula reúne tu pregunta, pasos para hoy, próximo hito, conversaciones y decisiones.
 
-[![Demostración de Mi ruta: consulta de semestres, ajuste de un producto e historial de cambios.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
+[![Mapa comentado de Compás 0.3.6: módulos y herramientas para conservar y compartir tu trayectoria.](docs/demos/compas-comentado.png)](docs/demos/compas-comentado.png)
 
-### Reportes: comparte los avances que tú eliges
+### 1. Mi ruta: planea y conserva la historia de tus ajustes
 
-Selecciona los registros que quieres compartir, revisa la vista previa y genera un reporte en HTML, Excel o PDF mediante la impresión del navegador. Tus tareas ToDo, horas, reflexiones y notas privadas quedan fuera del reporte.
+Consulta los semestres, registra una nueva versión del diseño metodológico, ajusta la fecha con un motivo y recupera el corte anterior en el historial.
 
-[![Demostración de Reportes: selección de avances, vista previa y opciones para compartir.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
+[![Recorrido de Mi ruta en Compás 0.3.6: actualizar un producto y consultar su historial.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
+
+### 2. ToDo: del producto a un paso concreto
+
+Crea una tarea desde Mi ruta, conserva su vínculo con el producto, asigna fecha y prioridad y márcala terminada. Las tareas son privadas; completarlas no aprueba productos ni cierra compromisos.
+
+[![Recorrido de ToDo en Compás 0.3.6: crear y terminar una tarea vinculada a un producto.](docs/demos/todo.gif)](docs/demos/todo.gif)
+
+### 3. Reportes: prepara la siguiente conversación
+
+Selecciona un compromiso y el corte de un producto, revisa la vista previa y descarga el panel de consulta. También puedes descargar Excel o imprimir y guardar PDF. Tus tareas ToDo, horas, reflexiones y notas privadas quedan fuera del reporte.
+
+[![Recorrido de Reportes en Compás 0.3.6: seleccionar avances, revisar y descargar un panel HTML.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
+
+El ZIP incluye **Conocer-Compas.html**, este mapa y los tres recorridos para consultarlos sin conexión. El video reúne la misma historia con narración local en español de México y textos explicativos. [Guion y comprobaciones](docs/demos/guion-recorridos.md).
 
 ## Descargar y empezar
 
@@ -39,7 +53,7 @@ Esta primera versión está pensada para usarse en una sola computadora y un mis
 
 No necesitas instalar Python, Node ni otras herramientas. Puedes trabajar sin internet.
 
-El ZIP contiene la aplicación, instrucciones, manifiesto y huellas de integridad; puede incluir el video demo. Es el mismo paquete para Windows y Mac. La interfaz se ha comprobado en Mac mediante servidor local; quedan pendientes la apertura directa del archivo descargado y la prueba en un equipo Windows.
+El ZIP contiene la aplicación, instrucciones, mapa comentado, recorridos animados, manifiesto y huellas de integridad; puede incluir el video demo y sus subtítulos. Es el mismo paquete para Windows y Mac. La interfaz se ha comprobado en Mac mediante servidor local; quedan pendientes la apertura directa del archivo descargado y la prueba en un equipo Windows.
 
 [Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases) · [Descargar el video demo](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-demo.mp4)
 

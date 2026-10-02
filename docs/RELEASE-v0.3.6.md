@@ -33,7 +33,9 @@ Completar la matriz manual del descargable en Windows y Mac, abierto por file://
 ## Descargables
 
 - `Compas-para-tesistas.zip`: aplicación 0.3.6, instrucciones, manifiesto, huellas de integridad y video demo.
-- `Compas-demo.mp4`: animación con taches y velero al cierre. Muestra la interfaz anterior; se conserva como recorrido introductorio.
+- `Compas-demo.mp4`: mapa comentado y tres recorridos reales de la interfaz 0.3.6, con cursor, textos explicativos, narración local en español de México y velero al cierre.
+- `Compas-demo.srt`: subtítulos sincronizados con la narración.
+- `Conocer-Compas.html`, mapa PNG y GIF de Mi ruta, ToDo y Reportes: incluidos en el ZIP para consultarlos sin conexión.
 - `SHA256SUMS.txt`: huellas del ZIP y el video.
 
-Los recorridos GIF de Mi ruta y Reportes se conservan en el README; también muestran la interfaz anterior.
+El README muestra el mapa comentado y las tres animaciones nuevas. Se comprobó mediante acciones en un navegador aislado que el historial conserva el corte anterior, la tarea mantiene su vínculo y el reporte descargado excluye esa tarea privada. El manifiesto de los recorridos identifica la huella de la aplicación capturada.

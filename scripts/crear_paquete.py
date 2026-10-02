@@ -17,7 +17,7 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def guide_html(guide, has_video):
+def guide_html(guide, has_video, has_demos=False):
     parts = []
     for paragraph in guide.split('\n\n'):
         if paragraph.startswith('## '):
@@ -29,7 +29,8 @@ def guide_html(guide, has_video):
         else:
             parts.append('<p>' + html.escape(paragraph).replace('\n', '<br>') + '</p>')
     video_link = '<a class="button" href="Compas-demo.mp4">Ver video demo</a>' if has_video else ''
-    return ('<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; connect-src \'none\'; form-action \'none\'; base-uri \'none\'"><title>Empezar con Compás</title><style>body{font-family:Arial,sans-serif;line-height:1.65;max-width:820px;margin:auto;padding:32px;color:#191919}h1{color:#e00034}h2{margin-top:30px}a{color:#e00034}.button{display:inline-block;padding:12px 18px;border:1px solid #e00034;text-decoration:none;margin:8px 12px 8px 0}@media print{.links{display:none}body{padding:0}}</style></head><body><div class="links"><a class="button" href="Compas.html">Abrir Compás</a>' + video_link + '</div>' + ''.join(parts) + '</body></html>').encode('utf-8')
+    demos_link = '<a class="button" href="Conocer-Compas.html">Conoce el mapa y los recorridos</a>' if has_demos else ''
+    return ('<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; connect-src \'none\'; form-action \'none\'; base-uri \'none\'"><title>Empezar con Compás</title><style>body{font-family:Arial,sans-serif;line-height:1.65;max-width:820px;margin:auto;padding:32px;color:#191919}h1{color:#e00034}h2{margin-top:30px}a{color:#e00034}.button{display:inline-block;padding:12px 18px;border:1px solid #e00034;text-decoration:none;margin:8px 12px 8px 0}@media print{.links{display:none}body{padding:0}}</style></head><body><div class="links"><a class="button" href="Compas.html">Abrir Compás</a>' + video_link + demos_link + '</div>' + ''.join(parts) + '</body></html>').encode('utf-8')
 
 
 def main():
@@ -64,11 +65,20 @@ def main():
         raise SystemExit('La guía EMPEZAR.md no identifica la versión de VERSION.')
     files = {
         'Compas.html': application,
-        'Empezar-aqui.html': guide_html(guide, bool(video)),
+        'Empezar-aqui.html': guide_html(guide, bool(video), (ROOT / 'docs/demos/index.html').is_file()),
         'Empezar-aqui.txt': guide_bytes,
     }
+    demo_dir = ROOT / 'docs/demos'
+    if (demo_dir / 'index.html').is_file():
+        # Lista pública explícita: no se agregan capturas temporales ni respaldos.
+        for name in ['compas-comentado.png', 'mi-ruta.gif', 'todo.gif', 'reportes.gif']:
+            files[name] = (demo_dir / name).read_bytes()
+        files['Conocer-Compas.html'] = (demo_dir / 'index.html').read_bytes()
     if video:
         files['Compas-demo.mp4'] = video.read_bytes()
+        subtitles = video.with_suffix('.srt')
+        if subtitles.is_file():
+            files['Compas-demo.srt'] = subtitles.read_bytes()
     manifest = {
         'name': 'Compás',
         'version': version,

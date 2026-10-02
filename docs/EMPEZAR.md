@@ -68,7 +68,10 @@ Primero descarga el respaldo desde tu aplicación actual. Cierra las pestañas d
 
 Escribe a teresa.marquez@ibero.mx. Repositorio: https://github.com/tmarquez-mx/Compas. Describe qué ocurrió y qué navegador usas; revisa que las capturas no muestren información privada.
 
+## Mapa y recorridos de Compás
+Abre Conocer-Compas.html para consultar la pantalla comentada de la versión 0.3.6. Los números señalan sus siete módulos y los controles de respaldo, recuperación, personalización y ayuda. Después puedes abrir tres recorridos animados: actualizar un producto en Mi ruta, crear y terminar una tarea vinculada en ToDo y preparar un reporte seleccionado. Todo utiliza datos ficticios y funciona sin conexión desde el ZIP.
+
 ## Video demo
-Si tu paquete incluye Compas-demo.mp4, encontrarás un recorrido de aproximadamente 3 minutos, con datos ficticios, acciones animadas, flechas, sonidos suaves de clic, voz sintética en español de México. El video muestra la interfaz de la versión anterior; el nuevo diseño conserva esos módulos y añade Personalizar.
+Si tu paquete incluye Compas-demo.mp4, encontrarás la misma historia con capturas reales de la interfaz 0.3.6, cursor animado, campos escritos y textos explicativos. La narración se sintetizó localmente con la voz Paulina, en español de México. Puedes seguir las acciones sin sonido; Compas-demo.srt contiene la transcripción sincronizada para reproductores que admitan subtítulos externos.
 
 CSP | Universidad Iberoamericana Ciudad de México

@@ -89,7 +89,7 @@ Una copia corrupta permanece intacta hasta una restauración o nuevo inicio expl
 
 El respaldo preparado registra solamente una confirmación pendiente. «Ya guardé el archivo» es una declaración del tesista, no una comprobación automática del disco. Solo se acepta si el proyecto y la huella siguen coincidiendo. Nuevos cambios o otra bitácora invalidan esa confirmación.
 
-Las fuentes se organizan en src/ y se genera el mismo HTML autosuficiente. VERSION y package.json deben coincidir. El build, las pruebas, el servidor local y el paquete se describen en docs/DESARROLLO-ENTORNO.md. El workflow configurado ejecuta esas verificaciones antes de generar una variante del ZIP sin video; aún no se ha ejecutado en GitHub como parte de esta entrega.
+Las fuentes se organizan en src/ y se genera el mismo HTML autosuficiente. VERSION y package.json deben coincidir. El build, las pruebas, el servidor local y el paquete se describen en docs/DESARROLLO-ENTORNO.md. El workflow configurado ejecuta esas verificaciones antes de generar una variante del ZIP sin video; la entrega 0.3.6 superó esas verificaciones en GitHub.
 
 ## Compatibilidad
 

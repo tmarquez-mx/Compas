@@ -1,0 +1,44 @@
+{
+  "version": "0.3.6",
+  "applicationSha256": "f804e29cdd4d75a8a1be4f1786d58939f9aa5052dfa28f70b45e59a91e83c4d8",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "checks": [
+    "Ruta: versión 3 guardada y versión 2 conservada en historial.",
+    "ToDo: tarea creada, vinculada a m2-metodo y terminada por la interfaz.",
+    "Reportes: selección de compromiso y producto; panel HTML descargado; tarea privada ausente.",
+    "Respaldo ficticio descargado; cero errores JavaScript durante los recorridos."
+  ],
+  "chaptersSeconds": {
+    "intro": 37.65816666666666,
+    "mi-ruta": 39.32,
+    "todo": 32.339999999999996,
+    "reportes": 36.839999999999996,
+    "cierre": 27.8665625
+  },
+  "audio": "Paulina, es-MX, síntesis local macOS",
+  "files": {
+    "compas-comentado.png": {
+      "sha256": "2512392d493d84a7cf4e21398676f55d5b2c3e3e4bbbbeffe8c4fbec4aa58aea",
+      "bytes": 581137
+    },
+    "mi-ruta.gif": {
+      "sha256": "976ad584828db87a0b93332103159a7c1886e34f1ebc701b80071fd696047ab2",
+      "bytes": 1786482
+    },
+    "todo.gif": {
+      "sha256": "66e3c51fe34052300e3b6ad0e01d6b15fd105e9e2838ef112f9279d5e8da3c9a",
+      "bytes": 926258
+    },
+    "reportes.gif": {
+      "sha256": "1f9f42a5c12b36800c3cc469283bc9db9c23f7dea0110bd81fb708bb6e52b2ec",
+      "bytes": 1658866
+    },
+    "Compas-demo.mp4": {
+      "sha256": "7bd9ce20d7e4e7536e4f0a872bae6c682ae96f2dde39a8adc5f4158edc48a6a4",
+      "bytes": 5713170
+    }
+  }
+}

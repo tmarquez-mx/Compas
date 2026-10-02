@@ -89,3 +89,14 @@ El workflow de GitHub verifica fuentes, pruebas y ZIP en Linux. Eso no certifica
 | Teclado, zoom y lector de pantalla | Foco, diálogos, etiquetas, estado de guardado y cuatro temas son utilizables. |
 
 El archivo personal JSON no está cifrado. El empaquetador y el workflow no necesitan ni deben recibir bitácoras reales.
+
+## Regenerar el mapa y los recorridos
+
+Los scripts de producción de demos son independientes del build de la aplicación. Requieren Playwright con Chromium, Pillow y FFmpeg con libx264. No forman parte de las dependencias del tesista ni del comando npm test.
+
+1. Ejecuta `scripts/capturar_demos.cjs` con Node; `COMPAS_PLAYWRIGHT` puede indicar la ubicación del paquete Playwright y `COMPAS_CHROMIUM` su ejecutable. `COMPAS_DEMO_WORK` define la carpeta temporal de capturas.
+2. Ejecuta `python3 scripts/montar_demos.py --work /ruta/capturas --ffmpeg /ruta/ffmpeg`. En macOS, la narración utiliza la voz local Paulina; comprueba que la síntesis tiene los permisos del sistema necesarios. `--silent` genera una variante sin audio. Los subtítulos usan la duración real de cada frase sintetizada.
+3. Revisa la pantalla comentada, los GIF completos y el MP4. El manifiesto en `docs/demos/manifest.json` identifica la aplicación capturada y las comprobaciones reales del historial, ToDo y reportes.
+4. Genera el ZIP con el MP4 nuevo. El paquete añade únicamente la página comentada, el mapa y los tres GIF desde una lista explícita; no incluye capturas temporales ni los respaldos ficticios usados para validar la producción.
+
+Las capturas se realizan en un contexto nuevo de Chromium con el ejemplo ficticio; no abren el perfil personal ni sus bitácoras. La carpeta temporal contiene un reporte y un respaldo ficticios usados para comprobar las descargas, y permanece fuera del repositorio.
