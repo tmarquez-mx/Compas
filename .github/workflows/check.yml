@@ -1,0 +1,27 @@
+name: Verificar Compás
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar dist contra las fuentes
+        run: npm run check
+      - name: Probar aplicación y recuperación
+        run: npm test
+      - name: Comprobar ZIP sin video ni archivos privados
+        run: python3 scripts/crear_paquete.py --no-video --output /tmp/Compas-para-tesistas.zip

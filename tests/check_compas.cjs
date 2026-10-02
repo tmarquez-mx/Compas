@@ -3,7 +3,7 @@ const vm=require('node:vm');
 const assert=require('node:assert/strict');
 const path=require('node:path');
 const htmlPath=process.argv[2]||path.resolve(__dirname,'../dist/index.html');
-const output=process.argv[3]||'/private/tmp/compas-validation';
+const output=process.argv[3]||path.join(require('node:os').tmpdir(),'compas-validation');
 const html=fs.readFileSync(htmlPath,'utf8');
 const core=html.match(/<script id="compas-core">([\s\S]*?)<\/script>/)[1];
 const ui=html.match(/<script id="compas-ui">([\s\S]*?)<\/script>/)[1];
@@ -74,7 +74,11 @@ check('Los textos se escapan y Excel no ejecuta fórmulas de las celdas',()=>{
 check('El prototipo no necesita recursos externos ni conexiones',()=>{
  assert(html.includes("connect-src 'none'"));
  assert(!/<script[^>]+src=/i.test(html));
- assert(!/<link[^>]+href=/i.test(html));
+ for(const link of html.match(/<link\b[^>]*>/gi)||[]){
+  const icon=link.match(/^<link rel="icon" type="image\/svg\+xml" href="data:image\/svg\+xml,([^"]+)">$/i);
+  assert(icon,'Solo se permite un icono SVG incorporado en el archivo');
+  assert(!/<(?:script|image|foreignObject)\b|\bhref\s*=/i.test(decodeURIComponent(icon[1])));
+ }
  assert(!/\bfetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/.test(core+ui));
  assert.equal((html.match(/<script id="compas-/g)||[]).length,2);
  assert.equal((html.match(/<\/script>/g)||[]).length,2);
@@ -161,6 +165,21 @@ check('El límite común permite reabrir respaldos con historiales grandes',()=>
  assert.equal(C.restore(backup).routeProgress[0].history.length,410);
  record.history.forEach(x=>{x.privateNotes='ñ'.repeat(16000);x.versionLabel='b'.repeat(16000);x.adjustmentReason='c'.repeat(16000);});
  assert.throws(()=>C.validate(big),/24 MB/);
+});
+
+
+check('La apariencia personal no entra en respaldos ni reportes',()=>{
+ const personal=C.clone(state);personal.appearance={theme:'noche',photo:secret};personal.project.photo=secret;
+ assert(!C.backup(personal).includes(secret));
+ assert(!JSON.stringify(C.makeShare(personal,opts)).includes(secret));
+ assert.equal(JSON.stringify(C.restore(C.backup(personal))),JSON.stringify(C.validate(state)));
+});
+check('La huella de respaldo permanece igual al reabrirlo',()=>{
+ const stamp=ui.match(/function stateStamp\(\)\{[^\n]+\}/)[0];
+ const sandbox={C,state:C.clone(state)};vm.createContext(sandbox);vm.runInContext(stamp,sandbox);
+ const original=vm.runInContext('stateStamp()',sandbox);
+ sandbox.state=C.restore(C.backup(sandbox.state));assert.equal(vm.runInContext('stateStamp()',sandbox),original);
+ sandbox.state.project.title+=' cambio';assert.notEqual(vm.runInContext('stateStamp()',sandbox),original);
 });
 
 fs.mkdirSync(output,{recursive:true});

@@ -1,0 +1,17 @@
+{
+  "name": "Compás",
+  "version": "0.3.6",
+  "application": {
+    "file": "index.html",
+    "sha256": "f804e29cdd4d75a8a1be4f1786d58939f9aa5052dfa28f70b45e59a91e83c4d8",
+    "bytes": 218867
+  },
+  "sources": {
+    "src/index.html": "2b5b7f30a02f43b4771ff35876aa8dc8344e29c132d7b0b493d866359ddf4e31",
+    "VERSION": "6d7ff4be0be7debf12dc50067f10057f5d85815ef89e542bc291bc2c893cbbbb",
+    "src/styles.css": "6f3d969ccc59bc48b67740a961fddf11f5e1a729970376153c5b461d28848fa4",
+    "src/core.js": "0d5bdb75c3aa070146bb2c843176203704eb38476b26cc6f01e612990207ffbc",
+    "src/storage.js": "eaea93899a1f947f9d5fd979c685e6625e00c57905e4b031637123d07abc5148",
+    "src/ui.js": "464792fe5d0d39cb15fd55d300b83dff538e141b1d146194289ac6de2eacc412"
+  }
+}

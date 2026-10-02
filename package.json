@@ -1,0 +1,14 @@
+{
+  "name": "compas-local",
+  "version": "0.3.6",
+  "private": true,
+  "description": "Compás: seguimiento local del proceso de tesis",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "check": "node scripts/build.cjs --check && node scripts/check_build.cjs",
+    "test": "node scripts/test.cjs",
+    "dev": "node scripts/build.cjs && node scripts/python.cjs scripts/servir_local.py",
+    "package": "node scripts/python.cjs scripts/crear_paquete.py"
+  }
+}
