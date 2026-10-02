@@ -7,7 +7,7 @@ Una aplicación personal para organizar el proceso de tesis en maestría y docto
 
 ## Compás en acción
 
-Dos recorridos animados con datos ficticios. Haz clic en cada imagen para verla a mayor tamaño.
+Dos recorridos animados con datos ficticios de la interfaz anterior. La versión 0.3.6 conserva estos módulos y renueva su apariencia. Haz clic en cada imagen para verla a mayor tamaño.
 
 ### Mi ruta: planea y conserva la historia de tus ajustes
 
