@@ -1,0 +1,31 @@
+COMPÁS · MATERIALES EN LÍNEA
+
+Página de Compás: mapa comentado y recorridos animados
+https://github.com/tmarquez-mx/Compas#compás-en-acción
+
+Video de presentación
+https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-demo.mp4
+
+Recorrido 1 · Mi ruta
+https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/mi-ruta.gif
+
+Recorrido 2 · ToDo
+https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/todo.gif
+
+Recorrido 3 · Reportes
+https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/reportes.gif
+
+Guion y comprobaciones de los recorridos
+https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/guion-recorridos.md
+
+Manifiesto de los materiales
+https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/manifest.json
+
+Comprobación de integridad de la descarga
+https://github.com/tmarquez-mx/Compas/releases/latest/download/SHA256SUMS.txt
+
+Versiones y actualizaciones
+https://github.com/tmarquez-mx/Compas/releases
+
+Necesitas Internet para consultar estas ligas.
+Para trabajar en Compás, abre Compas.html: puedes usarlo sin Internet.

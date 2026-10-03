@@ -1,44 +1,51 @@
 {
-  "version": "0.3.6",
-  "applicationSha256": "f804e29cdd4d75a8a1be4f1786d58939f9aa5052dfa28f70b45e59a91e83c4d8",
+  "version": "0.3.7",
+  "applicationSource": "dist/index.html",
+  "applicationBytes": 321599,
+  "applicationSha256": "82b29f99464b732c25a16e57d6e443a157a2948138197a9c48a09a940976c85d",
+  "captureMethod": "Playwright / Chromium · HTTP local · contexto aislado",
   "viewport": {
     "width": 1440,
     "height": 900
   },
   "checks": [
+    "Rincón: paisaje original ficticio, marco de madera y flores sobre los bordes de la foto.",
     "Ruta: versión 3 guardada y versión 2 conservada en historial.",
+    "Calendario: una tarea pendiente seleccionada, fecha 6 de octubre; ICS descargado sin notas privadas para importación manual.",
     "ToDo: tarea creada, vinculada a m2-metodo y terminada por la interfaz.",
-    "Reportes: selección de compromiso y producto; panel HTML descargado; tarea privada ausente.",
+    "Dedicación: 45 minutos de escritura guardados desde el apartado opcional de ToDo.",
+    "Diario: Querido diario... contiene sólo páginas; entrada ficticia guardada. Sin marco probado; Jardín y flores visibles al final.",
+    "Reportes: selección de compromiso y producto; panel HTML descargado; tareas, diario y notas de actividad ausentes.",
     "Respaldo ficticio descargado; cero errores JavaScript durante los recorridos."
   ],
   "chaptersSeconds": {
-    "intro": 37.65816666666666,
+    "intro": 48.928729166666656,
     "mi-ruta": 39.32,
-    "todo": 32.339999999999996,
+    "todo": 121.71999999999998,
     "reportes": 36.839999999999996,
-    "cierre": 27.8665625
+    "cierre": 29.587333333333333
   },
   "audio": "Paulina, es-MX, síntesis local macOS",
   "files": {
     "compas-comentado.png": {
-      "sha256": "2512392d493d84a7cf4e21398676f55d5b2c3e3e4bbbbeffe8c4fbec4aa58aea",
-      "bytes": 581137
+      "sha256": "0239dd41ac6f52680008a9210eb406344327d76b859f092a45a5d9e70040803e",
+      "bytes": 573702
     },
     "mi-ruta.gif": {
-      "sha256": "976ad584828db87a0b93332103159a7c1886e34f1ebc701b80071fd696047ab2",
-      "bytes": 1786482
+      "sha256": "20f809df2e61822eff24903848f8a33d52a1fb163610984caf92fbd9520e04b2",
+      "bytes": 1805979
     },
     "todo.gif": {
-      "sha256": "66e3c51fe34052300e3b6ad0e01d6b15fd105e9e2838ef112f9279d5e8da3c9a",
-      "bytes": 926258
+      "sha256": "1868142b543cc8d6401b2d9feb5d891c81431978bb7216f8bb9de134cf3636e3",
+      "bytes": 5050054
     },
     "reportes.gif": {
-      "sha256": "1f9f42a5c12b36800c3cc469283bc9db9c23f7dea0110bd81fb708bb6e52b2ec",
-      "bytes": 1658866
+      "sha256": "ed3f1ea91874fbc5e02c8b7de4654dbeb40e3076b67e20287abaa5d78e63dd93",
+      "bytes": 1643852
     },
     "Compas-demo.mp4": {
-      "sha256": "7bd9ce20d7e4e7536e4f0a872bae6c682ae96f2dde39a8adc5f4158edc48a6a4",
-      "bytes": 5713170
+      "sha256": "ef2a1df3ffb2191812087ff724f6d8700104c82bdd1eed47a7c511517446e3e4",
+      "bytes": 8896143
     }
   }
 }

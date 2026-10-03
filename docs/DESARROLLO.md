@@ -12,11 +12,11 @@ Al abrirlo por primera vez encontrarás un ejemplo ficticio. Puedes modificarlo 
 
 1. En Brújula, edita el rumbo: nivel (maestría o doctorado), semestre actual, pregunta, objetivos, enfoque, alcance y próximo hito.
 2. En Mi ruta, consulta los productos de cada semestre. Registra versiones, referencias de avance, revisión con la dirección y ajustes del plan. Cada actualización conserva el registro anterior.
-3. En ToDo, desglosa el trabajo en tareas privadas. Puedes vincularlas con compromisos y productos; terminarlas no cierra automáticamente los otros registros.
+3. En ToDo, desglosa el trabajo en tareas privadas. Puedes vincularlas con compromisos y productos; terminarlas no cierra automáticamente los otros registros. Debajo de las tareas, despliega «Registrar dedicación (opcional)» si quieres anotar actividades y horas.
 4. Registra un coloquio o una reunión de supervisión. Agrega un compromiso vinculado a esa sesión.
 5. Revisa ese compromiso, distingue tu decisión sobre el comentario de su estado de atención y anota una evidencia de avance o respuesta.
 6. Registra una decisión metodológica. Usa Registrar cambio posterior cuando el rumbo evolucione; la decisión previa permanece en el historial.
-7. En Dedicación, captura actividades y reflexiones privadas.
+7. En Diario, escribe páginas privadas. Este módulo queda dedicado a la escritura.
 8. Descarga el respaldo personal para conservar todo el trabajo. Usa Abrir respaldo para continuar.
 9. En Reportes, selecciona el periodo y los registros, revisa la copia y descarga el panel de consulta o Excel. Para obtener un PDF, usa Imprimir / Guardar PDF y elige Guardar como PDF en el diálogo del navegador.
 
@@ -156,3 +156,25 @@ La interfaz 0.3 se comprobó en el navegador integrado mediante un servidor loca
 En el navegador integrado, mediante un servidor local separado con datos ficticios, se abrió una segunda pestaña: quedó en consulta con controles de edición deshabilitados. Después de modificar una tarea en la primera pestaña, cerrarla y volver a comprobar desde la segunda, se recuperó el cambio y se habilitó la edición. Preparar un respaldo mostró la confirmación pendiente sin afirmar que existía un archivo guardado. El navegador no expuso la ubicación de descarga al agente; no se confirmó como verificado en disco. No se observaron errores de consola en la pestaña de prueba.
 
 La verificación de Windows y de apertura directa file://, las descargas nativas completas y la revisión con lector de pantalla permanecen pendientes antes de distribución amplia. Las pruebas automáticas cubren la serialización y recuperación; no sustituyen esas comprobaciones.
+
+## Acompañamiento y guía inicial · piloto 0.3.7
+
+La pantalla inicial permite empezar con una tarea o una página del diario; título y pregunta no son obligatorios. Las conversaciones y decisiones se despliegan cuando hacen falta. Los botones explican su función con ratón y teclado. Escape cierra primero el letrero, conservando el formulario abierto.
+
+La limpieza visual elimina los rótulos sobre los títulos principales y las descripciones repetidas de todas las vistas. Los avisos de privacidad se abrevian; se conservan los datos de proyecto, fechas, estados, hitos y la información de guardado.
+
+Diario reutiliza `reflections` del esquema 2: los respaldos y las anotaciones anteriores siguen compatibles. Las entradas siguen fuera de todos los reportes. El módulo se dedica únicamente a escribir.
+
+El registro de actividades y horas se presenta en **ToDo → Registrar dedicación (opcional)**, plegado debajo de las tareas. Cambia su ubicación en la interfaz; conserva `timeEntries`, sus registros existentes y su inclusión en el respaldo personal. Las horas y sus totales siguen fuera de los reportes.
+
+Las invitaciones por logros aparecen solamente al pasar de pendiente a terminado en una tarea, producto o compromiso existente y tras aceptar el guardado. Importar tareas ya terminadas no dispara una invitación. No hay rachas, puntos ni bloqueo de adornos; todos los marcos y detalles están disponibles desde el principio. La preferencia para omitir invitaciones, marcos y adornos se guarda con la apariencia local. La foto sigue separada de la bitácora.
+
+Cómo usar Compás comienza por descargar y extraer el ZIP, identifica Compas.html como la aplicación sin instalación y explica apertura, respaldo, cierre y reapertura en cada sesión.
+
+
+El rincón personal agrupa la foto y la capa SVG decorativa en `personal-keepsake`, con marcos de material simulados en CSS y un soporte de papel cuando no se muestra la foto. La vista previa reutiliza la composición; las decoraciones no interceptan el puntero ni se imprimen.
+
+La exportación de ToDo a calendario se reparte entre `core/calendar.js` (iCalendar, eventos de día completo, lista explícita de títulos y fechas) y `ui/calendar.js` (selección y descarga). No modifica tareas ni requiere conexión. Las claves internas `supervision` se mantienen para respaldos antiguos; la interfaz muestra «Asesoría de tesis».
+
+
+La entrega de escritorio comprueba el dispositivo antes de inicializar la UI. `ui/device.js` declara los ayudantes elevados y el prefijo del cierre en `source-files.cjs` retorna en teléfonos/tabletas antes de acceder a almacenamiento, fotos o bloqueos de edición. El ancho de ventana no se usa para esa decisión; el layout adaptable sigue atendiendo ventanas estrechas de computadora. La copia en nube es un respaldo JSON manual gestionado por el servicio elegido por el usuario; no hay integración de cuenta ni sincronización.

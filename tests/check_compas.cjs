@@ -175,13 +175,26 @@ check('La apariencia personal no entra en respaldos ni reportes',()=>{
  assert.equal(JSON.stringify(C.restore(C.backup(personal))),JSON.stringify(C.validate(state)));
 });
 check('La huella de respaldo permanece igual al reabrirlo',()=>{
- const stamp=ui.match(/function stateStamp\(\)\{[^\n]+\}/)[0];
+ const stamp=require('./support/source.cjs').functionSource(ui, 'stateStamp');
  const sandbox={C,state:C.clone(state)};vm.createContext(sandbox);vm.runInContext(stamp,sandbox);
  const original=vm.runInContext('stateStamp()',sandbox);
  sandbox.state=C.restore(C.backup(sandbox.state));assert.equal(vm.runInContext('stateStamp()',sandbox),original);
  sandbox.state.project.title+=' cambio';assert.notEqual(vm.runInContext('stateStamp()',sandbox),original);
 });
 
+check('El conteo de reportes coincide con la exportación para selecciones y cortes',()=>{
+ for(const options of [opts,{...opts,from:C.today(),to:C.today()},{...opts,to:'2000-01-01'},{...opts,actions:[],sessions:[],decisions:[],route:[]},{...opts,actions:[...opts.actions,...opts.actions]}]){
+  const report=C.makeShare(state,options);
+  assert.equal(C.reportCount(state,options),report.actions.length+report.sessions.length+report.decisions.length+report.route.length);
+ }
+});
+check('Preparar respaldo devuelve una copia normalizada y reabrible',()=>{
+ const input=C.clone(state);input.project.extra='Campo descartado';
+ const prepared=C.prepareBackup(input);
+ assert.equal(prepared.state.project.extra,undefined);assert.equal(input.project.extra,'Campo descartado');
+ assert.equal(JSON.stringify(C.restore(prepared.text)),JSON.stringify(prepared.state));
+ prepared.state.project.title='Edición de la copia';assert.notEqual(input.project.title,prepared.state.project.title);
+});
 fs.mkdirSync(output,{recursive:true});
 fs.writeFileSync(path.join(output,'consulta.html'),doc);
 fs.writeFileSync(path.join(output,'reporte.xlsx'),excel);

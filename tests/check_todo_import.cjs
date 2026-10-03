@@ -147,15 +147,15 @@ check('Títulos HTML/XML permanecen texto literal y se escapan antes de presenta
 });
 check('La vista previa escapa archivo, encabezados, títulos, notas y observaciones',()=>{
  const ui=html.match(/<script id="compas-ui">([\s\S]*?)<\/script>/)[1];
- const mappingFunction=ui.match(/function importMappingField\([^\n]+/);
- const previewFunction=ui.match(/function todoImportPreview\(\)\{[\s\S]*?\n\}\nfunction todoImportCommit/);
- assert(mappingFunction,'No se encontró el mapeo de columnas de la vista previa.');assert(previewFunction,'No se encontró el generador de la vista previa.');
+ const { functionSource }=require('./support/source.cjs');
+ const mappingFunction=functionSource(ui,'importMappingField');
+ const previewFunction=functionSource(ui,'todoImportPreview');
  const hostile='<img src=x onerror=alert(1)> & "nombre" <script>alert(2)</script>';
  const rows=csv('Tarea,Fecha,Prioridad,Estado,Notas\nLectura,2026-11-01,Media,Pendiente,\n');
  rows[0].title=hostile;rows[0].privateNotes=hostile;rows[0].warnings=[hostile];
  const dialog={innerHTML:'',querySelector:()=>null},draft={parsed:{format:'csv',columns:[hostile],warnings:[hostile]},mapping:{title:0,due:-1,priority:-1,status:-1,notes:-1},options:{dateOrder:'dmy',includeNotes:true},candidates:rows,duplicates:new Set(),selected:new Set(),page:0,name:hostile};
  const viewContext={todoImportDraft:draft,C,e:C.esc,fmt:C.fmt,$:()=>dialog,btn:label=>'<button>'+C.esc(label)+'</button>',document:{activeElement:null,getElementById:()=>null},Set,Math};
- vm.createContext(viewContext);vm.runInContext(mappingFunction[0]+'\n'+previewFunction[0].replace(/\nfunction todoImportCommit$/,'')+'\ntodoImportPreview();',viewContext);
+ vm.createContext(viewContext);vm.runInContext(mappingFunction+'\n'+previewFunction+'\ntodoImportPreview();',viewContext);
  assert(!dialog.innerHTML.includes('<img'));assert(!dialog.innerHTML.includes('<script>'));assert(!dialog.innerHTML.includes(hostile));assert(dialog.innerHTML.includes('&lt;img'));
  assert(dialog.innerHTML.includes('aria-label="Importar: &lt;img'));assert(dialog.innerHTML.includes('&quot;nombre&quot;'));
 });
@@ -225,7 +225,7 @@ check('Notas, títulos y claves importadas se quedan fuera de reportes para comp
 
 check('Deshacer un lote conserva tareas anteriores y las importadas que se editaron después',()=>{
  const ui=html.match(/<script id="compas-ui">([\s\S]*?)<\/script>/)[1];
- const source=ui.match(/function todoImportCommit\(\)\{[\s\S]*?\n\}\n(?=\n?function todoForm)/)[0];
+ const source=require('./support/source.cjs').functionSource(ui, 'todoImportCommit');
  const prior=C.blank();prior.todos.push(item('Tarea anterior','2026-11-01'));const priorCopy=JSON.stringify(prior);
  const candidates=csv('Tarea,Fecha,Prioridad,Estado,Notas\nRevisar el argumento,2026-11-05,Media,Pendiente,\nRevisar bibliografía,2026-11-06,Media,Pendiente,\n');
  let undo;

@@ -180,4 +180,19 @@ check('Una copia de recuperación cambiada antes del commit no reemplaza la copi
  storage.getItem=k=>{if(k===RECOVERY&&++reads===2)storage.values.set(RECOVERY,JSON.stringify({format:'compas-local-recovery',version:1,at:new Date().toISOString(),reason:'replace',raw:C.backup(project('Otra recuperación ficticia'))}));return get(k);};
  const result=control.restoreRecovery(originalRaw);assert.equal(result.ok,false);assert.equal(storage.getItem(KEY),active);assert.equal(control.getJournal().raw,active);
 });
+check('Consultar propiedades no lee las copias auxiliares ni entrega estado mutable',()=>{
+ const storage=store({[KEY]:originalRaw}),control=controller(storage);control.open();
+ const get=storage.getItem.bind(storage),reads=[];storage.getItem=key=>{reads.push(key);return get(key);};
+ assert.equal(control.status,'ready');assert.equal(control.rawBase,originalRaw);assert.equal(typeof control.message,'string');
+ const copy=control.state;copy.project.title='Cambio fuera del controlador';
+ assert.equal(control.state.project.title,original.project.title);assert.deepEqual(reads,[]);
+});
+check('Guardar prepara un solo respaldo y conserva su estado normalizado',()=>{
+ const storage=store({[KEY]:originalRaw});let preparations=0;
+ const core={...C,prepareBackup:input=>{preparations++;return C.prepareBackup(input);}};
+ const control=S.startStorage({storage,key:KEY,core,canWrite:()=>true});control.open();
+ const next=C.clone(original);next.project.title='Cambio normalizado ficticio';next.project.extra='No pertenece al esquema';
+ assert.equal(control.save(next).persisted,true);assert.equal(preparations,1);
+ assert.equal(control.state.project.extra,undefined);assert.equal(C.restore(storage.getItem(KEY)).project.title,next.project.title);
+});
 console.log(count+' comprobaciones de persistencia pasaron.');

@@ -3,7 +3,9 @@
 
 Decisiones, acuerdos y próximos pasos, en un solo lugar.
 
-Una aplicación personal para organizar el proceso de tesis en maestría y doctorado: ruta por semestres, acuerdos, decisiones, supervisión, tareas y dedicación.
+Una aplicación personal para computadora (Windows o Mac) para organizar el proceso de tesis en maestría y doctorado: ruta por semestres, acuerdos, decisiones, asesoría de tesis, tareas y dedicación.
+
+Compás se usa en una computadora y un navegador habitual; en celulares y tabletas muestra una invitación para continuar desde la computadora. Puedes trabajar sin internet y guardar tus respaldos JSON localmente. También puedes conservarlos en una carpeta de Google Drive, OneDrive, Dropbox u otro servicio configurado: la subida requiere internet y la gestiona ese servicio. Compás no conecta cuentas ni sincroniza dispositivos. Para cambiar de equipo, guarda el respaldo reciente, cierra la copia anterior y abre el JSON en el nuevo lugar.
 
 ## Compás en acción
 
@@ -11,29 +13,29 @@ La interfaz actual, comentada y en tres recorridos con datos ficticios. Haz clic
 
 ### Conoce todas las funciones
 
-El mapa señala los siete módulos, las herramientas de respaldo y recuperación, Personalizar y Ayuda. Brújula reúne tu pregunta, pasos para hoy, próximo hito, conversaciones y decisiones.
+El mapa señala los siete módulos, las herramientas de respaldo y recuperación, Personalizar y Ayuda. Los botones explican su función al pasar el ratón o enfocarlos con el teclado. Brújula reúne tu pregunta, pasos para hoy, próximo hito, conversaciones y decisiones.
 
-[![Mapa comentado de Compás 0.3.6: módulos y herramientas para conservar y compartir tu trayectoria.](docs/demos/compas-comentado.png)](docs/demos/compas-comentado.png)
+[![Mapa comentado de Compás 0.3.7: módulos y herramientas para conservar y compartir tu trayectoria.](docs/demos/compas-comentado.png)](docs/demos/compas-comentado.png)
 
 ### 1. Mi ruta: planea y conserva la historia de tus ajustes
 
 Consulta los semestres, registra una nueva versión del diseño metodológico, ajusta la fecha con un motivo y recupera el corte anterior en el historial.
 
-[![Recorrido de Mi ruta en Compás 0.3.6: actualizar un producto y consultar su historial.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
+[![Recorrido de Mi ruta en Compás 0.3.7: actualizar un producto y consultar su historial.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
 
 ### 2. ToDo: del producto a un paso concreto
 
-Crea una tarea desde Mi ruta, conserva su vínculo con el producto, asigna fecha y prioridad y márcala terminada. Las tareas son privadas; completarlas no aprueba productos ni cierra compromisos.
+Crea una tarea desde Mi ruta, conserva su vínculo con el producto y asigna fecha y prioridad. Selecciónala para exportarla al calendario y completa el paso. Si te sirve, registra tu dedicación desde ToDo; después elige un detalle para tu rincón y escribe en el Diario. Completarlas no aprueba productos ni cierra compromisos.
 
-[![Recorrido de ToDo en Compás 0.3.6: crear y terminar una tarea vinculada a un producto.](docs/demos/todo.gif)](docs/demos/todo.gif)
+[![Recorrido de ToDo en Compás 0.3.7: crear y terminar una tarea vinculada a un producto.](docs/demos/todo.gif)](docs/demos/todo.gif)
 
 ### 3. Reportes: prepara la siguiente conversación
 
-Selecciona un compromiso y el corte de un producto, revisa la vista previa y descarga el panel de consulta. También puedes descargar Excel o imprimir y guardar PDF. Tus tareas ToDo, horas, reflexiones y notas privadas quedan fuera del reporte.
+Selecciona un compromiso y el corte de un producto, revisa la vista previa y descarga el panel de consulta. También puedes descargar Excel o imprimir y guardar PDF. Tus tareas ToDo, horas, diario y notas privadas quedan fuera del reporte.
 
-[![Recorrido de Reportes en Compás 0.3.6: seleccionar avances, revisar y descargar un panel HTML.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
+[![Recorrido de Reportes en Compás 0.3.7: seleccionar avances, revisar y descargar un panel HTML.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
 
-El ZIP incluye **Conocer-Compas.html**, este mapa y los tres recorridos para consultarlos sin conexión. El video reúne la misma historia con narración local en español de México y textos explicativos. [Guion y comprobaciones](docs/demos/guion-recorridos.md).
+El mapa, los recorridos, el video y sus archivos de comprobación se consultan en la página de Compás; el ZIP trae sus enlaces en **Materiales-en-linea.txt**. El video reúne la misma historia con narración local en español de México y textos explicativos. [Guion y comprobaciones](docs/demos/guion-recorridos.md).
 
 ## Descargar y empezar
 
@@ -53,7 +55,7 @@ Esta primera versión está pensada para usarse en una sola computadora y un mis
 
 No necesitas instalar Python, Node ni otras herramientas. Puedes trabajar sin internet.
 
-El ZIP contiene la aplicación, instrucciones, mapa comentado, recorridos animados, manifiesto y huellas de integridad; puede incluir el video demo y sus subtítulos. Es el mismo paquete para Windows y Mac. La interfaz se ha comprobado en Mac mediante servidor local; quedan pendientes la apertura directa del archivo descargado y la prueba en un equipo Windows.
+El ZIP contiene tres archivos: **Compas.html**, la aplicación; **Empezar-aqui.html**, las instrucciones; y **Materiales-en-linea.txt**, con las ligas al video, las animaciones y los archivos de comprobación en la página de Compás. Es el mismo paquete para Windows y Mac. La interfaz se ha comprobado en Mac mediante servidor local y apertura directa del HTML con un navegador aislado; queda pendiente la prueba en un equipo Windows y otros navegadores.
 
 [Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases) · [Descargar el video demo](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-demo.mp4)
 
@@ -61,11 +63,11 @@ El ZIP contiene la aplicación, instrucciones, mapa comentado, recorridos animad
 
 - **Brújula:** hasta tres pasos pendientes, posición en la ruta, próximo hito y decisiones.
 - **Mi ruta:** maestría o doctorado, semestres, productos, versiones y ajustes de la planeación.
-- **ToDo:** tareas privadas con fechas, prioridades y vínculos con compromisos o productos; importación local de archivos CSV e ICS con vista previa y selección.
-- **Coloquios y Supervisión:** sesiones, retroalimentación y seguimiento de acuerdos.
-- **Dedicación:** actividades, horas y reflexiones personales.
+- **ToDo:** tareas privadas con fechas, prioridades y vínculos con compromisos o productos; importación local de archivos CSV e ICS y exportación de tareas elegidas a Google Calendar, Calendario de Apple y Outlook mediante ICS. Debajo de las tareas, **Registrar dedicación (opcional)** permite anotar actividades y horas en un apartado plegado; conserva los registros anteriores.
+- **Coloquios y Asesoría de tesis:** sesiones, retroalimentación y seguimiento de acuerdos.
+- **Diario:** páginas privadas con fecha para escribir ideas, dudas o cómo te fue, sin registro de horas.
 - **Reportes:** selección de avances para compartir como HTML, Excel o PDF mediante la impresión del navegador.
-- **Personalizar:** cuatro temas y una foto local opcional, en portarretratos o como fondo suave. La foto queda fuera de respaldos y reportes.
+- **Personalizar:** cuatro temas y un rincón con foto sin marco o marcos de Lino, Madera, Jardín o Arcilla. Flores, hojas o estrellas sobre los bordes de una foto local opcional; sin foto, acompañan una tarjeta «A tu ritmo». También puedes usar la imagen como fondo suave. Todos los detalles están disponibles desde el principio y quedan fuera de respaldos y reportes.
 
 Las rutas son referencias en borrador. Compás no calcula el porcentaje de avance de una tesis ni otorga aprobaciones. La revisión de un producto o una minuta es un registro del tesista, sin firma verificada.
 
@@ -82,6 +84,12 @@ Se admiten archivos de hasta **2 MB y 1,000 registros**. En CSV, elige la column
 
 Nada se selecciona inicialmente. Revisa los títulos y fechas; te recomendamos descargar y comprobar un respaldo desde la vista previa antes de confirmar. Los duplicados detectados se omiten: repetir la importación no actualiza ni elimina tareas existentes. Puedes deshacer el lote durante diez segundos. Las tareas importadas siguen siendo privadas; quedan fuera de los reportes y se conservan en el respaldo personal.
 
+## Exportar tareas al calendario
+
+En **ToDo → Exportar a calendario**, selecciona tareas pendientes con fecha y descarga el ICS. Impórtalo en [Google Calendar desde la computadora](https://support.google.com/calendar/answer/37118?hl=es), [Calendario de Apple en Mac](https://support.apple.com/es-mx/guide/calendar/icl1023/mac) u [Outlook web](https://support.microsoft.com/en-us/outlook/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web). Se generan eventos de día completo en su fecha prevista, con título y fecha; las notas privadas y el diario quedan fuera. Es una copia puntual, sin sincronización: revisa los posibles duplicados antes de importar de nuevo.
+
+El archivo sigue [iCalendar, RFC 5545](https://www.rfc-editor.org/info/rfc5545/), con identificadores estables, fechas sin horario y plegado de líneas UTF-8.
+
 ## Tu bitácora y tus reportes
 
 | Archivo | Uso |
@@ -92,7 +100,7 @@ Nada se selecciona inicialmente. Revisa los títulos y fechas; te recomendamos d
 
 La aplicación **no envía los registros a servidores** y no requiere cuentas. La descarga desde GitHub no le da acceso a tus anotaciones. El navegador puede conservar una copia auxiliar, pero esa copia puede borrarse: descarga y confirma respaldos regularmente. La edición se limita a una pestaña cuando el navegador permite un bloqueo exclusivo; sin él, los cambios permanecen en modo temporal. Las copias dañadas y las bitácoras reemplazadas pueden conservarse para recuperación.
 
-Las tareas ToDo, las horas y sus totales, las reflexiones y las notas privadas quedan fuera de los reportes. El respaldo personal sí las contiene y no está cifrado. Si lo guardas en una carpeta sincronizada, también podrá almacenarse en la nube.
+Las tareas ToDo, las horas y sus totales, el diario y las notas privadas quedan fuera de los reportes. El respaldo personal sí las contiene y no está cifrado. Si lo guardas en una carpeta sincronizada, también podrá almacenarse en la nube.
 
 Registra decisiones metodológicas y revisiones de avances. Conserva fuera de Compás entrevistas, transcripciones, bases de datos e información que identifique a participantes de la investigación.
 
@@ -108,18 +116,24 @@ Escribe a [teresa.marquez@ibero.mx](mailto:teresa.marquez@ibero.mx). Consulta el
 
 ## Para quienes revisan el código
 
-La aplicación completa está en [dist/index.html](dist/index.html), generado desde [src/](src/). No edites el descargable a mano. La versión local es 0.3.6. Los registros incluidos en el ejemplo y las pruebas son ficticios.
+La aplicación completa está en [dist/index.html](dist/index.html), generado desde [src/](src/). No edites el descargable a mano. La versión del piloto es 0.3.7. [Cambios de esta versión](docs/RELEASE-v0.3.7.md). Los registros incluidos en el ejemplo y las pruebas son ficticios.
 
-[Entorno de desarrollo](docs/DESARROLLO-ENTORNO.md) · [Detalles de funcionamiento y validación](docs/DESARROLLO.md) · [Guía para tesistas](docs/EMPEZAR.md)
+[Auditoría y mejoras de rendimiento](docs/AUDITORIA-CODIGO-2026-10-03.md) · [Entorno de desarrollo](docs/DESARROLLO-ENTORNO.md) · [Detalles de funcionamiento y validación](docs/DESARROLLO.md) · [Guía para tesistas](docs/EMPEZAR.md)
 
 Ejecutar comprobaciones:
 
     npm test
     npm run check
 
-Generar el paquete:
+Generar el paquete de tres archivos:
 
-    python3 scripts/crear_paquete.py --video /ruta/Compas-demo.mp4
+    npm run package
+
+Para mantenimiento, todavía puede generarse una copia adicional con los recorridos y el video disponible:
+
+    npm run package:complete
+
+Para indicar otro MP4, usa `python3 scripts/crear_paquete.py --video /ruta/Compas-demo.mp4`; este argumento genera la variante completa.
 
 ---
 

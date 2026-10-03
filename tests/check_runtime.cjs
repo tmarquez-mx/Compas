@@ -9,19 +9,10 @@ const htmlPath=process.argv[2]||path.resolve(__dirname,'../dist/index.html');
 const html=fs.readFileSync(htmlPath,'utf8');
 const core=html.match(/<script id="compas-core">([\s\S]*?)<\/script>/)[1];
 const ui=html.match(/<script id="compas-ui">([\s\S]*?)<\/script>/)[1];
-function statementAt(index,label){
- assert(index>=0,'Falta el código real de UI: '+label);
- const lines=ui.slice(index).split('\n');let source='';
- for(const line of lines){source+=line+'\n';try{new vm.Script(source);return source;}catch(err){if(!(err instanceof SyntaxError))throw err;}}
- throw new Error('No se pudo extraer '+label);
-}
-function realFunction(name){
- const match=new RegExp('^(?:async )?function '+name+'\\(','m').exec(ui);
- assert(match,'Falta la función real de UI: '+name);
- return statementAt(match.index,name);
-}
-const functions=['stateStamp','saveMessage','saveInfo','updateEditControls','workspaceNotice','ensureEditable','saveWorkspace','persist','mutate','backup','confirmBackup','replaceState','acquireEditing','releaseEditing','recoveryDialog','btn'].map(realFunction).join('\n');
-const metadataStartup=statementAt(ui.indexOf('try{const raw=localStore?.getItem(BACKUP_META_KEY)'),'lectura de metadata de respaldo');
+const { statementSource, functionSource } = require('./support/source.cjs');
+const realFunction = name => functionSource(ui, name);
+const functions=['stateStamp','saveMessage','saveInfo','updateEditControls','workspaceNotice','ensureEditable','saveWorkspace','mutate','completedStep','backup','confirmBackup','replaceState','acquireEditing','releaseEditing','recoveryDialog','btn'].map(realFunction).join('\n');
+const metadataStartup=statementSource(ui, ui.search(/try\s*\{\s*const raw\s*=\s*localStore\?\.getItem\(BACKUP_META_KEY\)/), 'lectura de metadata de respaldo');
 let count=0;
 function check(label,fn){fn();count++;console.log('OK '+label);}
 function storage(initial={}){
@@ -37,7 +28,7 @@ function harness({mode='owner',raw,dirty=true,storeInput}={}){
  const original=C.demo();original.isDemo=false;original.project.title='Bitácora ficticia para pruebas de UI';
  const KEY='compas-test-runtime',BACKUP_META_KEY='compas-test-backup-meta',localStore=storeInput||storage({[KEY]:raw===undefined?C.backup(original):raw});
  Object.assign(context,{C,e:C.esc,$:node,KEY,BACKUP_META_KEY,VERSION:'prueba',localStore,localStorage:localStore,
-  state:original,dirty,storageAvailable:mode==='owner',writeMode:mode,saveStatus:'saved',saveWarning:'',previewShare:null,backupMeta:null,pendingBackup:null,recoveryDraft:null,
+  state:original,dirty,storageAvailable:mode==='owner',writeMode:mode,saveStatus:'saved',saveWarning:'',previewShare:null,backupMeta:null,pendingBackup:null,recoveryDraft:null,appearance:{celebrate:true},celebration:'',
   lockRequestPending:false,releaseEditLock:null,navigator:{},document:{activeElement:null,querySelectorAll(){return [];},querySelector(){return null;}},dialogTrigger:null,
   reportOptions:null,actionFilter:'todos',routeLevel:'',routeSemester:'',todoFilter:'pendientes',confirmAnswer:true,
   render(){renders.push(true);},navigate(view){context.view=view;},toast(message,undo){messages.push({message,undo});},
@@ -120,13 +111,23 @@ check('Recuperar desde la interfaz intercambia las bitácoras sin perder la que 
  assert.equal(h.run("replaceState(selected.state,'Copia recuperada',{recoveryRaw:selected.raw})"),true);
  assert.equal(JSON.stringify(h.context.state),JSON.stringify(original));assert.equal(JSON.stringify(h.context.workspace.getRecovery().state),JSON.stringify(active));
  assert.equal(h.context.storageAvailable,true);assert.equal(h.context.dirty,true);assert.equal(h.node('editor').closed,true);
- assert.match(ui,/recoveryRaw:b\.dataset\.kind==='recovery'\?r\.raw:null/);
 });
 check('Una recuperación que cambió desde la vista no reemplaza la bitácora activa',()=>{
  const h=harness();h.context.next=h.C.blank();assert.equal(h.run("replaceState(next,'Nueva bitácora ficticia')"),true);h.run('recoveryDialog()');h.context.selected=h.context.recoveryDraft.recovery;
  const active=JSON.stringify(h.context.state),raw=h.localStore.getItem(h.context.KEY);h.localStore.removeItem(h.context.workspace.keys.recovery);
  assert.equal(h.run("replaceState(selected.state,'No debe recuperar',{recoveryRaw:selected.raw})"),false);assert.equal(JSON.stringify(h.context.state),active);assert.equal(h.localStore.getItem(h.context.KEY),raw);assert.equal(h.node('editor').open,true);
  assert(h.messages.some(x=>/copia de recuperación cambió/i.test(x.message)));
+});
+check('El botón de recuperación transmite la copia elegida al intercambio protegido',()=>{
+ const h=harness(),original=h.C.clone(h.context.state);
+ h.context.next=h.C.blank();h.context.next.project.title='Activa ficticia del botón';
+ assert.equal(h.run("replaceState(next,'Nueva bitácora ficticia')"),true);h.run('recoveryDialog()');
+ const active=h.C.clone(h.context.state);
+ for(const name of ['todoImportStart','todoImportCommit','help','projectForm','levelForm','prepareReport'])h.context[name]=()=>{throw new Error('Acción inesperada: '+name);};
+ h.run(statementSource(ui,ui.indexOf('const actionHandlers ='),'acciones de la interfaz'));
+ h.run("actionHandlers['recovery-restore']({dataset:{kind:'recovery'}})");
+ assert.equal(JSON.stringify(h.context.state),JSON.stringify(original));
+ assert.equal(JSON.stringify(h.context.workspace.getRecovery().state),JSON.stringify(active));
 });
 check('Cancelar una recuperación conserva ambas copias',()=>{
  const h=harness();h.context.next=h.C.blank();assert.equal(h.run("replaceState(next,'Nueva bitácora ficticia')"),true);h.run('recoveryDialog()');h.context.selected=h.context.recoveryDraft.recovery;h.context.confirmAnswer=false;
@@ -203,5 +204,12 @@ async function asyncCheck(label,fn){await fn();count++;console.log('OK '+label);
   const h=harness({mode:'pending'}),before=h.localStore.getItem(h.context.KEY);h.run('acquireEditing()');await settle();assert.equal(h.context.writeMode,'session');
   assert.equal(h.run("mutate(s=>s.project.title='Sesión ficticia sin Web Locks')"),true);assert.equal(h.context.storageAvailable,false);assert.equal(h.localStore.getItem(h.context.KEY),before);assert.match(h.run("saveMessage('Cambio preparado.')"),/solo en esta sesión/);
  });
- console.log(count+' comprobaciones del runtime de UI pasaron.');
+check('Deshacer un paso terminado retira su invitación y conserva la tarea abierta',()=>{
+ const h=harness();h.context.id=h.context.state.todos[0].id;
+ assert.equal(h.run('mutate(s=>Object.assign(s,C.setTodoDone(s,id,true)))'),true);
+ assert.equal(h.context.celebration,h.context.state.todos[0].title);
+ assert.equal(h.run('mutate(s=>Object.assign(s,C.setTodoDone(s,id,false)))'),true);
+ assert.equal(h.context.celebration,'');assert.equal(h.context.state.todos[0].done,false);
+});
+console.log(count+' comprobaciones del runtime de UI pasaron.');
 })().catch(err=>{console.error(err);process.exitCode=1;});

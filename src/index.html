@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="compas-version" content="{{COMPAS_VERSION}}">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Compás. Organiza y da seguimiento a tu tesis: ruta por semestres, tareas, acuerdos, supervisión, decisiones y dedicación.">
+<meta name="description" content="Compás. Organiza y da seguimiento a tu tesis: ruta por semestres, tareas, acuerdos, asesoría de tesis, decisiones y dedicación.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src 'self' data:; frame-src 'self' blob:; connect-src 'none'; form-action 'none'; base-uri 'none'">
 <title>Compás</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%2017%2069%2069%22%20role%3D%22img%22%20aria-labelledby%3D%22title%22%20style%3D%22color%3A%23e00034%22%3E%3Ctitle%20id%3D%22title%22%3EC%20de%20Comp%C3%A1s%20con%20anotaciones%20de%20tesis%3C%2Ftitle%3E%3Cpath%20transform%3D%22translate%286.000%2078%29%20scale%281%20-1%29%22%20d%3D%22M39.586%2021.059L53.543%2016.840Q52.137%2010.969%2049.113%207.031Q46.090%203.094%2041.607%201.090Q37.125%20-0.914%2030.199%20-0.914Q21.797%20-0.914%2016.471%201.529Q11.145%203.973%207.277%2010.125Q3.410%2016.277%203.410%2025.875Q3.410%2038.672%2010.213%2045.545Q17.016%2052.418%2029.461%2052.418Q39.199%2052.418%2044.771%2048.480Q50.344%2044.543%2053.051%2036.387L38.988%2033.258Q38.250%2035.613%2037.441%2036.703Q36.105%2038.531%2034.172%2039.516Q32.238%2040.500%2029.848%2040.500Q24.434%2040.500%2021.551%2036.141Q19.371%2032.906%2019.371%2025.980Q19.371%2017.402%2021.973%2014.221Q24.574%2011.039%2029.285%2011.039Q33.855%2011.039%2036.193%2013.605Q38.531%2016.172%2039.586%2021.059Z%22%20fill%3D%22currentColor%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22var%28--logo-gray%2C%2382786f%29%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M30%2044H41M29%2048H45M28%2052H54M28%2056H48M31%2061H41M33%2065H38%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22var%28--logo-paper%2C%23f8fbf9%29%22%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2236%22%20r%3D%222.3%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%2252%22%20r%3D%222.3%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2270%22%20r%3D%222.3%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
@@ -23,15 +23,19 @@
   <button class="nav-item" data-view="ruta"><span class="number" aria-hidden="true">02</span>Mi ruta</button>
   <button class="nav-item" data-view="todo"><span class="number" aria-hidden="true">03</span>ToDo</button>
   <button class="nav-item" data-view="coloquios"><span class="number" aria-hidden="true">04</span>Coloquios</button>
-  <button class="nav-item" data-view="supervision"><span class="number" aria-hidden="true">05</span>Supervisión</button>
-  <button class="nav-item" data-view="dedicacion"><span class="number" aria-hidden="true">06</span>Dedicación</button>
+  <button class="nav-item" data-view="supervision"><span class="number" aria-hidden="true">05</span>Asesoría de tesis</button>
+  <button class="nav-item" data-view="dedicacion"><span class="number" aria-hidden="true">06</span>Diario</button>
   <button class="nav-item" data-view="reportes"><span class="number" aria-hidden="true">07</span>Reportes</button>
  </nav>
  <div class="personal-space">
- <figure class="personal-frame" id="personal-frame" hidden><img id="personal-image" alt="Fotografía personal"></figure>
- <button type="button" class="button personalize-shortcut" id="personalize-shortcut" data-do="appearance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18h1a2 2 0 0 0 1.4-3.4 1.7 1.7 0 0 1 1.2-2.9h1.8A3.6 3.6 0 0 0 21 11.1 9 9 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="10" r="1.1" fill="currentColor"/><circle cx="11" cy="7" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8" r="1.1" fill="currentColor"/></svg><span>Personalizar<small>Temas y foto</small></span></button>
+ <div class="personal-keepsake" id="personal-keepsake" hidden>
+ <figure class="personal-frame keepsake-frame" id="personal-frame" hidden><img id="personal-image" alt="Fotografía personal"></figure>
+ <div class="keepsake-paper" id="keepsake-paper" hidden><span>A tu ritmo</span></div>
+ <div class="personal-ornament" id="personal-ornament" aria-hidden="true" hidden></div>
  </div>
- <div class="sidebar-bottom"><div class="local-label">◎ &nbsp; En tu equipo</div><p class="hint">Conserva tu respaldo para continuar tu trayectoria.</p><button class="button" data-do="help">Cómo usar Compás</button></div>
+ <button type="button" class="button personalize-shortcut" id="personalize-shortcut" data-do="appearance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18h1a2 2 0 0 0 1.4-3.4 1.7 1.7 0 0 1 1.2-2.9h1.8A3.6 3.6 0 0 0 21 11.1 9 9 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="10" r="1.1" fill="currentColor"/><circle cx="11" cy="7" r="1.1" fill="currentColor"/><circle cx="15.5" cy="8" r="1.1" fill="currentColor"/></svg><span>Personalizar<small>Tu rincón y ambiente</small></span></button>
+ </div>
+ <div class="sidebar-bottom"><div class="local-label">◎ &nbsp; En tu computadora</div><p class="hint">Trabaja en una computadora y un navegador. Guarda tu respaldo localmente o en una carpeta de nube; no hay sincronización entre dispositivos.</p><button class="button" data-do="help">Cómo usar Compás</button></div>
 </aside>
 <div class="content-area">
  <header class="topbar"><div class="save-info" id="save-info" role="status">Compás · En tu equipo</div><div class="toolbar"><button class="button" data-do="open">Abrir respaldo</button><button class="button" data-do="backup">Descargar respaldo</button><button class="button ghost" data-do="recovery">Recuperación</button><button class="button ghost" data-do="help" aria-label="Ayuda y privacidad">Ayuda</button></div></header>
@@ -43,6 +47,7 @@
 <dialog id="editor" aria-labelledby="dialog-title"></dialog>
 <input id="backup-input" type="file" accept=".json,application/json" hidden>
 <input id="photo-input" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+<div id="button-hint" class="button-hint" role="tooltip" popover="manual" hidden></div>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript>Compás necesita JavaScript para funcionar. Su contenido se procesa localmente en tu navegador.</noscript>
 <script id="compas-core">{{COMPAS_CORE}}
