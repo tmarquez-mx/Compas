@@ -58,12 +58,12 @@ async function originalKeepsakeImage(){
  await page.locator('#personalize-shortcut').click();
  await page.locator('#photo-input').setInputFiles({name:'paisaje-ficticio.png',mimeType:'image/png',buffer:keepsakeImage});
  await page.waitForFunction(()=>document.querySelector('#personal-image')?.naturalWidth>0);
- await page.locator('[data-do="frame"][data-frame="madera"]').click();
+ await page.locator('[data-do="frame"][data-frame="mexicano"]').click();
  await page.locator('[data-do="decoration"][data-decoration="flores"]').click();
  await page.locator('#editor .dialog-top [data-do="close"]').click();
  await page.locator('#toast').waitFor({state:'hidden',timeout:12000});
- if(!(await page.locator('#personal-keepsake').isVisible())||await page.locator('#personal-frame').getAttribute('data-frame')!=='madera')throw new Error('Rincón con foto y madera no visible');
- checks.push('Rincón: paisaje original ficticio, marco de madera y flores sobre los bordes de la foto.');
+ if(!(await page.locator('#personal-keepsake').isVisible())||await page.locator('#personal-frame').getAttribute('data-frame')!=='mexicano')throw new Error('Rincón con foto y marco mexicano no visible');
+ checks.push('Rincón: paisaje original ficticio, marco mexicano y flores sobre los bordes de la foto.');
  await page.screenshot({path:path.join(out,'brujula.png')});
  const targets=await page.evaluate(()=>Object.fromEntries([...document.querySelectorAll('.side-nav [data-view], .topbar [data-do], #personalize-shortcut')].map(el=>{const b=el.getBoundingClientRect();return [el.dataset.view||el.dataset.do,{x:b.x,y:b.y,width:b.width,height:b.height}];})));
  fs.writeFileSync(path.join(out,'targets.json'),JSON.stringify(targets,null,2));
@@ -131,11 +131,11 @@ async function originalKeepsakeImage(){
  await scroll('.todo-time .time-total','02 · Tu dedicación','Puedes consultar tus actividades cuando lo necesites.');
  checks.push('Dedicación: 45 minutos de escritura guardados desde el apartado opcional de ToDo.');
  await click('.todo-time > summary','02 · Tu dedicación','Puedes cerrar este apartado y continuar con tu siguiente paso.',2);
- await click('.celebration-note [data-do="appearance"]','02 · Un paso y un detalle','Una foto, un marco natural y flores para hacer tuyo este rincón.');
+ await click('.celebration-note [data-do="appearance"]','02 · Un paso y un detalle','Una foto, un marco con carácter y flores para hacer tuyo este rincón.');
  await click('[data-do="frame"][data-frame="none"]','02 · Un paso y un detalle','También puedes dejar tu foto sin marco y conservar sus flores.',2.5);
  await page.locator('#editor .photo-preview').scrollIntoViewIfNeeded();
  await shot('02 · Un paso y un detalle','Sin marco: tu imagen y sus detalles, con el centro libre.',3);
- await click('[data-do="frame"][data-frame="jardin"]','02 · Un paso y un detalle','Elige un marco suave, con textura de jardín y bordes irregulares.');
+ await click('[data-do="frame"][data-frame="botanico"]','02 · Un paso y un detalle','Elige un marco botánico, con hojas, verde profundo y bordes orgánicos.');
  await click('[data-do="decoration"][data-decoration="flores"]','02 · Un paso y un detalle','Flores y ramitas sobre los bordes de tu foto, como un pequeño rincón analógico.');
  await page.locator('#editor .photo-preview').scrollIntoViewIfNeeded();
  await shot('02 · Un paso y un detalle','Tu foto, marco y flores forman un solo rincón. Todos los detalles están disponibles desde el principio.',4);
@@ -148,8 +148,8 @@ async function originalKeepsakeImage(){
  const diary=await page.evaluate(()=>JSON.parse(localStorage.getItem('compas-personal-v1')).data.reflections);
  if(!diary.some(entry=>entry.text.includes('Una conversación breve')))throw new Error('Diario no guardado');
  if(await page.locator('#personal-ornament svg').count()!==1)throw new Error('Flores no visibles');
- if(await page.locator('#personal-frame').getAttribute('data-frame')!=='jardin')throw new Error('Marco de jardín no elegido');
- checks.push('Diario: Querido diario... contiene sólo páginas; entrada ficticia guardada. Sin marco probado; Jardín y flores visibles al final.');
+ if(await page.locator('#personal-frame').getAttribute('data-frame')!=='botanico')throw new Error('Marco botánico no elegido');
+ checks.push('Diario: Querido diario... contiene sólo páginas; entrada ficticia guardada. Sin marco probado; Botánico y flores visibles al final.');
  await click('[data-do="dismiss-celebration"]','02 · Mi diario','El avance se conserva aunque cierres la invitación.');
 
  await page.locator('#toast').waitFor({state:'hidden',timeout:12000});

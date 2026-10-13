@@ -7,8 +7,7 @@
   --paper: #f7f7f5;
   --white: #fff;
   --soft: #f7f3f2;
-  font-family:
-    IBEROAMERICANA, "Iberoamericana Pro", Arial, Helvetica, sans-serif;
+  font-family: "Albert Sans", "Avenir Next", "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -1163,8 +1162,11 @@ h3 {
   font-weight: 500;
 }
 h1 {
-  font-size: 31px;
-  letter-spacing: -0.6px;
+  font-family: "Alumni Sans", "Arial Narrow", "Albert Sans", sans-serif;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0;
 }
 h2 {
   font-size: 23px;
@@ -1831,31 +1833,6 @@ dialog .dialog-bottom {
   min-height: 24px;
   color: var(--muted);
 }
-.ambient-photo {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  display: none;
-  pointer-events: none;
-  overflow: hidden;
-}
-.ambient-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(10px);
-  transform: scale(1.06);
-}
-.ambient-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--paper);
-  opacity: 0.65;
-}
-body[data-photo-mode="background"] .ambient-photo {
-  display: block;
-}
 .sidebar.has-frame {
   position: relative;
   top: auto;
@@ -2045,8 +2022,9 @@ body[data-photo-mode="background"] .ambient-photo {
   .home-intro {
     margin-bottom: 22px;
   }
-  .home-title-row h1 {
-    font-size: 27px;
+  .home-title-row h1,
+  .page-head h1 {
+    font-size: 40px;
   }
   .home-layout {
     gap: 23px;
@@ -2117,7 +2095,6 @@ body[data-photo-mode="background"] .ambient-photo {
   }
 }
 @media print {
-  .ambient-photo,
   .personal-frame {
     display: none !important;
   }
@@ -2156,8 +2133,7 @@ body[data-photo-mode="background"] .ambient-photo {
   opacity: 1;
 }
 :root[data-theme="noche"] .ambient-detail,
-:root[data-theme="ibero"] .ambient-detail,
-body[data-photo-mode="background"] .ambient-detail {
+:root[data-theme="ibero"] .ambient-detail {
   display: none;
 }
 .theme-swatch.aire {
@@ -2548,39 +2524,11 @@ body[data-photo-mode="background"] .ambient-detail {
 }
 .keepsake-frame {
   position: relative;
-  padding: 9px 9px 11px;
+  padding: 0;
   border: 1px solid #c9b99c;
-  border-radius: 10px 13px 9px 12px / 12px 9px 14px 8px;
-  background-color: #e7dac1;
-  background-image:
-    repeating-linear-gradient(0deg, #9b896b12 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, #fff8e944 0 1px, transparent 1px 3px),
-    linear-gradient(130deg, #eee3ce, #dfcfaf 70%, #eee0c6);
-  box-shadow:
-    inset 1px 1px 2px #fff9e899,
-    inset -1px -2px 3px #7c65452e,
-    1px 3px 3px #40342424,
-    2px 10px 16px #4034241c;
-}
-.keepsake-frame[data-frame="madera"] {
-  border-color: #8c6847;
-  border-radius: 9px 12px 7px 10px / 11px 7px 10px 8px;
-  background-color: #b89266;
-  background-image:
-    repeating-linear-gradient(
-      88deg,
-      #64432326 0 1px,
-      transparent 1px 5px,
-      #f4d6a830 5px 6px,
-      transparent 6px 11px
-    ),
-    repeating-linear-gradient(
-      93deg,
-      transparent 0 19px,
-      #71503122 19px 21px,
-      transparent 21px 31px
-    ),
-    linear-gradient(105deg, #c3a074, #a77c50 49%, #caa77a);
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
 }
 .keepsake-frame[data-frame="none"] {
   padding: 0;
@@ -2595,25 +2543,6 @@ body[data-photo-mode="background"] .ambient-detail {
 .frame-sample[data-frame="none"]::after {
   inset: 0;
   box-shadow: 1px 3px 6px #40342424;
-}
-.keepsake-frame[data-frame="jardin"] {
-  border-color: #7c8662;
-  border-radius: 15px 8px 14px 9px / 9px 15px 8px 13px;
-  background-color: #a4ae8c;
-  background-image:
-    repeating-linear-gradient(86deg, #50613b22 0 1px, transparent 1px 8px),
-    radial-gradient(ellipse at 15% 20%, #d2d6aeaa, transparent 55%),
-    linear-gradient(120deg, #abb590, #8e9a76 60%, #b9b99a);
-}
-.keepsake-frame[data-frame="cielo"] {
-  border-color: #ae7f68;
-  border-radius: 19px 15px 18px 13px / 15px 20px 13px 19px;
-  background-color: #c7957e;
-  background-image:
-    radial-gradient(ellipse at 18% 12%, #f0c7ac9c, transparent 50%),
-    radial-gradient(ellipse at 87% 76%, #a96e5844, transparent 46%),
-    repeating-linear-gradient(24deg, #a2705910 0 1px, transparent 1px 4px),
-    linear-gradient(120deg, #d2a48b, #bd8d76);
 }
 .personal-frame {
   width: 100%;
@@ -2784,4 +2713,230 @@ body[data-photo-mode="background"] .ambient-detail {
 }
 .device-notice li {
   margin: 12px 0;
+}
+
+/* Marco de mesa: pantalla horizontal y base textil, sin imágenes externas. */
+.homepad-clock {
+  display: none;
+}
+.homepad-clock-option[hidden],
+.personal-frame [hidden] {
+  display: none;
+}
+.personal-keepsake[data-frame="homepad"],
+.keepsake-preview[data-frame="homepad"] {
+  transform: none;
+  --homepad-base-height: 68px;
+  padding-bottom: calc(var(--homepad-base-height) + 19px);
+}
+.personal-keepsake[data-frame="homepad"] {
+  width: 174px;
+  max-width: 100%;
+}
+.keepsake-preview[data-frame="homepad"] {
+  width: 220px;
+  --homepad-base-height: 86px;
+  max-width: 100%;
+}
+[data-frame="homepad"] > .keepsake-frame {
+  z-index: 1;
+  transform: perspective(500px) rotateX(-5deg);
+}
+.keepsake-frame[data-frame="homepad"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-rows: minmax(0, 1fr);
+  aspect-ratio: 1.28;
+  align-items: center;
+  gap: 7px;
+  padding: 9px;
+  border: 1px solid #777b78;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #161917, #050605 55%, #0c0e0c);
+  box-shadow:
+    inset 0 1px 1px #ffffff55,
+    0 3px 3px #1c211c44,
+    0 8px 13px #1c211c26;
+}
+.keepsake-frame[data-frame="homepad"][data-clock="false"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+.keepsake-frame[data-frame="homepad"] img,
+.keepsake-frame[data-frame="homepad"] .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.keepsake-frame[data-frame="homepad"][data-clock="false"] img,
+.keepsake-frame[data-frame="homepad"][data-clock="false"] .photo-placeholder {
+  aspect-ratio: auto;
+}
+.keepsake-frame[data-frame="homepad"] .photo-placeholder {
+  font-size: 13px;
+  text-align: center;
+}
+.keepsake-frame[data-frame="homepad"] .homepad-clock {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.keepsake-frame[data-frame="homepad"][data-clock="false"] .homepad-clock {
+  display: none;
+}
+.clock-dial {
+  fill: #050605;
+}
+.clock-marks {
+  stroke-linecap: round;
+}
+.clock-mark-hour {
+  stroke: #e7e9e5;
+  stroke-width: 1;
+}
+.clock-mark-minute {
+  stroke: #6b716b;
+  stroke-width: 0.8;
+}
+.clock-numbers {
+  fill: #f7f8f5;
+  font:
+    500 11.5px -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.clock-hour,
+.clock-minute {
+  fill: none;
+  stroke: #fafbf8;
+  stroke-linecap: round;
+}
+.clock-hour {
+  stroke-width: 3.8;
+}
+.clock-minute {
+  stroke-width: 3.5;
+}
+.clock-second {
+  fill: none;
+  stroke: #efa637;
+  stroke-width: 0.7;
+  stroke-linecap: round;
+}
+.clock-pin {
+  fill: #0b0d0b;
+  stroke: #efa637;
+  stroke-width: 0.8;
+}
+.personal-keepsake[data-frame="homepad"]::before,
+.keepsake-preview[data-frame="homepad"]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--homepad-base-height) - 8px);
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 35px;
+  transform: rotate(14deg);
+  transform-origin: bottom;
+  box-shadow: 1px 0 2px #303a3444;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #777d78, #dadbd4 45%, #868e88);
+}
+.personal-keepsake[data-frame="homepad"]::after,
+.keepsake-preview[data-frame="homepad"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 13%;
+  width: 74%;
+  height: var(--homepad-base-height);
+  border-radius: 50% 50% 16% 16% / 95% 95% 10% 10%;
+  background:
+    repeating-linear-gradient(45deg, #ffffff88 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, #6d74621a 0 1px, transparent 1px 4px),
+    radial-gradient(ellipse at 38% 15%, #ffffff, #d3d5cd 65%, #b9bdb4);
+  box-shadow:
+    inset 0 1px 1px #c9d1c533,
+    0 5px 7px #28332825;
+}
+[data-frame="homepad"] > .personal-ornament {
+  bottom: calc(var(--homepad-base-height) + 12px);
+}
+.frame-sample[data-frame="homepad"] {
+  display: block;
+  height: 43px;
+  margin-bottom: 13px;
+  border-radius: 8px;
+}
+.frame-sample[data-frame="homepad"]::after {
+  inset: auto 17px -14px;
+  height: 12px;
+  border-radius: 50% 50% 15% 15% / 95% 95% 10% 10%;
+  background: #c4c8bb;
+}
+.frame-sample[data-frame="homepad"]::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 4px;
+  background:
+    radial-gradient(circle at 25% 50%, #ece5d6 0 23%, transparent 25%),
+    linear-gradient(90deg, transparent 50%, #afbc9f 50%);
+}
+.homepad-clock-option .celebrate-option {
+  margin-top: 16px;
+}
+@media (min-width: 601px) {
+  .frame-choices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.personal-keepsake .personal-frame[hidden] {
+  display: none;
+}
+
+.clock-stem {
+  stroke-width: 1.1;
+}
+.clock-hub {
+  fill: #fafbf8;
+}
+
+.dialog-top h2 {
+  font-family: "Alumni Sans", "Arial Narrow", "Albert Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.route-origin {
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  margin: 16px 0 22px;
+  background: var(--soft);
+  border-radius: 0 10px 10px 0;
+}
+.route-origin p {
+  margin: 5px 0;
+}
+.route-origin summary {
+  cursor: pointer;
+  font-size: 14px;
+}
+.route-origin li {
+  margin: 5px 0;
+}
+
+.photo-preview-visual {
+  flex-shrink: 0;
+  max-width: 100%;
 }

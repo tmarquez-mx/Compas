@@ -18,6 +18,16 @@ const ACTION_HELP = {
   level: "Indica nivel y semestre para consultar tu ruta de referencia.",
   "todo-edit":
     "Anota o revisa una tarea pequeña. Puede tener fecha y un vínculo; permanece privada.",
+  "route-setup":
+    "Elige una plantilla de tu programa o empieza una ruta propia. Puedes adaptar sus entregables.",
+  "route-product":
+    "Añade un entregable o adapta su nombre, descripción y semestre a tu posgrado.",
+  "route-semester":
+    "Adapta la etapa y las materias de este semestre a tu programa.",
+  "route-archive":
+    "Retira el entregable del plan y conserva sus avances, historial y tareas. Puedes recuperarlo después.",
+  "route-unarchive":
+    "Vuelve a incluir este entregable en tu plan, con sus registros anteriores.",
   "route-progress":
     "Anota lo que avanzaste en este producto y, si hace falta, ajusta tu plan. Se conserva su historia.",
   "route-stage":

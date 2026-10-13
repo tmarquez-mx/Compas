@@ -1,6 +1,6 @@
 # Compás
 
-Seguimiento del proceso de tesis para el Posgrado en Ciencias Sociales y Políticas de la Ibero.
+Seguimiento personal del proceso de tesis, con rutas adaptables para distintos posgrados de la Ibero.
 
 ## Abrir el prototipo
 
@@ -13,7 +13,7 @@ Al abrirlo por primera vez encontrarás un ejemplo ficticio. Puedes modificarlo 
 1. En Brújula, edita el rumbo: nivel (maestría o doctorado), semestre actual, pregunta, objetivos, enfoque, alcance y próximo hito.
 2. En Mi ruta, consulta los productos de cada semestre. Registra versiones, referencias de avance, revisión con la dirección y ajustes del plan. Cada actualización conserva el registro anterior.
 3. En ToDo, desglosa el trabajo en tareas privadas. Puedes vincularlas con compromisos y productos; terminarlas no cierra automáticamente los otros registros. Debajo de las tareas, despliega «Registrar dedicación (opcional)» si quieres anotar actividades y horas.
-4. Registra un coloquio o una reunión de supervisión. Agrega un compromiso vinculado a esa sesión.
+4. Registra un coloquio o una reunión de asesoría de tesis. Agrega un compromiso vinculado a esa sesión.
 5. Revisa ese compromiso, distingue tu decisión sobre el comentario de su estado de atención y anota una evidencia de avance o respuesta.
 6. Registra una decisión metodológica. Usa Registrar cambio posterior cuando el rumbo evolucione; la decisión previa permanece en el historial.
 7. En Diario, escribe páginas privadas. Este módulo queda dedicado a la escritura.
@@ -38,15 +38,15 @@ El panel HTML de consulta es autosuficiente y puede abrirse sin internet. Lleva 
 
 ## Mi ruta y ToDo
 
-Las rutas son la transcripción operativa de los dos borradores compartidos por la coordinación el 10 de septiembre de 2026. La versión de referencia se identifica como borrador-2026-09-10; no se presenta como reglamento oficial.
+Mi ruta combina 19 propuestas sintéticas por posgrado, los dos borradores compartidos por la coordinación el 10 de septiembre de 2026 y rutas personales. Las propuestas y borradores se señalan como no oficiales; el origen, la versión y los ajustes aparecen en los reportes seleccionados. Los documentos oficiales de cada programa siguen pendientes. Consulta RUTAS-POR-POSGRADO.md para mantener el catálogo.
 
-Maestría tiene cuatro semestres de referencia y doctorado, ocho. El semestre personal puede continuar más allá de esos límites. El carril muestra también los semestres adicionales donde hayas programado productos. Cambiar de nivel conserva los registros de la ruta anterior, que puede consultarse con el selector.
+Las propuestas iniciales de maestría tienen cuatro semestres y las de doctorado, ocho, como orientación adaptable. El estudiante puede modificar esa duración, los semestres y los entregables sin alterar la plantilla de origen. El carril muestra también los semestres adicionales donde hayas programado productos. Cambiar de nivel conserva los registros de la ruta anterior, que puede consultarse con el selector.
 
-Los productos relacionados conservan un vínculo entre etapas: por ejemplo, marco teórico y diseño metodológico en doctorado S2, S3 y S4. Cada etapa y cada actualización tiene su propio registro; no se aprueban automáticamente las otras versiones.
+En los borradores anteriores, los productos relacionados conservan un vínculo entre etapas: por ejemplo, marco teórico y diseño metodológico en doctorado S2, S3 y S4. Cada etapa y cada actualización tiene su propio registro; no se aprueban automáticamente las otras versiones.
 
 Se distinguen estado de avance, referencia de versión y situación de revisión. Una revisión o aprobación requiere persona, fecha y referencia, y sigue siendo una declaración registrada por el tesista. Reprogramar requiere un motivo. El historial anterior permanece en el respaldo.
 
-Los porcentajes 50% y 70%, la mención de BS y mayo se conservan como texto del borrador. Compás no calcula avance de tesis a partir de tareas, horas ni casillas. No añade fechas de defensa ni hitos de graduación no proporcionados.
+Los porcentajes 50% y 70%, la mención de BS y mayo se conservan únicamente como texto de los borradores anteriores, con su procedencia identificada. Compás no calcula avance de tesis a partir de tareas, horas ni casillas. No añade fechas de defensa ni hitos de graduación no proporcionados.
 
 En Reportes, los productos de Mi ruta se seleccionan individualmente; están desmarcados por defecto. Se incluye el último registro disponible hasta la fecha de corte, aunque sea anterior al inicio del periodo. No se incluyen versiones posteriores a ese corte, historial privado, tareas o compromisos vinculados que no hayan sido seleccionados. Excel añade una hoja Mi ruta.
 
@@ -72,11 +72,11 @@ Brújula presenta hasta tres tareas pendientes, la posición en la ruta, el pró
 
 Los formularios de proyecto, tarea, compromiso, decisión y sesión muestran primero sus campos esenciales. Los detalles académicos y notas privadas permanecen disponibles en desplegables; su contenido se conserva al guardar. Terminar una tarea desde Brújula o ToDo ofrece Deshacer durante diez segundos.
 
-Personalizar, debajo del portarretratos sin pie de foto en la barra lateral, ofrece cuatro temas y tres modos de foto: oculta, portarretratos y fondo suave. Las preferencias usan una clave local independiente; la imagen se guarda como Blob en IndexedDB, en otra base. Se acepta JPG, PNG o WebP hasta 20 MB y se reduce a un JPEG de máximo 1,400 píxeles por lado, menor de 2 MB, sin conservar los metadatos del archivo original. No se aceptan enlaces remotos. La foto y el tema no se incorporan a los respaldos ni a los reportes. Si el navegador bloquea su almacenamiento, la imagen se muestra en la sesión actual y se explica que no se pudo conservar el cambio.
+Personalizar, debajo del portarretratos sin pie de foto en la barra lateral, ofrece cuatro temas y dos modos de foto: oculta o visible en el rincón, con o sin marco. Las preferencias usan una clave local independiente; la imagen se guarda como Blob en IndexedDB, en otra base. Se acepta JPG, PNG o WebP hasta 20 MB y se reduce a un JPEG de máximo 1,400 píxeles por lado, menor de 2 MB, sin conservar los metadatos del archivo original. No se aceptan enlaces remotos. La foto y el tema no se incorporan a los respaldos ni a los reportes. Si el navegador bloquea su almacenamiento, la imagen se muestra en la sesión actual y se explica que no se pudo conservar el cambio.
 
 El indicador de guardado distingue copia del navegador, respaldo preparado y cambios posteriores. El estado del respaldo se conserva por proyecto con una huella del contenido validado y confirmación explícita del tesista. Preparar una descarga no limpia los cambios pendientes ni desactiva la confirmación de reemplazo. Las marcas de versiones anteriores sin confirmación no se consideran respaldos confirmados. La advertencia al cerrar queda reservada a cambios que no se pudieron guardar localmente. El reemplazo de una bitácora con avances posteriores al respaldo mantiene su confirmación y conserva una copia anterior recuperable si puede escribirse en el navegador. En modo temporal se mantiene el flujo de respaldo personal.
 
-En ventanas estrechas, el menú muestra Brújula, Mi ruta y ToDo, y despliega los demás módulos en Más. Se mantienen foco visible, regreso del foco al cerrar diálogos, enlace para saltar al contenido y respeto por la preferencia de movimiento reducido. Las superficies sobre una foto son opacas para conservar la legibilidad.
+En ventanas estrechas, el menú muestra Brújula, Mi ruta y ToDo, y despliega los demás módulos en Más. Se mantienen foco visible, regreso del foco al cerrar diálogos, enlace para saltar al contenido y respeto por la preferencia de movimiento reducido.
 
 
 ## Guardado y recuperación · 0.3.6
@@ -89,11 +89,11 @@ Una copia corrupta permanece intacta hasta una restauración o nuevo inicio expl
 
 El respaldo preparado registra solamente una confirmación pendiente. «Ya guardé el archivo» es una declaración del tesista, no una comprobación automática del disco. Solo se acepta si el proyecto y la huella siguen coincidiendo. Nuevos cambios o otra bitácora invalidan esa confirmación.
 
-Las fuentes se organizan en src/ y se genera el mismo HTML autosuficiente. VERSION y package.json deben coincidir. El build, las pruebas, el servidor local y el paquete se describen en docs/DESARROLLO-ENTORNO.md. El workflow configurado ejecuta esas verificaciones antes de generar una variante del ZIP sin video; la entrega 0.3.6 superó esas verificaciones en GitHub.
+Las fuentes se organizan en src/ y se genera el mismo HTML autosuficiente. VERSION y package.json deben coincidir. El build, las pruebas, el servidor local y el paquete se describen en docs/DESARROLLO-ENTORNO.md. El workflow configurado ejecuta esas verificaciones antes de generar el ZIP de tres archivos. La ejecución de cada commit debe comprobarse por separado en GitHub.
 
 ## Compatibilidad
 
-Los respaldos actuales usan versión 2. Compás sigue abriendo los respaldos de versión 1 y conserva sus textos, incluso semestres escritos libremente. El tesista elige su nivel al configurar la nueva ruta; no se infiere del nombre del programa. La copia auxiliar mantiene su clave anterior para poder recuperar el trabajo existente en el mismo navegador y dirección.
+Los respaldos actuales usan versión 3 e incorporan `routePlan`. Se migran respaldos 1 y 2; las versiones anteriores rechazan el formato 3 para evitar descartar las personalizaciones. Compás sigue abriendo los respaldos de versión 1 y conserva sus textos, incluso semestres escritos libremente. El tesista elige su nivel al configurar la nueva ruta; no se infiere del nombre del programa. La copia auxiliar mantiene su clave anterior para poder recuperar el trabajo existente en el mismo navegador y dirección.
 
 El límite común de validación y respaldo de la bitácora es 24 MB; la lectura de CSV e ICS para ToDo tiene el límite menor de 2 MB. Si un cambio supera el tamaño o los límites de registros correspondientes, se rechaza sin sustituir el estado anterior; no se recorta el historial. La copia auxiliar puede alcanzar antes el límite del navegador: descarga el respaldo personal para conservar el trabajo.
 
@@ -103,7 +103,7 @@ Nombre: Compás, en referencia al compás magnético.
 
 La marca visible usa COMPÁS en mayúsculas: todos los caracteres parten de Arial Black, convertidos en contornos vectoriales, con la misma altura y grosor. La C contiene tres bloques de anotaciones y tres puntos de decisión. La C forma la primera letra, no un símbolo adicional al nombre. No lleva subtítulo. El logotipo se incorpora en línea en la aplicación y no requiere descargar fuentes ni imágenes. El original vectorial está en docs/diseno/compas-logotipo.svg.
 
-Aire añade una textura de papel de muy baja intensidad; Cielo, líneas curvas suaves. Ambas son imágenes vectoriales incorporadas como datos, estáticas y sin conexiones. Se mantienen debajo de las superficies de trabajo y se ocultan al elegir una foto de fondo y al imprimir. Noche conserva su fondo despejado. IBERO usa blanco, rojo institucional y gris cálido, con navegación activa en rojo y un detalle angular en la superficie de trabajo, inspirado en https://ibero.mx/es-MX/home (consultado el 1 de octubre de 2026).
+Aire añade una textura de papel de muy baja intensidad; Cielo, líneas curvas suaves. Ambas son imágenes vectoriales incorporadas como datos, estáticas y sin conexiones. Se mantienen debajo de las superficies de trabajo y se ocultan al imprimir. Noche conserva su fondo despejado. IBERO usa blanco, rojo institucional y gris cálido, con navegación activa en rojo y un detalle angular en la superficie de trabajo, inspirado en https://ibero.mx/es-MX/home (consultado el 1 de octubre de 2026).
 
 Referencia institucional: Manual de Identidad IBERO 2024, páginas 9 a 11. El documento de consulta no forma parte de esta distribución.
 
@@ -111,7 +111,7 @@ Referencia institucional: Manual de Identidad IBERO 2024, páginas 9 a 11. El do
 - Gris: #82786F (Warm Gray 9).
 - Negro: #000000.
 - Fondos personales Aire (salvia), Cielo (azul), Noche (oscuro) e IBERO (neutro), manteniendo el rojo institucional en marca y acciones principales.
-- Tipografía: la familia IBEROAMERICANA está preparada en la prioridad de fuentes, pero sus archivos no están disponibles. Esta versión usa Arial como sustitución provisional. No se extrajeron ni reconstruyeron logotipos institucionales.
+- Tipografía: Albert Sans para texto y controles y Alumni Sans para títulos. Las fuentes y sus licencias SIL OFL están incorporadas en el HTML; no necesitan Internet. El logotipo usa contornos vectoriales independientes.
 
 El pie de la aplicación y la ayuda ofrecen teresa.marquez@ibero.mx para fallas y comentarios, junto a https://github.com/tmarquez-mx/Compas. Estos enlaces solo se abren por decisión del tesista; no envían la bitácora.
 
@@ -120,7 +120,7 @@ CSP | Universidad Iberoamericana Ciudad de México
 
 ## Alcance de esta versión
 
-Prototipo local 0.3: siete módulos —Brújula, Mi ruta, ToDo, Coloquios, Supervisión, Dedicación y Reportes—, rutas ajustables por semestre, historial de productos y decisiones, tareas privadas, captura manual de dedicación, respaldo completo y reportes seleccionados.
+Piloto local 0.3.13: siete módulos —Brújula, Mi ruta, ToDo, Coloquios, Asesoría de tesis, Diario y Reportes—, rutas ajustables por semestre, historial de productos y decisiones, tareas privadas, captura manual de dedicación, respaldo completo y reportes seleccionados.
 
 Esta entrega está orientada al uso en una sola computadora y un mismo navegador. No se plantea distribución para teléfonos ni sincronización entre dispositivos.
 
@@ -178,3 +178,19 @@ La exportación de ToDo a calendario se reparte entre `core/calendar.js` (iCalen
 
 
 La entrega de escritorio comprueba el dispositivo antes de inicializar la UI. `ui/device.js` declara los ayudantes elevados y el prefijo del cierre en `source-files.cjs` retorna en teléfonos/tabletas antes de acceder a almacenamiento, fotos o bloqueos de edición. El ancho de ventana no se usa para esa decisión; el layout adaptable sigue atendiendo ventanas estrechas de computadora. La copia en nube es un respaldo JSON manual gestionado por el servicio elegido por el usuario; no hay integración de cuenta ni sincronización.
+
+
+## Rutas por posgrado · 0.3.9
+
+`src/core/synthetic-routes.js` define 19 propuestas orientativas. `src/core/route-plans.js` mantiene el catálogo de plantillas, resuelve la ruta personal y valida sus ajustes. El estado conserva solamente selección y personalizaciones; no modifica el catálogo ni permite declarar un plan como oficial desde el JSON. Los identificadores de entregables permanecen estables; retirar o cambiar una plantilla conserva progreso, historial y vínculos. Los productos anteriores retirados pueden recuperarse y seleccionarse en reportes, identificando su origen.
+
+Se comparte procedencia cuando se selecciona el proyecto o un producto de ruta. El reporte declara el origen del plan actual y la fuente del entregable elegido. Los ajustes globales se resumen sin exponer títulos de entregables no seleccionados ni notas privadas. El registro de versiones de avances permanece independiente de la definición editable de la ruta.
+
+`tests/check_route_plans.cjs` verifica migración, edición, historial, retiro reversible, nuevas plantillas, privacidad y origen oficial con un catálogo ficticio solo en pruebas. `scripts/comprobar_rutas.cjs` recorre la interfaz con un perfil nuevo y datos ficticios; usa las mismas variables Playwright/Chromium que las demás comprobaciones de navegador.
+
+
+## Apariencia vigente · 0.3.13
+
+Los temas Aire, Cielo, Noche e IBERO usan las fuentes locales Albert Sans y Alumni Sans. Los nueve estilos de foto son Sin marco, HomePad, Mexicano · Talavera, Nemo · Marino, Cubista, Graduado, Nostálgico, Memphis y Botánico. Los adornos son flores, hojas, estrellas, velas, copas, globos, cumpleaños y confeti, además de Sin adorno. `ui/frame-art.js` y `ui/ornament-art.js` dibujan los detalles con SVG local. HomePad consulta la hora del equipo; el reloj se detiene cuando la página está oculta y vuelve a consultar al regresar.
+
+Lino, Madera, Jardín, Arcilla y Fondo suave se retiraron. `normalizeAppearance` conserva tema, detalles, reloj e invitaciones; un marco retirado pasa a Sin marco y el antiguo modo fondo pasa a Foto en tu rincón. La foto permanece en IndexedDB, separada de la bitácora, y no se incluye en respaldos o reportes.

@@ -40,7 +40,9 @@ for (const name of [
     sandbox,
   );
 for (const name of [
+  "clockHands",
   "normalizeAppearance",
+  "celebrationArtwork",
   "ornamentSVG",
   "completedStep",
   "celebrationBanner",
@@ -66,8 +68,8 @@ check(
     sandbox.saved = { theme: "noche", photoMode: "background" };
     const result = run("normalizeAppearance(saved)");
     assert.equal(result.theme, "noche");
-    assert.equal(result.photoMode, "background");
-    assert.equal(result.frame, "sencillo");
+    assert.equal(result.photoMode, "frame");
+    assert.equal(result.frame, "none");
     assert.equal(result.decoration, "none");
     assert.equal(result.celebrate, true);
   },
@@ -84,7 +86,7 @@ check(
     };
     const result = run("normalizeAppearance(saved)");
     assert.equal(result.theme, "aire");
-    assert.equal(result.frame, "sencillo");
+    assert.equal(result.frame, "none");
     assert.equal(result.decoration, "none");
     assert.equal(run("ornamentSVG(saved.decoration)"), "");
   },
@@ -93,15 +95,81 @@ check("La preferencia de omitir invitaciones se conserva", () => {
   sandbox.saved = {
     theme: "cielo",
     photoMode: "frame",
-    frame: "jardin",
+    frame: "botanico",
     decoration: "flores",
     celebrate: false,
   };
   const result = run("normalizeAppearance(saved)");
   assert.equal(result.celebrate, false);
-  assert.equal(result.frame, "jardin");
+  assert.equal(result.frame, "botanico");
   assert.equal(result.decoration, "flores");
 });
+check(
+  "Marcos retirados migran a Sin marco sin perder tema ni opciones privadas",
+  () => {
+    for (const frame of ["sencillo", "madera", "jardin", "cielo"]) {
+      sandbox.saved = {
+        theme: "cielo",
+        photoMode: "background",
+        frame,
+        decoration: "flores",
+        clock: false,
+        celebrate: false,
+      };
+      const result = run("normalizeAppearance(saved)");
+      assert.equal(result.frame, "none");
+      assert.equal(result.photoMode, "frame");
+      assert.equal(result.theme, "cielo");
+      assert.equal(result.decoration, "flores");
+      assert.equal(result.clock, false);
+      assert.equal(result.celebrate, false);
+    }
+    assert.equal(
+      run('normalizeAppearance({photoMode: "none"}).photoMode'),
+      "none",
+    );
+  },
+);
+check(
+  "Nuevos detalles se conservan y valores desconocidos no generan SVG",
+  () => {
+    for (const decoration of [
+      "velas",
+      "copas",
+      "globos",
+      "cumpleanos",
+      "confeti",
+    ]) {
+      sandbox.saved = { frame: "graduado", decoration, photoMode: "frame" };
+      const result = run("normalizeAppearance(saved)");
+      assert.equal(result.decoration, decoration);
+      assert.equal(result.frame, "graduado");
+      assert(run("ornamentSVG(saved.decoration)").startsWith("<svg"));
+    }
+    assert.equal(run('ornamentSVG("<svg onload=x>")'), "");
+  },
+);
+check("HomePad conserva reloj opcional y migra preferencias anteriores", () => {
+  sandbox.saved = { frame: "homepad", clock: false };
+  const result = run("normalizeAppearance(saved)");
+  assert.equal(result.frame, "homepad");
+  assert.equal(result.clock, false);
+  assert.equal(run("normalizeAppearance({}).clock"), true);
+});
+check(
+  "El reloj usa hora local, minutos y segundos del equipo sin acumular tiempo",
+  () => {
+    sandbox.now = new Date(2026, 9, 3, 15, 30, 45);
+    const hands = run("clockHands(now)");
+    assert.equal(hands.hour, 105.375);
+    assert.equal(hands.minute, 184.5);
+    assert.equal(hands.second, 270);
+    for (const hour of [0, 12]) {
+      sandbox.now = new Date(2026, 9, 3, hour, 0, 0);
+      assert.equal(run("clockHands(now).hour"), 0);
+    }
+  },
+);
 check(
   "Terminar una tarea reconoce el paso sin cerrar su producto ni compromiso",
   () => {

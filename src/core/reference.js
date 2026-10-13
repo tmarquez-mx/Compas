@@ -274,4 +274,10 @@ const MILESTONES = Object.entries(ROUTES).flatMap(([level, stages]) =>
 const milestonesById = new Map(
   MILESTONES.map((product) => [product.id, product]),
 );
-const milestone = (id) => milestonesById.get(id);
+const milestone = (id, state) => {
+  const custom = state?.routePlan?.products?.find((p) => p.id === id);
+  const base = catalogueMilestone(id);
+  return custom
+    ? { templateVersion: ROUTE_VERSION, ...(base || {}), ...custom }
+    : base;
+};

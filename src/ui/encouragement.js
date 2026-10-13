@@ -5,7 +5,7 @@ function completedStep(before, after) {
     [
       "routeProgress",
       (x) => x.status === "resuelto",
-      (x) => C.milestone(x.id)?.title || "Tu producto",
+      (x) => C.milestone(x.id, after)?.title || "Tu producto",
     ],
     ["actions", (x) => x.status === "resuelto", (x) => x.description],
   ]) {

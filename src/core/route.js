@@ -1,12 +1,12 @@
-function routeDefault(id) {
-  if (!milestone(id)) throw new Error("Producto de ruta desconocido.");
+function routeDefault(id, state) {
+  if (!milestone(id, state)) throw new Error("Producto de ruta desconocido.");
   return {
     id,
     templateVersion: ROUTE_VERSION,
     status: "pendiente",
     versionLabel: "",
     evidence: "",
-    planSemester: String(milestone(id).semester),
+    planSemester: String(milestone(id, state).semester),
     due: "",
     adjustmentReason: "",
     reviewState: "sin-revision",
@@ -33,7 +33,7 @@ function routeAt(state, id, cutoff) {
 function saveRoute(state, id, values) {
   const next = clone(state),
     old = next.routeProgress.find((x) => x.id === id),
-    base = old || routeDefault(id);
+    base = old || routeDefault(id, state);
   const p = {
     ...base,
     ...values,
@@ -54,7 +54,7 @@ function saveRoute(state, id, values) {
       "Describe la evidencia o referencia del producto realizado.",
     );
   if (
-    (p.planSemester !== String(milestone(id).semester) ||
+    (p.planSemester !== String(milestone(id, state).semester) ||
       (old && (p.planSemester !== old.planSemester || p.due !== old.due))) &&
     !p.adjustmentReason.trim()
   )

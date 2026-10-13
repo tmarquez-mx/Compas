@@ -28,11 +28,7 @@ try {
 } catch (_) {}
 try {
   const saved = JSON.parse(localStore?.getItem(APPEARANCE_KEY) || "null");
-  if (
-    saved &&
-    Object.hasOwn(THEMES, saved.theme) &&
-    ["none", "frame", "background"].includes(saved.photoMode)
-  )
+  if (saved && typeof saved === "object" && !Array.isArray(saved))
     appearance = normalizeAppearance(saved);
 } catch (_) {}
 function toast(t, undo) {
@@ -104,6 +100,11 @@ function updateEditControls() {
     "level",
     "todo-edit",
     "route-progress",
+    "route-setup",
+    "route-product",
+    "route-semester",
+    "route-archive",
+    "route-unarchive",
     "action",
     "session",
     "decision",

@@ -1,18 +1,20 @@
 function normalizeAppearance(saved) {
   return {
     theme: Object.hasOwn(THEMES, saved?.theme) ? saved.theme : "aire",
-    photoMode: ["none", "frame", "background"].includes(saved?.photoMode)
+    photoMode: ["none", "frame"].includes(saved?.photoMode)
       ? saved.photoMode
       : "frame",
-    frame: Object.hasOwn(FRAME_STYLES, saved?.frame) ? saved.frame : "sencillo",
+    frame: Object.hasOwn(FRAME_STYLES, saved?.frame) ? saved.frame : "none",
     decoration: Object.hasOwn(DECORATIONS, saved?.decoration)
       ? saved.decoration
       : "none",
+    clock: typeof saved?.clock === "boolean" ? saved.clock : true,
     celebrate: typeof saved?.celebrate === "boolean" ? saved.celebrate : true,
   };
 }
 function ornamentSVG(kind) {
-  if (!["flores", "hojas", "estrellas"].includes(kind)) return "";
+  if (!["flores", "hojas", "estrellas"].includes(kind))
+    return celebrationArtwork(kind);
   const sprigs =
     '<g fill="none" stroke="#6a7750" stroke-width="1.8" stroke-linecap="round"><path d="M8 170Q23 137 18 98M9 169Q39 145 69 158M142 8Q158 27 172 65"/></g><g fill="#8a9a6b" stroke="#65764c" stroke-width=".5"><path d="M18 128Q1 126 3 110Q17 110 18 128Z"/><path d="M19 119Q36 111 30 101Q18 105 19 119Z"/><path d="M14 147Q-1 143 2 133Q14 133 14 147Z"/><path d="M34 155Q35 135 47 137Q47 151 34 155Z"/><path d="M48 155Q54 169 66 167Q65 155 48 155Z"/><path d="M155 26Q139 29 138 17Q149 15 155 26Z"/><path d="M161 37Q175 25 177 37Q174 46 161 37Z"/><path d="M168 54Q153 54 154 43Q163 42 168 54Z"/></g>';
   let details = sprigs;
@@ -49,6 +51,10 @@ function keepsakePreview() {
     '<div class="keepsake-preview"><div class="keepsake-frame" data-frame="' +
     appearance.frame +
     '">' +
+    clockFace() +
+    '<div class="frame-art" aria-hidden="true">' +
+    frameArtwork(appearance.frame) +
+    "</div>" +
     (photoURL
       ? '<img src="' + e(photoURL) + '" alt="Vista previa de tu foto">'
       : '<div class="photo-placeholder"><span>A tu ritmo</span></div>') +
@@ -61,17 +67,48 @@ function applyAppearance() {
   document.documentElement.dataset.theme = appearance.theme;
   document.body.dataset.photoMode = photoBlob ? appearance.photoMode : "none";
   const framedPhoto = !!photoBlob && appearance.photoMode === "frame";
+  const homepad =
+    appearance.frame === "homepad" && appearance.photoMode === "frame";
+  const visibleFrame = framedPhoto || homepad;
   const decorated = appearance.decoration !== "none";
-  $("personal-keepsake").hidden = !framedPhoto && !decorated;
-  $("personal-frame").hidden = !framedPhoto;
+  $("personal-keepsake").hidden = !visibleFrame && !decorated;
+  $("personal-frame").hidden = !visibleFrame;
+  $("personal-image").hidden = !photoBlob;
+  $("personal-placeholder").hidden = !homepad || !!photoBlob;
+  $("personal-keepsake").dataset.frame = visibleFrame ? appearance.frame : "";
+  $("personal-frame").dataset.clock = String(appearance.clock);
+  if (!$("personal-frame").querySelector(".homepad-clock"))
+    $("personal-frame").insertAdjacentHTML("afterbegin", clockFace());
   $("personal-frame").dataset.frame = appearance.frame;
-  $("keepsake-paper").hidden = framedPhoto || !decorated;
+  $("personal-frame-art").innerHTML = frameArtwork(appearance.frame);
+  $("keepsake-paper").hidden = visibleFrame || !decorated;
   const ornament = $("personal-ornament");
   ornament.hidden = !decorated;
   ornament.innerHTML = ornamentSVG(appearance.decoration);
+  const previewHolder = document.querySelector(".photo-preview-visual");
+  if (
+    previewHolder &&
+    (previewHolder.dataset.mode !== appearance.photoMode ||
+      previewHolder.dataset.photo !== photoURL)
+  ) {
+    previewHolder.dataset.mode = appearance.photoMode;
+    previewHolder.dataset.photo = photoURL;
+    previewHolder.innerHTML = keepsakePreview();
+  }
+  const previewHint = document.querySelector(".photo-preview-hint");
+  if (previewHint)
+    previewHint.textContent =
+      "Los detalles acompañan los bordes de tu foto. Sin foto, acompañan una pequeña tarjeta «A tu ritmo».";
   const preview = document.querySelector(".keepsake-preview");
   if (preview) {
+    preview.dataset.frame = appearance.frame;
     preview.querySelector(".keepsake-frame").dataset.frame = appearance.frame;
+    preview.querySelector(".frame-art").innerHTML = frameArtwork(
+      appearance.frame,
+    );
+    preview.querySelector(".keepsake-frame").dataset.clock = String(
+      appearance.clock,
+    );
     preview.querySelector(".personal-ornament").innerHTML = ornamentSVG(
       appearance.decoration,
     );
@@ -85,7 +122,20 @@ function applyAppearance() {
           String(button.dataset[key] === appearance[key]),
         ),
       );
-  document.querySelector(".sidebar").classList.toggle("has-frame", framedPhoto);
+  document
+    .querySelector(".sidebar")
+    .classList.toggle("has-frame", visibleFrame);
+  document
+    .querySelectorAll('input[name="photo-mode"]')
+    .forEach((n) => (n.checked = n.value === appearance.photoMode));
+  const description = document.querySelector(".frame-description");
+  if (description)
+    description.textContent =
+      FRAME_DESCRIPTIONS[appearance.frame] ||
+      "Con o sin marco: prueba el estilo que quieras para tu foto.";
+  const clockOption = document.querySelector(".homepad-clock-option");
+  if (clockOption) clockOption.hidden = appearance.frame !== "homepad";
+  syncHomepadClock();
 }
 function saveAppearance() {
   applyAppearance();
@@ -137,10 +187,8 @@ function showPhoto(blob) {
   if (photoURL) URL.revokeObjectURL(photoURL);
   photoBlob = blob;
   photoURL = blob ? URL.createObjectURL(blob) : "";
-  for (const id of ["personal-image", "ambient-image"]) {
-    if (photoURL) $(id).src = photoURL;
-    else $(id).removeAttribute("src");
-  }
+  if (photoURL) $("personal-image").src = photoURL;
+  else $("personal-image").removeAttribute("src");
   applyAppearance();
 }
 async function compressPhoto(file) {
@@ -207,8 +255,12 @@ function appearanceDialog(refresh = false) {
       )
       .join("") +
     '</div><h3>Tu foto y su rincón</h3><div class="photo-preview">' +
+    '<div class="photo-preview-visual" data-mode="' +
+    appearance.photoMode +
+    '">' +
     keepsakePreview() +
-    '<div><p class="hint">Flores y ramitas descansan sobre los bordes, dejando libre el centro de tu foto. Sin foto, acompañan una pequeña tarjeta. También puedes usar tu imagen como fondo suave.</p><div class="toolbar" style="margin-top:10px">' +
+    "</div>" +
+    '<div><p class="hint photo-preview-hint">Los detalles acompañan los bordes de tu foto. Sin foto, acompañan una pequeña tarjeta «A tu ritmo».</p><div class="toolbar" style="margin-top:10px">' +
     btn(
       photoBlob ? "Cambiar foto" : "Elegir foto",
       "choose-photo",
@@ -220,7 +272,6 @@ function appearanceDialog(refresh = false) {
     [
       ["none", "Sin foto"],
       ["frame", "Foto en tu rincón"],
-      ["background", "Fondo suave"],
     ]
       .map(
         ([v, label]) =>
@@ -233,7 +284,7 @@ function appearanceDialog(refresh = false) {
           "</label>",
       )
       .join("") +
-    '</div><h3>Tu foto, con o sin marco</h3><p class="hint">Puedes dejar la foto sola o acompañarla con lino, madera, tonos de jardín o arcilla.</p><div class="detail-choices frame-choices" role="group" aria-label="Marco para tu foto">' +
+    '</div><h3>Tu foto, con o sin marco</h3><p class="hint frame-description">Elige un marco con carácter, HomePad o tu foto sin marco.</p><div class="detail-choices frame-choices" role="group" aria-label="Marco para tu foto">' +
     Object.entries(FRAME_STYLES)
       .map(
         ([key, label]) =>
@@ -243,12 +294,16 @@ function appearanceDialog(refresh = false) {
           (appearance.frame === key) +
           '"><span class="frame-sample keepsake-frame" data-frame="' +
           key +
-          '" aria-hidden="true"></span>' +
+          '" aria-hidden="true"><span class="frame-art">' +
+          frameArtwork(key) +
+          "</span></span>" +
           label +
           "</button>",
       )
       .join("") +
-    '</div><h3>Un detalle para acompañarte</h3><p class="hint">Todos están disponibles desde el principio. Elige uno cuando quieras, también en los días difíciles.</p><div class="detail-choices" role="group" aria-label="Adorno de tu espacio">' +
+    '</div><div class="homepad-clock-option"><label class="celebrate-option"><input type="checkbox" name="homepad-clock"' +
+    (appearance.clock ? " checked" : "") +
+    '> Mostrar reloj analógico junto a la foto</label><p class="hint">Usa la hora de tu computadora. Funciona sin Internet.</p></div><h3>Un detalle para acompañarte</h3><p class="hint">Todos están disponibles desde el principio. Elige uno cuando quieras, también en los días difíciles.</p><div class="detail-choices" role="group" aria-label="Adorno de tu espacio">' +
     Object.entries(DECORATIONS)
       .map(
         ([key, label]) =>
@@ -270,6 +325,7 @@ function appearanceDialog(refresh = false) {
     btn("Listo", "close", "", "primary") +
     "</div>";
   if (!d.open) d.showModal();
+  applyAppearance();
 }
 applyAppearance();
 photoStore("readonly", (store) => store.get("photo"))

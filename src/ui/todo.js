@@ -58,7 +58,7 @@ function renderTodo() {
     (items
       .map((t) => {
         const a = state.actions.find((x) => x.id === t.actionId),
-          m = C.milestone(t.milestoneId),
+          m = C.milestone(t.milestoneId, state),
           late = !t.done && t.due && t.due < C.today();
         return (
           '<article class="todo-row' +

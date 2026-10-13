@@ -224,7 +224,9 @@ function excelBytes(r) {
         "Persona que revisó",
         "Fecha de revisión",
         "Último registro",
-        "Versión del borrador",
+        "Versión de la plantilla",
+        "Plantilla de origen del entregable",
+        "Situación en el plan",
         "Aviso",
       ],
       ...(r.route || []).map((x) => [
@@ -242,10 +244,38 @@ function excelBytes(r) {
         x.reviewDate,
         x.updatedAt,
         x.templateVersion,
-        "Ruta de referencia en borrador. Registro del tesista; sin firma ni VoBo verificado. No mide porcentaje de avance de tesis.",
+        x.originTemplate || "",
+        x.planMembership || "",
+        "Registro del tesista; sin firma ni VoBo verificado. No mide porcentaje de avance de tesis.",
       ]),
     ],
   ]);
+  if (r.routeOrigins?.length)
+    sheets.push([
+      "Origen de mi ruta",
+      [
+        [
+          "Condición de la ruta",
+          "Plantilla",
+          "Programa de origen",
+          "Departamento",
+          "Versión",
+          "Fecha de la plantilla",
+          "Fuente",
+          "Ajustes personales",
+        ],
+        ...r.routeOrigins.map((o) => [
+          o.label,
+          o.template,
+          o.program,
+          o.department,
+          o.version,
+          o.date,
+          o.source,
+          o.adaptations.join("; "),
+        ]),
+      ],
+    ]);
   const ns = "http://schemas.openxmlformats.org/spreadsheetml/2006/main";
   const files = [
     [

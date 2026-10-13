@@ -1,20 +1,20 @@
 # Empezar con Compás
-Organiza y da seguimiento a tu tesis · Versión 0.3.7
+Organiza y da seguimiento a tu tesis · Versión 0.3.13
 
 ## 1. Descarga y descomprime el ZIP
-Descarga Compas-para-tesistas.zip desde el repositorio de Compás, desde tu computadora. En Windows, haz clic derecho sobre el ZIP y elige «Extraer todo». En Mac, haz doble clic sobre el ZIP. Busca la carpeta extraída Compas y guárdala en un lugar fijo de tu computadora.
+Desde tu computadora, abre https://github.com/tmarquez-mx/Compas y pulsa la descarga ZIP destacada al principio de la página. Descarga Compas-para-tesistas.zip. En Windows, haz clic derecho sobre el ZIP y elige «Extraer todo». En Mac, haz doble clic sobre el ZIP. Busca la carpeta extraída Compas y guárdala en un lugar fijo de tu computadora.
 
 ## 2. Abre Compas.html: esa es la aplicación
 Esta versión de Compás es para computadora (Windows o Mac), con un navegador habitual. No incluye una versión de trabajo para celular o tableta: al abrirla allí verás una invitación para continuar desde la computadora.
 
 Dentro de la carpeta Compas, puedes abrir Empezar-aqui.html para leer estas instrucciones. Para trabajar, haz doble clic en Compas.html. Se abre en tu navegador: no necesitas instalar nada. Si aparece un editor de texto, usa «Abrir con» y elige tu navegador habitual. Trabaja con el archivo de la carpeta extraída, no desde el ZIP.
 
-El ZIP contiene sólo la aplicación, estas instrucciones y Materiales-en-linea.txt, con las ligas al mapa, las animaciones, el video y las comprobaciones. Después de descargar el paquete puedes trabajar sin internet, sin iniciar sesión ni instalar Python o Node. Necesitas internet únicamente para consultar esos materiales en línea o subir un respaldo a la nube.
+El ZIP contiene sólo la aplicación, estas instrucciones y Materiales-en-linea.txt, con las ligas al mapa, las animaciones, el video y las comprobaciones. Los recorridos publicados muestran la versión 0.3.7; esta aplicación es la 0.3.13. Después de descargar el paquete puedes trabajar sin internet, sin iniciar sesión ni instalar Python o Node. Necesitas internet únicamente para consultar esos materiales en línea o subir un respaldo a la nube.
 
 ## 3. Empieza con algo pequeño
 La primera apertura muestra un ejemplo ficticio. Puedes explorarlo o elegir «Empezar mi bitácora». Puedes completar título, pregunta, nivel y semestre cuando los tengas; no necesitas llenarlo todo para empezar. Anota una tarea pequeña o escribe una página de tu Diario.
 
-Mi ruta ofrece productos de referencia por semestre. Puedes registrar versiones y adaptar el plan. Terminar una tarea no aprueba un producto ni cierra automáticamente un compromiso.
+Mi ruta permite elegir una plantilla de tu posgrado, empezar una ruta propia y adaptar entregables y semestres. Terminar una tarea no aprueba un producto ni cierra automáticamente un compromiso.
 
 Cuando pulsas «Guardar cambios» en un formulario o marcas una tarea, Compás conserva el cambio automáticamente si la barra dice «Guardado en este navegador». El texto que sólo has escrito y todavía no has guardado en el formulario no se conserva. Descargar un respaldo crea otro archivo: no es necesario descargarlo para que funcione este guardado del navegador.
 
@@ -39,6 +39,16 @@ Guardar el JSON en una carpeta de nube es opcional y requiere internet para comp
 ## Importante: avisa que probarás Compás
 
 Después de descargar Compás, escribe a posgrado.sociales@ibero.mx e indica que lo descargaste y que lo probarás. Así, la Coordinación podrá avisarte por correo cuando haya una nueva versión para que actualices tu copia. Si no das este aviso, podrías quedarte con una versión desactualizada.
+
+## Elige y adapta Mi ruta
+
+En «Mi ruta → Elegir y adaptar ruta», selecciona tu posgrado o una ruta propia e indica la duración prevista. Hay propuestas sintéticas para los 19 programas del catálogo. Sus cuatro semestres de maestría u ocho de doctorado son orientativos; ajústalos a tu programa. No son requisitos institucionales ni establecen fechas de defensa. También siguen disponibles las referencias anteriores de Ciencias Sociales y Políticas, identificadas como borradores.
+
+En cada semestre, «Añadir entregable» permite crear un producto propio. «Adaptar entregable» cambia su nombre, descripción y semestre; «Adaptar semestre» cambia la etapa y las materias o espacios. «Retirar del plan» conserva los avances, historial y tareas: puedes recuperarlo en «Entregables retirados». Cambiar la plantilla conserva los registros previos; no los convierte automáticamente en los productos de la nueva ruta.
+
+El origen se muestra en Mi ruta y en los reportes HTML, PDF y Excel. Las propuestas actuales se identifican como «Ruta orientativa, no oficial». Cuando se incorporen documentos oficiales, la plantilla señalará programa, versión, fecha y fuente. La ruta adaptada se distinguirá de la original; el estudiante no puede marcar su propio plan como oficial.
+
+Los respaldos nuevos usan formato 3 e incluyen tu ruta y sus ajustes. Esta versión abre los respaldos anteriores 1 y 2. Para reabrir un respaldo nuevo necesitas Compás 0.3.9 o posterior: las versiones anteriores lo rechazan para evitar perder la ruta adaptada. Guarda un respaldo de tu trabajo antes de actualizar la aplicación.
 
 ## Tu diario privado
 En «Diario» puedes escribir una idea, una dificultad, algo que te ayudó o cómo te fue hoy. Cada página lleva fecha y puedes editarla o eliminarla. Las reflexiones de versiones anteriores siguen disponibles. No hay que escribir todos los días. Este espacio queda dedicado a escribir.
@@ -74,9 +84,11 @@ En Google Calendar, desde la computadora, usa «Configuración → Importar y ex
 El archivo contiene títulos y fechas de las tareas elegidas. No incluye sus notas privadas, el diario ni otros registros. Es una copia puntual: cambiar o terminar una tarea en Compás no modifica el calendario. Importar varias veces puede crear duplicados; revisa el calendario antes de repetir una importación.
 
 ## Haz tuyo el espacio
-Pulsa «Personalizar», debajo del portarretratos, en la barra lateral. Elige Aire (verde salvia), Cielo (azul), Noche (oscuro) o IBERO (rojo, blanco y gris cálido). El rojo institucional se conserva. Aire tiene una textura de papel tenue y Cielo, líneas suaves; Noche mantiene un fondo despejado; IBERO usa detalles rojos y esquinas angulares. Puedes elegir una imagen JPG, PNG o WebP para mostrarla en un portarretratos o como fondo suave; también puedes ocultarla.
+Pulsa «Personalizar», debajo del portarretratos, en la barra lateral. Elige Aire (verde salvia), Cielo (azul), Noche (oscuro) o IBERO (rojo, blanco y gris cálido). El rojo institucional se conserva. Aire tiene una textura de papel tenue y Cielo, líneas suaves; Noche mantiene un fondo despejado; IBERO usa detalles rojos y esquinas angulares. Puedes elegir una imagen JPG, PNG o WebP para mostrarla en tu rincón, con o sin marco; también puedes ocultarla.
 
-En Personalizar puedes elegir «Sin marco» para mostrar tu foto sola, o un marco de Lino, Madera, Jardín o Arcilla. Puedes acompañarla con flores, hojas o estrellas colocadas sobre las esquinas y los bordes de la foto. El centro queda despejado. Los materiales, las formas suaves y los detalles asimétricos evocan un portarretratos hecho a mano. La vista previa muestra cómo quedan juntos. Sin foto, o si la usas como fondo, los adornos acompañan una pequeña tarjeta «A tu ritmo».
+En Personalizar puedes elegir «Sin marco» para mostrar tu foto sola, HomePad, o uno de los siete marcos con carácter: Mexicano · Talavera (azulejo azul y flores geométricas), Nemo · Marino (coral, ondas y azul profundo), Cubista (planos asimétricos), Graduado (azul tinta, oro y un birrete grande centrado, que sobresale por arriba y se coloca sobre el retrato; queda mejor con una foto de frente y la cabeza cerca del borde superior), Nostálgico (instantánea de papel y cinta), Memphis (color, puntos y zigzags) y Botánico (hojas y verde profundo). Al elegir cualquier marco, se activa «Foto en tu rincón» y puedes ver el resultado de inmediato; necesitas haber elegido una foto. Puedes acompañarla con flores, hojas, estrellas, velas, copas, globos, detalles de cumpleaños o confeti colocados sobre las esquinas y los bordes de la foto. Los detalles decorativos descansan junto a los bordes; el birrete de Graduado se coloca sobre la parte superior del retrato. La vista previa muestra cómo quedan juntos. Sin foto, los adornos acompañan una pequeña tarjeta «A tu ritmo».
+
+El marco «HomePad» tiene una pantalla horizontal, brazo metálico y base blanca de tela. Puedes mostrar un reloj analógico junto a la foto: toma la hora local de la computadora, funciona sin Internet y se ajusta al volver a la aplicación. Activa o desactiva «Mostrar reloj analógico junto a la foto» en Personalizar. Si aún no eliges foto, muestra la tarjeta «A tu ritmo».
 
 Todos los marcos y adornos están disponibles desde el principio. Al terminar una tarea, un producto o un compromiso aparece una invitación para elegir alguno de esos mismos detalles; puedes omitirla o desactivarla. No se desbloquean adornos nuevos ni hay puntos, rachas o aprobaciones automáticas.
 

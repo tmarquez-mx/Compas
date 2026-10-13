@@ -24,7 +24,10 @@ function selectedReportRecords(state, options) {
     ),
     route: state.routeProgress
       .filter((x) => selected.route.has(x.id))
-      .map((x) => ({ m: milestone(x.id), p: routeSnapshot(x, options.to) }))
+      .map((x) => ({
+        m: milestone(x.id, state),
+        p: routeSnapshot(x, options.to),
+      }))
       .filter((x) => x.p),
   };
 }
@@ -53,6 +56,7 @@ function makeShare(state, options) {
     actions: [],
     decisions: [],
     route: [],
+    routeOrigins: [],
   };
   if (options.project) {
     share.project = textFields(state.project, [
@@ -133,6 +137,12 @@ function makeShare(state, options) {
       referenceSemester: String(m.semester),
       expected: m.expected,
       templateVersion: m.templateVersion,
+      originTemplate:
+        ROUTE_TEMPLATES.find((t) => t.id === m.templateId)?.title ||
+        "Entregable propio",
+      planMembership: m.archived
+        ? "Retirado del plan actual; registro conservado"
+        : "Incluido en el plan actual",
       ...textFields(p, [
         "status",
         "versionLabel",
@@ -147,6 +157,17 @@ function makeShare(state, options) {
     };
     if (options.names) r.reviewBy = p.reviewBy;
     return r;
+  });
+  const levels = new Set(records.route.map((x) => x.m.level));
+  if (options.project && state.project.level) levels.add(state.project.level);
+  share.routeOrigins = [...levels].map((level) => {
+    const origin = routeProvenance(state, level);
+    return {
+      ...origin,
+      adaptations: origin.adaptations.length
+        ? [origin.adaptations.length + " ajustes personales en el plan actual"]
+        : [],
+    };
   });
   return share;
 }
@@ -201,11 +222,28 @@ function reportHTML(r) {
       pair("Fecha del hito", p.milestoneDate ? fmt(p.milestoneDate) : "") +
       "</dl>";
   }
+  if (r.routeOrigins?.length)
+    b +=
+      "<h2>Origen de la ruta actual</h2>" +
+      r.routeOrigins
+        .map(
+          (o) =>
+            '<article class="record"><h3>' +
+            esc(o.label) +
+            "</h3><dl>" +
+            pair("Plantilla", o.template) +
+            pair("Programa de origen", o.program) +
+            pair("Departamento de origen", o.department) +
+            pair("Versión", o.version) +
+            pair("Fecha de la plantilla", o.date ? fmt(o.date) : "") +
+            pair("Fuente", o.source) +
+            pair("Ajustes personales", o.adaptations.join("; ")) +
+            "</dl></article>",
+        )
+        .join("");
   if (r.route?.length)
     b +=
-      '<h2>Mi ruta · productos seleccionados</h2><p class="meta">Ruta de referencia en borrador, versión ' +
-      esc(ROUTE_VERSION) +
-      ". Último registro disponible hasta la fecha de corte; puede ser anterior al inicio del periodo. Los estados y las revisiones son registros del tesista, sin firma ni VoBo verificado. No representan un porcentaje de avance de la tesis.</p>" +
+      '<h2>Mi ruta · productos seleccionados</h2><p class="meta">Último registro disponible hasta la fecha de corte; puede ser anterior al inicio del periodo. Los estados y las revisiones son registros del tesista, sin firma ni VoBo verificado. No representan un porcentaje de avance de la tesis.</p>' +
       r.route
         .map(
           (x) =>
@@ -213,6 +251,9 @@ function reportHTML(r) {
             esc(x.title) +
             "</h3><dl>" +
             pair("Nivel", x.level) +
+            pair("Origen del entregable", x.originTemplate) +
+            pair("Versión de origen", x.templateVersion) +
+            pair("Situación en mi plan", x.planMembership) +
             pair("Semestre de referencia", x.referenceSemester) +
             pair("Resultado esperado", x.expected) +
             pair("Semestre en mi plan", x.planSemester) +

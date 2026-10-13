@@ -55,6 +55,7 @@ function renderReports() {
       (a.status !== "resuelto" || !o.from || a.updatedAt >= o.from),
   );
   let h = head("Comparte una parte de tu trayectoria");
+  h += state.project.level ? routeOriginCard(state.project.level) : "";
   h +=
     '<p class="module-note">Tu diario, tareas, horas y notas privadas quedan fuera del reporte.</p><div class="report-grid"><section class="card"><div class="form-grid"><label class="field wide"><span>Título del reporte</span><input id="report-title" maxlength="160" value="' +
     e(o.title) +
@@ -84,7 +85,7 @@ function renderReports() {
       state.routeProgress
         .map((p) => {
           const v = C.routeAt(state, p.id, o.to),
-            m = C.milestone(p.id);
+            m = C.milestone(p.id, state);
           return v
             ? {
                 id: p.id,

@@ -1,6 +1,6 @@
 function createState(projectId) {
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     isDemo: false,
     project: {
       id: projectId,
@@ -25,6 +25,7 @@ function createState(projectId) {
     decisions: [],
     timeEntries: [],
     reflections: [],
+    routePlan: emptyRoutePlan(),
     routeProgress: [],
     todos: [],
   };
@@ -244,7 +245,8 @@ function demo() {
       evidence: "Capítulo metodológico, matriz de casos revisada.",
       planSemester: "3",
       due: shift(10),
-      adjustmentReason: "Revisar la delimitación después de la asesoría de tesis.",
+      adjustmentReason:
+        "Revisar la delimitación después de la asesoría de tesis.",
       reviewState: "por-revisar",
       updatedAt: shift(-2),
     },
@@ -289,13 +291,15 @@ function normalizeState(input) {
     !input ||
     typeof input !== "object" ||
     Array.isArray(input) ||
-    ![1, 2].includes(input.schemaVersion)
+    ![1, 2, 3].includes(input.schemaVersion)
   )
     throw new Error("El archivo no es una bitácora Compás compatible.");
+  if (input.schemaVersion === 3 && input.routePlan === undefined)
+    throw new Error("Falta la configuración de ruta en este respaldo.");
   if (input.schemaVersion === 1)
     input = {
       ...input,
-      schemaVersion: 2,
+      schemaVersion: 3,
       project: { ...input.project, level: "" },
       routeProgress: [],
       todos: [],
@@ -340,6 +344,7 @@ function normalizeState(input) {
     if (!vals.includes(v)) throw new Error("Valor inválido en " + k + ".");
     return v;
   };
+  out.routePlan = validateRoutePlan(input.routePlan);
   out.isDemo = input.isDemo === true;
   out.project = pick(input.project, Object.keys(out.project));
   out.project.id = id(input.project.id, "proyecto");
@@ -466,7 +471,7 @@ function normalizeState(input) {
       "updatedAt",
     ]);
     r.id = id(r.id, "producto");
-    if (!milestone(r.id)) throw new Error("Producto de ruta desconocido.");
+    if (!milestone(r.id, out)) throw new Error("Producto de ruta desconocido.");
     if (r.templateVersion !== ROUTE_VERSION)
       throw new Error("La versión de la ruta no es compatible.");
     oneOf(r.status, Object.keys(ROUTE_STATES), "avance del producto");
@@ -554,7 +559,7 @@ function normalizeState(input) {
       throw new Error("Hay identificadores duplicados en " + key + ".");
   }
   for (const record of [...out.actions, ...out.decisions, ...out.todos])
-    if (record.milestoneId && !milestone(record.milestoneId))
+    if (record.milestoneId && !milestone(record.milestoneId, out))
       throw new Error("Vínculo a un producto de ruta desconocido.");
   for (const task of out.todos)
     if (task.actionId && !ids.actions.has(task.actionId))
@@ -576,7 +581,7 @@ function backupText(state) {
   return JSON.stringify(
     {
       format: "compas-backup",
-      version: 2,
+      version: 3,
       savedAt: new Date().toISOString(),
       data: state,
     },
@@ -620,7 +625,7 @@ function restore(text) {
     typeof o !== "object" ||
     Array.isArray(o) ||
     o.format !== "compas-backup" ||
-    ![1, 2].includes(o.version)
+    ![1, 2, 3].includes(o.version)
   )
     throw new Error(
       "Selecciona un respaldo editable de Compás; los reportes de consulta no son respaldos.",

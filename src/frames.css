@@ -1,0 +1,145 @@
+/* Colección con carácter; estilos originales dibujados con CSS y SVG locales. */
+.frame-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.frame-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.keepsake-frame[data-frame="mexicano"] {
+  padding: 15px;
+  border: 1px solid #164d82;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #146eac, #153e7d);
+  box-shadow:
+    inset 0 0 0 3px #f2eedb,
+    inset 0 0 0 5px #1c648e,
+    2px 9px 18px #17375535;
+}
+.keepsake-frame[data-frame="nemo"] {
+  padding: 14px;
+  border-color: #133f56;
+  border-radius: 23px 12px 22px 13px / 12px 24px 13px 22px;
+  background:
+    radial-gradient(ellipse at 10% 5%, #4eb3b1, transparent 55%),
+    linear-gradient(150deg, #187b86, #123d66 65%, #ef9863);
+  box-shadow:
+    inset 0 0 0 3px #b7d9cf66,
+    3px 8px 17px #153f5540;
+}
+.keepsake-frame[data-frame="cubista"] {
+  padding: 15px 12px 13px 16px;
+  border: 1px solid #273d42;
+  border-radius: 3px 10px 3px 7px;
+  background: conic-gradient(
+    from 32deg at 68% 37%,
+    #d39b47 0 17%,
+    #397f82 17% 34%,
+    #efe3bd 34% 52%,
+    #a94f42 52% 71%,
+    #293e57 71% 89%,
+    #d39b47 89%
+  );
+  box-shadow:
+    3px 4px 0 #23374066,
+    7px 11px 18px #23374026;
+}
+.keepsake-frame[data-frame="graduado"] {
+  padding: 13px;
+  border: 1px solid #c8a76c;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #293649, #161f2c 65%, #384155);
+  box-shadow:
+    inset 0 0 0 3px #101827,
+    inset 0 0 0 5px #c8a76c,
+    3px 9px 18px #1e26343a;
+}
+/* Reservar espacio para el birrete que sobresale, también en la vista previa. */
+.personal-keepsake[data-frame="graduado"] {
+  margin-top: 46px;
+}
+.keepsake-preview[data-frame="graduado"] {
+  margin-top: 34px;
+}
+.frame-sample[data-frame="graduado"] {
+  margin-top: 10px;
+}
+.graduation-cap {
+  filter: drop-shadow(0 2px 2px #10182755);
+}
+.keepsake-frame[data-frame="nostalgico"] {
+  padding: 9px 9px 24px;
+  border-color: #d4c6ae;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(0deg, #99826608 0 1px, transparent 1px 3px),
+    linear-gradient(135deg, #fff9ec, #ebdec5);
+  box-shadow:
+    1px 2px 1px #8b745b40,
+    3px 9px 14px #6b563328;
+}
+.keepsake-frame[data-frame="nostalgico"]::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 15%;
+  width: 30px;
+  height: 10px;
+  transform: rotate(-14deg);
+  background:
+    repeating-linear-gradient(90deg, #fff4db66 0 1px, transparent 1px 3px),
+    #d4b7879c;
+  border: 1px solid #b5a17c44;
+  z-index: 3;
+}
+.keepsake-frame[data-frame="nostalgico"] img {
+  border-radius: 1px;
+}
+.keepsake-frame[data-frame="memphis"] {
+  padding: 14px;
+  border: 1px solid #333b57;
+  border-radius: 12px 3px 12px 3px;
+  background: linear-gradient(
+    125deg,
+    #ef947d 0 24%,
+    #6eb2b5 24% 65%,
+    #b0a3d2 65%
+  );
+  box-shadow:
+    4px 4px 0 #303850,
+    8px 10px 15px #30385024;
+}
+.keepsake-frame[data-frame="botanico"] {
+  padding: 13px;
+  border-color: #153f34;
+  border-radius: 20px 8px 18px 10px / 10px 19px 10px 17px;
+  background:
+    radial-gradient(ellipse at 12% 14%, #587a59, transparent 55%),
+    linear-gradient(130deg, #2a5e4c, #153d34 70%, #41644c);
+  box-shadow:
+    inset 0 0 0 2px #c2b77455,
+    2px 7px 17px #1b473330;
+}
+/* La miniatura mantiene los mismos materiales y bordes que el marco grande. */
+.frame-sample[data-frame="mexicano"]::after,
+.frame-sample[data-frame="nemo"]::after,
+.frame-sample[data-frame="cubista"]::after,
+.frame-sample[data-frame="graduado"]::after,
+.frame-sample[data-frame="memphis"]::after,
+.frame-sample[data-frame="botanico"]::after {
+  inset: 9px;
+}
+.frame-sample[data-frame="nostalgico"]::after {
+  inset: 7px 7px 16px;
+  border-radius: 1px;
+}
+.frame-sample[data-frame="nostalgico"]::before {
+  width: 18px;
+  height: 6px;
+  top: -3px;
+}

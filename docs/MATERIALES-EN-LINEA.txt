@@ -3,8 +3,8 @@ COMPÁS · MATERIALES EN LÍNEA
 Página de Compás: mapa comentado y recorridos animados
 https://github.com/tmarquez-mx/Compas#compás-en-acción
 
-Video de presentación
-https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-demo.mp4
+Video de presentación · versión 0.3.7
+https://github.com/tmarquez-mx/Compas/releases/download/v0.3.7/Compas-demo.mp4
 
 Recorrido 1 · Mi ruta
 https://github.com/tmarquez-mx/Compas/blob/main/docs/demos/mi-ruta.gif

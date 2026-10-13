@@ -205,20 +205,20 @@ fs.mkdirSync(out, { recursive: true });
         .querySelector("#appearance-status")
         ?.textContent.includes("Foto guardada"),
     );
-    await page.locator('[data-do="frame"][data-frame="jardin"]').click();
+    await page.locator('[data-do="frame"][data-frame="botanico"]').click();
     await page
       .locator('[data-do="decoration"][data-decoration="flores"]')
       .click();
     assert.equal(
       await page.locator("#personal-frame").getAttribute("data-frame"),
-      "jardin",
+      "botanico",
     );
     assert.equal(await page.locator("#personal-ornament svg").count(), 1);
     assert.equal(
       await page
         .locator(".keepsake-preview .keepsake-frame")
         .getAttribute("data-frame"),
-      "jardin",
+      "botanico",
     );
     const previewFlowers = await page
       .locator(".keepsake-preview .personal-ornament")
@@ -230,18 +230,18 @@ fs.mkdirSync(out, { recursive: true });
       await page.locator(".keepsake-preview .personal-ornament").innerHTML(),
       previewFlowers,
     );
-    await page.locator('[data-do="frame"][data-frame="madera"]').click();
+    await page.locator('[data-do="frame"][data-frame="mexicano"]').click();
     assert.equal(
       await page
         .locator(".keepsake-preview .keepsake-frame")
         .getAttribute("data-frame"),
-      "madera",
+      "mexicano",
     );
-    await page.locator('[data-do="frame"][data-frame="jardin"]').click();
+    await page.locator('[data-do="frame"][data-frame="botanico"]').click();
     await page
       .locator('[data-do="decoration"][data-decoration="flores"]')
       .click();
-    for (const mode of ["none", "background"]) {
+    for (const mode of ["none"]) {
       await page.locator('[name="photo-mode"][value="' + mode + '"]').check();
       assert.equal(await page.locator("#personal-frame").isVisible(), false);
       assert.equal(await page.locator("#keepsake-paper").isVisible(), true);
@@ -254,7 +254,7 @@ fs.mkdirSync(out, { recursive: true });
     await page.locator('[name="photo-mode"][value="frame"]').check();
     assert.equal(await page.locator("#keepsake-paper").isVisible(), false);
     assert.equal(await missingHelp(), 0);
-    await page.locator('[data-do="frame"][data-frame="madera"]').hover();
+    await page.locator('[data-do="frame"][data-frame="mexicano"]').hover();
     await page.waitForTimeout(430);
     assert.equal(await page.locator("#button-hint").isVisible(), true);
     await page.keyboard.press("Escape");
@@ -264,7 +264,7 @@ fs.mkdirSync(out, { recursive: true });
     await page.waitForTimeout(350);
     assert.equal(
       await page.locator("#personal-frame").getAttribute("data-frame"),
-      "jardin",
+      "botanico",
     );
     assert.equal(await page.locator("#personal-frame").isVisible(), true);
     assert.equal(await page.locator("#personal-ornament svg").count(), 1);
@@ -395,7 +395,7 @@ fs.mkdirSync(out, { recursive: true });
             "Rincón y vista previa compuestos; adornos sobre la foto y tarjeta sin foto.",
             "Rincón sin desbordamiento ni obstáculos a 390, 600, 720 y 1150 px; oculto en impresión.",
             "Reconocimiento al terminar y preferencia para desactivarlo.",
-            "Diario y personalización en móvil, sin desbordamiento.",
+            "Diario y personalización en ventanas estrechas de computadora, sin desbordamiento.",
           ],
           errors,
           out,

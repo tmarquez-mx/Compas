@@ -89,7 +89,7 @@ check('Respaldo v1 real migra sin inferir nivel ni perder datos',()=>{
  const legacy=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/legacy-v1.json'),'utf8'));
  legacy.data.project.semester='10 · extensión';
  const migrated=C.restore(JSON.stringify(legacy));
- assert.equal(migrated.schemaVersion,2);assert.equal(migrated.project.level,'');assert.equal(migrated.project.semester,'10 · extensión');
+ assert.equal(migrated.schemaVersion,3);assert.equal(migrated.project.level,'');assert.equal(migrated.project.semester,'10 · extensión');
  assert.equal(migrated.todos.length,0);assert.equal(migrated.routeProgress.length,0);
  for(const key of ['sessions','actions','decisions','timeEntries','reflections']) {
   assert.equal(migrated[key].length,legacy.data[key].length);

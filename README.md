@@ -1,139 +1,73 @@
 # Compás
-**Organiza y da seguimiento a tu tesis**
 
-Decisiones, acuerdos y próximos pasos, en un solo lugar.
+## [⬇ Descargar Compás 0.3.13 para Windows y Mac (.ZIP)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
 
-Una aplicación personal para computadora (Windows o Mac) para organizar el proceso de tesis en maestría y doctorado: ruta por semestres, acuerdos, decisiones, asesoría de tesis, tareas y dedicación.
+**Descomprime el ZIP y abre `Compas.html`. No necesitas instalar nada.**
 
-Compás se usa en una computadora y un navegador habitual; en celulares y tabletas muestra una invitación para continuar desde la computadora. Puedes trabajar sin internet y guardar tus respaldos JSON localmente. También puedes conservarlos en una carpeta de Google Drive, OneDrive, Dropbox u otro servicio configurado: la subida requiere internet y la gestiona ese servicio. Compás no conecta cuentas ni sincroniza dispositivos. Para cambiar de equipo, guarda el respaldo reciente, cierra la copia anterior y abre el JSON en el nuevo lugar.
+[Manual para empezar y continuar](docs/EMPEZAR.md) · [Cambios de esta versión](docs/RELEASE-v0.3.13.md) · [Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases)
 
-## Compás en acción
+**Organiza y da seguimiento a tu tesis.** Decisiones, acuerdos y próximos pasos, en un solo lugar.
 
-La interfaz actual, comentada y en tres recorridos con datos ficticios. Haz clic en las imágenes para verlas a mayor tamaño.
+Compás es una aplicación personal para computadora y un navegador habitual. Funciona sin Internet después de descargarla. No sincroniza dispositivos ni incluye una versión de trabajo para celular o tableta.
 
-### Conoce todas las funciones
+## Empezar y volver a abrir
 
-El mapa señala los siete módulos, las herramientas de respaldo y recuperación, Personalizar y Ayuda. Los botones explican su función al pasar el ratón o enfocarlos con el teclado. Brújula reúne tu pregunta, pasos para hoy, próximo hito, conversaciones y decisiones.
+1. Descarga y **descomprime por completo** el ZIP. Guarda la carpeta **Compas** en un lugar fijo.
+2. Lee **Empezar-aqui.html** y abre **Compas.html** con tu navegador habitual.
+3. Explora el ejemplo ficticio o elige **Empezar mi bitácora**.
+4. Los cambios confirmados con **Guardar cambios** y las tareas marcadas se conservan automáticamente cuando Compás indica **Guardado en este navegador**.
+5. Al terminar, pulsa **Descargar respaldo**, localiza el JSON, confirma **Ya guardé el archivo** y cierra la pestaña.
+6. La siguiente vez abre el mismo **Compas.html**, desde la misma carpeta y con el mismo navegador. Si no aparece tu trabajo, usa **Abrir respaldo** con tu JSON más reciente.
 
-[![Mapa comentado de Compás 0.3.7: módulos y herramientas para conservar y compartir tu trayectoria.](docs/demos/compas-comentado.png)](docs/demos/compas-comentado.png)
+El ZIP tiene **tres archivos**: la aplicación, las instrucciones y **Materiales-en-linea.txt**, con ligas al video, las animaciones y las comprobaciones. Es el mismo paquete para Windows y Mac. La apertura directa y por servidor local se han comprobado en macOS con un navegador aislado; la prueba en Windows y otros navegadores sigue pendiente. Esta entrega continúa como piloto.
 
-### 1. Mi ruta: planea y conserva la historia de tus ajustes
+### Importante: avisa que probarás Compás
 
-Consulta los semestres, registra una nueva versión del diseño metodológico, ajusta la fecha con un motivo y recupera el corte anterior en el historial.
-
-[![Recorrido de Mi ruta en Compás 0.3.7: actualizar un producto y consultar su historial.](docs/demos/mi-ruta.gif)](docs/demos/mi-ruta.gif)
-
-### 2. ToDo: del producto a un paso concreto
-
-Crea una tarea desde Mi ruta, conserva su vínculo con el producto y asigna fecha y prioridad. Selecciónala para exportarla al calendario y completa el paso. Si te sirve, registra tu dedicación desde ToDo; después elige un detalle para tu rincón y escribe en el Diario. Completarlas no aprueba productos ni cierra compromisos.
-
-[![Recorrido de ToDo en Compás 0.3.7: crear y terminar una tarea vinculada a un producto.](docs/demos/todo.gif)](docs/demos/todo.gif)
-
-### 3. Reportes: prepara la siguiente conversación
-
-Selecciona un compromiso y el corte de un producto, revisa la vista previa y descarga el panel de consulta. También puedes descargar Excel o imprimir y guardar PDF. Tus tareas ToDo, horas, diario y notas privadas quedan fuera del reporte.
-
-[![Recorrido de Reportes en Compás 0.3.7: seleccionar avances, revisar y descargar un panel HTML.](docs/demos/reportes.gif)](docs/demos/reportes.gif)
-
-El mapa, los recorridos, el video y sus archivos de comprobación se consultan en la página de Compás; el ZIP trae sus enlaces en **Materiales-en-linea.txt**. El video reúne la misma historia con narración local en español de México y textos explicativos. [Guion y comprobaciones](docs/demos/guion-recorridos.md).
-
-## Descargar y empezar
-
-### [Descargar Compás para Windows y Mac (.zip)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
-
-## Importante: avisa que probarás Compás
-
-Después de descargar Compás, escribe a [posgrado.sociales@ibero.mx](mailto:posgrado.sociales@ibero.mx) e indica que lo descargaste y que lo probarás. Así, la Coordinación podrá avisarte por correo cuando haya una nueva versión para que actualices tu copia. Si no das este aviso, podrías quedarte con una versión desactualizada.
-
-1. Descarga el ZIP y **descomprímelo por completo**.
-2. Abre la carpeta **Compas** y lee **Empezar-aqui.html**.
-3. Abre **Compas.html** en un navegador actualizado.
-4. Elige **Empezar mi bitácora** o explora el ejemplo ficticio.
-5. Al terminar, pulsa **Descargar respaldo**, localiza el archivo y confirma **Ya guardé el archivo**.
-
-Esta primera versión está pensada para usarse en una sola computadora y un mismo navegador. Conserva una sola copia de trabajo y descarga respaldos periódicamente.
-
-No necesitas instalar Python, Node ni otras herramientas. Puedes trabajar sin internet.
-
-El ZIP contiene tres archivos: **Compas.html**, la aplicación; **Empezar-aqui.html**, las instrucciones; y **Materiales-en-linea.txt**, con las ligas al video, las animaciones y los archivos de comprobación en la página de Compás. Es el mismo paquete para Windows y Mac. La interfaz se ha comprobado en Mac mediante servidor local y apertura directa del HTML con un navegador aislado; queda pendiente la prueba en un equipo Windows y otros navegadores.
-
-[Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases) · [Descargar el video demo](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-demo.mp4)
+Después de descargarlo, escribe a [posgrado.sociales@ibero.mx](mailto:posgrado.sociales@ibero.mx) e indica que lo probarás. Así, la Coordinación podrá avisarte cuando haya una nueva versión para actualizar tu copia.
 
 ## Qué incluye
 
-- **Brújula:** hasta tres pasos pendientes, posición en la ruta, próximo hito y decisiones.
-- **Mi ruta:** maestría o doctorado, semestres, productos, versiones y ajustes de la planeación.
-- **ToDo:** tareas privadas con fechas, prioridades y vínculos con compromisos o productos; importación local de archivos CSV e ICS y exportación de tareas elegidas a Google Calendar, Calendario de Apple y Outlook mediante ICS. Debajo de las tareas, **Registrar dedicación (opcional)** permite anotar actividades y horas en un apartado plegado; conserva los registros anteriores.
-- **Coloquios y Asesoría de tesis:** sesiones, retroalimentación y seguimiento de acuerdos.
-- **Diario:** páginas privadas con fecha para escribir ideas, dudas o cómo te fue, sin registro de horas.
-- **Reportes:** selección de avances para compartir como HTML, Excel o PDF mediante la impresión del navegador.
-- **Personalizar:** cuatro temas y un rincón con foto sin marco o marcos de Lino, Madera, Jardín o Arcilla. Flores, hojas o estrellas sobre los bordes de una foto local opcional; sin foto, acompañan una tarjeta «A tu ritmo». También puedes usar la imagen como fondo suave. Todos los detalles están disponibles desde el principio y quedan fuera de respaldos y reportes.
+- **Brújula:** tu rumbo, hasta tres pasos pendientes, próximo hito y decisiones.
+- **Mi ruta:** 19 plantillas sintéticas por posgrado, borradores previos y ruta propia; semestres y entregables adaptables, versiones y retiro reversible. Las propuestas sintéticas se señalan como **no oficiales**. [Origen de las rutas](docs/RUTAS-POR-POSGRADO.md).
+- **ToDo:** tareas privadas, importación de CSV o ICS y exportación de tareas elegidas a Google, Apple y Outlook mediante ICS. La dedicación es opcional y está plegada debajo de las tareas.
+- **Coloquios y Asesoría de tesis:** conversaciones, comentarios y seguimiento de acuerdos.
+- **Diario:** páginas privadas con fecha para escribir ideas, dudas o cómo te fue.
+- **Reportes:** selección de avances para compartir como HTML, Excel o PDF mediante impresión.
+- **Personalizar:** cuatro temas; Sin marco, HomePad con reloj local y siete marcos con carácter. Flores, hojas, estrellas, velas, copas, globos, cumpleaños y confeti acompañan los bordes de la foto. Todos los detalles están disponibles desde el principio.
 
-Las rutas son referencias en borrador. Compás no calcula el porcentaje de avance de una tesis ni otorga aprobaciones. La revisión de un producto o una minuta es un registro del tesista, sin firma verificada.
+Compás no calcula un porcentaje de tesis ni otorga aprobaciones académicas. Terminar una tarea no aprueba un producto ni cierra un compromiso. La revisión registrada por el tesista no equivale a una firma verificada.
 
-## Importar tareas a ToDo
+## Conservar y compartir tu trabajo
 
-En **ToDo → Importar tareas**, elige un archivo CSV o ICS guardado en tu computadora. La vista previa permite revisar y elegir qué incorporar. No necesitas conectar cuentas y la importación no mantiene sincronización con la aplicación de origen.
+La aplicación no envía tus registros a servidores ni requiere cuentas. El navegador conserva una copia auxiliar que puede borrarse: **descarga y confirma respaldos regularmente**. El texto escrito en un formulario que todavía no guardaste no se conserva.
 
-- **Notion:** exporta la base de tareas como [Markdown & CSV](https://www.notion.com/help/export-your-content), descomprime el ZIP y elige el CSV de la base.
-- **Google Calendar:** [exporta el calendario desde la computadora](https://support.google.com/calendar/answer/37111), descomprime el ZIP y elige uno de sus archivos ICS.
-- **Outlook clásico:** usa [Archivo → Guardar calendario](https://support.microsoft.com/en-us/outlook/export-an-outlook-calendar-to-google-calendar) para obtener un ICS; puedes limitar el rango de fechas.
-- **Calendario de Apple en Mac:** elige un calendario y usa [Archivo → Exportar → Exportar](https://support.apple.com/es-lamr/guide/calendar/icl1023/mac). Compás admite ICS, no el archivo de todos los calendarios ICBU.
+El **respaldo JSON** contiene todo tu trabajo, incluido el diario y las notas privadas; no está cifrado. Los **reportes** contienen únicamente la selección que decides compartir y excluyen ToDo, dedicación, diario y notas privadas. No sustituyen al respaldo.
 
-Se admiten archivos de hasta **2 MB y 1,000 registros**. En CSV, elige la columna de título y, si las necesitas, las de fecha, prioridad y estado. Confirma el orden de las fechas; las notas se incorporan únicamente si eliges esa opción. En ICS, los eventos elegidos se convierten en tareas con su día declarado, sin hora ni conversión de zona horaria. Las repeticiones no se despliegan y las cancelaciones y excepciones de series no se incorporan.
+Puedes conservar el JSON en una carpeta de Google Drive, OneDrive, Dropbox u otro servicio que ya tengas configurado. Su subida requiere Internet y la gestiona ese servicio; no crea sincronización entre dispositivos. Mantén una sola copia de trabajo.
 
-Nada se selecciona inicialmente. Revisa los títulos y fechas; te recomendamos descargar y comprobar un respaldo desde la vista previa antes de confirmar. Los duplicados detectados se omiten: repetir la importación no actualiza ni elimina tareas existentes. Puedes deshacer el lote durante diez segundos. Las tareas importadas siguen siendo privadas; quedan fuera de los reportes y se conservan en el respaldo personal.
+Para actualizar, descarga un respaldo desde tu versión actual, cierra sus pestañas, descomprime el nuevo ZIP y abre tu JSON mediante **Abrir respaldo**. Compás 0.3.13 abre formatos 1, 2 y 3. Los nuevos respaldos usan formato 3 y requieren Compás 0.3.9 o posterior para conservar la ruta adaptada. La foto y la apariencia permanecen en el navegador y quedan fuera del respaldo.
 
-## Exportar tareas al calendario
+**No publiques respaldos personales ni datos de investigación en este repositorio o sus incidencias.** El [manual](docs/EMPEZAR.md) explica el guardado, la reapertura, las rutas y el intercambio con calendarios.
 
-En **ToDo → Exportar a calendario**, selecciona tareas pendientes con fecha y descarga el ICS. Impórtalo en [Google Calendar desde la computadora](https://support.google.com/calendar/answer/37118?hl=es), [Calendario de Apple en Mac](https://support.apple.com/es-mx/guide/calendar/icl1023/mac) u [Outlook web](https://support.microsoft.com/en-us/outlook/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web). Se generan eventos de día completo en su fecha prevista, con título y fecha; las notas privadas y el diario quedan fuera. Es una copia puntual, sin sincronización: revisa los posibles duplicados antes de importar de nuevo.
+## Compás en acción
 
-El archivo sigue [iCalendar, RFC 5545](https://www.rfc-editor.org/info/rfc5545/), con identificadores estables, fechas sin horario y plegado de líneas UTF-8.
-
-## Tu bitácora y tus reportes
-
-| Archivo | Uso |
-| --- | --- |
-| Compas.html | La aplicación que puedes abrir en tu navegador. |
-| Respaldo personal JSON | Conserva todos los módulos y registros privados; se vuelve a abrir en Compás. |
-| Reporte HTML, Excel o PDF | Contiene la selección que decides compartir. No sustituye al respaldo. |
-
-La aplicación **no envía los registros a servidores** y no requiere cuentas. La descarga desde GitHub no le da acceso a tus anotaciones. El navegador puede conservar una copia auxiliar, pero esa copia puede borrarse: descarga y confirma respaldos regularmente. La edición se limita a una pestaña cuando el navegador permite un bloqueo exclusivo; sin él, los cambios permanecen en modo temporal. Las copias dañadas y las bitácoras reemplazadas pueden conservarse para recuperación.
-
-Las tareas ToDo, las horas y sus totales, el diario y las notas privadas quedan fuera de los reportes. El respaldo personal sí las contiene y no está cifrado. Si lo guardas en una carpeta sincronizada, también podrá almacenarse en la nube.
-
-Registra decisiones metodológicas y revisiones de avances. Conserva fuera de Compás entrevistas, transcripciones, bases de datos e información que identifique a participantes de la investigación.
-
-**No publiques respaldos personales ni datos de investigación en este repositorio o en sus incidencias.**
-
-## Actualizar sin perder tu trabajo
-
-Antes de sustituir la aplicación, descarga el respaldo desde tu versión actual. Cierra las pestañas de la versión anterior. Descarga y descomprime el nuevo paquete, abre Compas.html y usa **Abrir respaldo**. Los respaldos de la versión 1 son compatibles con esta versión.
+El [mapa comentado](docs/demos/compas-comentado.png), los recorridos de [Mi ruta](docs/demos/mi-ruta.gif), [ToDo](docs/demos/todo.gif) y [Reportes](docs/demos/reportes.gif), y el [video](https://github.com/tmarquez-mx/Compas/releases/download/v0.3.7/Compas-demo.mp4) muestran la **versión 0.3.7**, anterior a las rutas adaptables y al rincón actual. [Guion y comprobaciones](docs/demos/guion-recorridos.md) · [Manifiesto](docs/demos/manifest.json).
 
 ## Fallas y comentarios
 
-Escribe a [teresa.marquez@ibero.mx](mailto:teresa.marquez@ibero.mx). Consulta el [repositorio de Compás](https://github.com/tmarquez-mx/Compas). Describe qué ocurrió y qué navegador usas, sin compartir información privada.
+Escribe a [teresa.marquez@ibero.mx](mailto:teresa.marquez@ibero.mx) o abre una [incidencia](https://github.com/tmarquez-mx/Compas/issues). Describe qué ocurrió y qué navegador usas, sin compartir información privada.
 
-## Para quienes revisan el código
+## Para quienes mantienen el código
 
-La aplicación completa está en [dist/index.html](dist/index.html), generado desde [src/](src/). No edites el descargable a mano. La versión del piloto es 0.3.7. [Cambios de esta versión](docs/RELEASE-v0.3.7.md). Los registros incluidos en el ejemplo y las pruebas son ficticios.
+La aplicación autosuficiente en [dist/index.html](dist/index.html) se genera desde [src/](src/); no se edita a mano. [Entorno y comandos](docs/DESARROLLO-ENTORNO.md) · [Funcionamiento y validación](docs/DESARROLLO.md).
 
-[Auditoría y mejoras de rendimiento](docs/AUDITORIA-CODIGO-2026-10-03.md) · [Entorno de desarrollo](docs/DESARROLLO-ENTORNO.md) · [Detalles de funcionamiento y validación](docs/DESARROLLO.md) · [Guía para tesistas](docs/EMPEZAR.md)
+```sh
+npm run check
+npm test
+npm run package
+```
 
-Ejecutar comprobaciones:
-
-    npm test
-    npm run check
-
-Generar el paquete de tres archivos:
-
-    npm run package
-
-Para mantenimiento, todavía puede generarse una copia adicional con los recorridos y el video disponible:
-
-    npm run package:complete
-
-Para indicar otro MP4, usa `python3 scripts/crear_paquete.py --video /ruta/Compas-demo.mp4`; este argumento genera la variante completa.
+Los registros de ejemplo y pruebas son ficticios. El empaquetador valida el ZIP y genera su huella SHA-256; la aplicación no necesita dependencias ni conexiones para funcionar.
 
 ---
 

@@ -15,6 +15,7 @@ No es necesario ejecutar `npm install`: no hay dependencias. Los comandos siguie
 - `VERSION`: versión de la entrega; debe coincidir con `package.json`.
 - `src/index.html`: estructura y plantilla.
 - `src/styles.css`: temas, componentes y accesibilidad visual.
+- `src/fonts.css`: Albert Sans y Alumni Sans variables, originales de Google Fonts, en WOFF2 embebido con sus licencias SIL OFL. Se incluyen en el HTML y no requieren conexión ni archivos adicionales. Albert Sans cubre texto, controles y subtítulos; Alumni Sans se reserva para títulos de pantalla y diálogo.
 - `src/core/`: núcleo dividido en validación, referencia de ruta, cambios de estado, reportes, Excel e importación ToDo. `api.js` define la API pública.
 - `src/storage.js`: conservación y recuperación del trabajo en el navegador.
 - `src/ui/`: vistas y formularios agrupados por función, almacenamiento de la interfaz, apariencia y eventos. `forms.js` contiene los controles compartidos.
@@ -93,7 +94,7 @@ Los scripts de producción de demos son independientes del build de la aplicaci�
 
 1. Ejecuta `scripts/capturar_demos.cjs` con Node; `COMPAS_PLAYWRIGHT` puede indicar la ubicación del paquete Playwright y `COMPAS_CHROMIUM` su ejecutable. `COMPAS_DEMO_WORK` define la carpeta temporal de capturas.
 2. Ejecuta `python3 scripts/montar_demos.py --work /ruta/capturas --ffmpeg /ruta/ffmpeg`. En macOS, la narración utiliza la voz local Paulina; comprueba que la síntesis tiene los permisos del sistema necesarios. `--silent` genera una variante sin audio. Los subtítulos usan la duración real de cada frase sintetizada.
-3. Revisa la pantalla comentada, los GIF completos y el MP4. El manifiesto en `docs/demos/manifest.json` identifica la aplicación capturada y las comprobaciones reales del historial, ToDo y reportes.
+3. Revisa la pantalla comentada, los GIF completos y el MP4. El manifiesto en `docs/demos/manifest.json` identifica la aplicación capturada y las comprobaciones realizadas del historial, ToDo y reportes.
 4. Comprueba que `applicationSha256` del manifiesto de los recorridos corresponda al `dist/index.html` final y que las huellas de sus medios coincidan con los archivos que publicarás.
 5. Genera el ZIP principal con `npm run package`: contiene únicamente la aplicación, la guía y el TXT de ligas. El video, el mapa, los GIF y las comprobaciones se consultan en la página de Compás y en los archivos de la versión publicada; no se añaden al ZIP.
 
@@ -103,6 +104,18 @@ Las capturas se realizan en un contexto nuevo de Chromium con el ejemplo fictici
 
 ## Verificar diario, ayuda y adornos
 
-`scripts/comprobar_acompanamiento.cjs` utiliza un perfil nuevo de Chromium con datos ficticios. Comprueba ayuda de todos los botones con ratón y teclado, Escape dentro de un diálogo, creación/edición/reapertura del diario, exclusión de reportes, foto ficticia, marcos y flores, invitaciones desactivables, móvil y comienzo de una bitácora sin datos obligatorios. Requiere Playwright y Chromium mediante las mismas variables que `capturar_demos.cjs`; no instala dependencias ni lee perfiles personales. `COMPAS_FILE=1` realiza el mismo recorrido abriendo `dist/index.html` directamente, sin utilizar el servidor.
+`scripts/comprobar_acompanamiento.cjs` utiliza un perfil nuevo de Chromium con datos ficticios. Comprueba ayuda de todos los botones con ratón y teclado, Escape dentro de un diálogo, creación/edición/reapertura del diario, exclusión de reportes, foto ficticia, marcos y flores, invitaciones desactivables, ventanas estrechas de computadora y comienzo de una bitácora sin datos obligatorios. Requiere Playwright y Chromium mediante las mismas variables que `capturar_demos.cjs`; no instala dependencias ni lee perfiles personales. `COMPAS_FILE=1` realiza el mismo recorrido abriendo `dist/index.html` directamente, sin utilizar el servidor.
 
 Las pruebas VM de `tests/check_supportive.cjs` se incluyen automáticamente en npm test. Conservan la compatibilidad de las preferencias de apariencia antiguas y las reflexiones del esquema 2, y comprueban las transiciones de finalización y la privacidad del diario.
+
+
+## Verificar apariencia y migración
+
+`scripts/comprobar_apariencia.cjs` comprueba que las preferencias anteriores de marcos retirados y Fondo suave pasan a «Sin marco» y «Foto en tu rincón», conservando foto, tema, reloj y detalles. Revisa también los nuevos adornos, su persistencia y HomePad. Usa perfiles aislados y una imagen ficticia, tanto por servidor local como por apertura directa. `scripts/comprobar_marcos.cjs` comprueba los siete marcos y el birrete; se usan las mismas variables `COMPAS_PLAYWRIGHT`, `COMPAS_CHROMIUM` y `COMPAS_DEMO_WORK`.
+
+
+## Publicar una versión
+
+Actualiza README, EMPEZAR y la nota de versión antes de ejecutar `npm run package`. La publicación de GitHub contiene `Compas-para-tesistas.zip` y `SHA256SUMS.txt`; el ZIP se entrega como archivo de la versión, no como otro binario en el árbol del repositorio. El enlace destacado del README apunta a la última descarga. El tag debe identificar exactamente el commit validado. Después de publicar, comprueba el workflow, descarga el ZIP público sin autenticación y verifica su huella y sus tres archivos.
+
+Cuando los videos o recorridos sean de una versión anterior, conserva esa identificación y enlaza su versión específica; no uses el enlace latest para un video ausente en la nueva entrega. Las versiones anteriores y los documentos históricos retirados del árbol siguen en Releases y en el historial Git.

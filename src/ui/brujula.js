@@ -4,7 +4,7 @@ function renderBrujula() {
       .filter((t) => !t.done)
       .sort(todoSort)
       .slice(0, 3),
-    stages = C.ROUTES[p.level],
+    stages = C.routeStages(state, p.level),
     current = Number(p.semester),
     nextSession = state.sessions
       .filter((s) => s.nextDate && s.nextDate >= C.today())
@@ -41,7 +41,7 @@ function renderBrujula() {
       ? tasks
           .map((t) => {
             const a = state.actions.find((x) => x.id === t.actionId),
-              m = C.milestone(t.milestoneId);
+              m = C.milestone(t.milestoneId, state);
             return (
               '<div class="focus-task"><input id="focus-' +
               e(t.id) +
@@ -79,7 +79,9 @@ function renderBrujula() {
         ? C.LEVELS[p.level] + " · semestre " + (p.semester || "por definir")
         : "Ubica tu punto de partida",
     ) +
-    '</h2><p class="hint">Ruta de referencia; puedes adaptar el plan.</p>' +
+    '</h2><p class="hint">' +
+    e(C.routeProvenance(state, p.level)?.label || "Puedes configurar tu ruta") +
+    "</p>" +
     (stages
       ? '<ol class="route-trail">' +
         stages

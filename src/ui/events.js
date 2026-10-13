@@ -137,6 +137,7 @@ const actionHandlers = {
   frame: (b) => {
     if (!Object.hasOwn(FRAME_STYLES, b.dataset.frame)) return;
     appearance.frame = b.dataset.frame;
+    appearance.photoMode = "frame";
     const stored = saveAppearance();
     appearanceStatus(
       stored
@@ -205,6 +206,11 @@ const actionHandlers = {
         : "Apariencia restablecida para esta sesión.",
     );
   },
+  "route-setup": () => routeSetupForm(),
+  "route-product": (b, id) => routeProductForm(id),
+  "route-semester": () => routeStageForm(),
+  "route-archive": (b, id) => routeArchive(id, true),
+  "route-unarchive": (b, id) => routeArchive(id, false),
   "route-progress": (b, id) => routeForm(id),
   "route-stage": (b, id) => {
     routeSemester = b.dataset.semester;
@@ -271,6 +277,11 @@ document.addEventListener("click", (ev) => {
       "level",
       "todo-edit",
       "route-progress",
+      "route-setup",
+      "route-product",
+      "route-semester",
+      "route-archive",
+      "route-unarchive",
       "action",
       "session",
       "decision",
@@ -294,6 +305,16 @@ document.addEventListener("change", (ev) => {
     if (el.checked) todoCalendarDraft.selected.add(id);
     else todoCalendarDraft.selected.delete(id);
     todoCalendarUpdate();
+    return;
+  }
+  if (el.name === "homepad-clock") {
+    appearance.clock = el.checked;
+    const stored = saveAppearance();
+    appearanceStatus(
+      stored
+        ? "Preferencia del reloj guardada."
+        : "Reloj ajustado para esta sesión.",
+    );
     return;
   }
   if (el.name === "celebrate") {
@@ -389,6 +410,7 @@ document.addEventListener("change", (ev) => {
     return;
   }
   if (el.name === "photo-mode") {
+    if (!["none", "frame"].includes(el.value)) return;
     appearance.photoMode = el.value;
     const stored = saveAppearance();
     appearanceStatus(
@@ -511,6 +533,7 @@ $("photo-input").addEventListener("change", async (ev) => {
   }
 });
 $("editor").addEventListener("close", () => {
+  syncHomepadClock();
   todoCalendarDraft = null;
   todoImportDraft = null;
   todoImportRevision++;

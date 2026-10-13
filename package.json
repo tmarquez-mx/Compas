@@ -1,6 +1,6 @@
 {
   "name": "compas-local",
-  "version": "0.3.7",
+  "version": "0.3.13",
   "private": true,
   "description": "Compás: seguimiento local del proceso de tesis",
   "engines": { "node": ">=20" },
