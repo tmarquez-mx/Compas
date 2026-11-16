@@ -3,7 +3,7 @@
 // Orden explícito del ensamblado. No hay carga de módulos ni red al abrir Compas.html.
 // Los fragmentos de cada grupo comparten un cierre privado; solo api.js expone el núcleo.
 module.exports = {
-  COMPAS_STYLES: { files: ["fonts.css", "styles.css", "frames.css"] },
+  COMPAS_STYLES: { files: ["fonts.css", "styles.css", "frames.css", "rewards.css"] },
   COMPAS_CORE: {
     files: [
       "core/common.js",
@@ -11,6 +11,7 @@ module.exports = {
       "core/synthetic-routes.js",
       "core/route-plans.js",
       "core/route.js",
+      "core/rewards.js",
       "core/state.js",
       "core/reports.js",
       "core/excel.js",
@@ -30,6 +31,7 @@ module.exports = {
       "ui/clock.js",
       "ui/frame-art.js",
       "ui/ornament-art.js",
+      "ui/rewards.js",
       "ui/appearance.js",
       "ui/shared.js",
       "ui/encouragement.js",

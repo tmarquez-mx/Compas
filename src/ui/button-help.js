@@ -44,6 +44,9 @@ const ACTION_HELP = {
     "Abre una página de tu diario. Solo va en tu respaldo personal, nunca en los reportes.",
   appearance:
     "Elige colores, foto, marco y adornos para que este espacio se sienta tuyo.",
+  rewards: "Abre tus tres colecciones y elige una pieza obtenida con tus avances.",
+  "reward-choose": "Elige esta pieza y colócala junto a tu foto.",
+  "reward-hide": "Retira la pieza del rincón sin perderla de tu colección.",
   frame: "Elige este marco para tu foto. Puedes cambiarlo cuando quieras.",
   decoration:
     "Elige este adorno para acompañarte. No necesitas completar metas para usarlo.",

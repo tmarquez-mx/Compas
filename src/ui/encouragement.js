@@ -11,13 +11,15 @@ function completedStep(before, after) {
   ]) {
     const previous = new Map(before[key].map((x) => [x.id, x]));
     const completed = after[key].find(
-      (x) => previous.has(x.id) && !finished(previous.get(x.id)) && finished(x),
+      (x) => (previous.has(x.id) ? !finished(previous.get(x.id)) : key !== "todos") && finished(x),
     );
     if (completed) return label(completed);
   }
   return "";
 }
 function celebrationBanner() {
+  if (celebration && appearance.celebrate && state.rewards?.some(r=>!r.piece))
+    return '<aside class="celebration-note"><div><strong>Este paso merece un lugar en tu rincón.</strong><p>' + e(celebration) + '</p><p>Elige una pieza de tus colecciones. También puedes hacerlo más tarde.</p></div><div class="toolbar">' + btn('Elegir una pieza','rewards','','compact') + btn('Ahora no','dismiss-celebration','','ghost compact') + '</div></aside>';
   return celebration && appearance.celebrate
     ? '<aside class="celebration-note" aria-label="Un avance para reconocer"><div><strong>Un paso que merece reconocerse.</strong><p>' +
         e(celebration) +

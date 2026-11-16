@@ -254,6 +254,7 @@ function mutate(fn) {
   const previous = state;
   try {
     fn(next);
+    C.earnRewards(previous, next);
     if (!saveWorkspace(next)) {
       render();
       return false;

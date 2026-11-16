@@ -1,5 +1,5 @@
 # Empezar con Compás
-Organiza y da seguimiento a tu tesis · Versión 0.3.13
+Organiza y da seguimiento a tu tesis · Versión 0.3.14
 
 ## 1. Descarga y descomprime el ZIP
 Desde tu computadora, abre https://github.com/tmarquez-mx/Compas y pulsa la descarga ZIP destacada al principio de la página. Descarga Compas-para-tesistas.zip. En Windows, haz clic derecho sobre el ZIP y elige «Extraer todo». En Mac, haz doble clic sobre el ZIP. Busca la carpeta extraída Compas y guárdala en un lugar fijo de tu computadora.
@@ -9,7 +9,7 @@ Esta versión de Compás es para computadora (Windows o Mac), con un navegador h
 
 Dentro de la carpeta Compas, puedes abrir Empezar-aqui.html para leer estas instrucciones. Para trabajar, haz doble clic en Compas.html. Se abre en tu navegador: no necesitas instalar nada. Si aparece un editor de texto, usa «Abrir con» y elige tu navegador habitual. Trabaja con el archivo de la carpeta extraída, no desde el ZIP.
 
-El ZIP contiene sólo la aplicación, estas instrucciones y Materiales-en-linea.txt, con las ligas al mapa, las animaciones, el video y las comprobaciones. Los recorridos publicados muestran la versión 0.3.7; esta aplicación es la 0.3.13. Después de descargar el paquete puedes trabajar sin internet, sin iniciar sesión ni instalar Python o Node. Necesitas internet únicamente para consultar esos materiales en línea o subir un respaldo a la nube.
+El ZIP contiene sólo la aplicación, estas instrucciones y Materiales-en-linea.txt, con las ligas al mapa, las animaciones, el video y las comprobaciones. Los recorridos publicados muestran la versión 0.3.7; esta aplicación es la 0.3.14. Después de descargar el paquete puedes trabajar sin internet, sin iniciar sesión ni instalar Python o Node. Necesitas internet únicamente para consultar esos materiales en línea o subir un respaldo a la nube.
 
 ## 3. Empieza con algo pequeño
 La primera apertura muestra un ejemplo ficticio. Puedes explorarlo o elegir «Empezar mi bitácora». Puedes completar título, pregunta, nivel y semestre cuando los tengas; no necesitas llenarlo todo para empezar. Anota una tarea pequeña o escribe una página de tu Diario.
@@ -90,7 +90,7 @@ En Personalizar puedes elegir «Sin marco» para mostrar tu foto sola, HomePad, 
 
 El marco «HomePad» tiene una pantalla horizontal, brazo metálico y base blanca de tela. Puedes mostrar un reloj analógico junto a la foto: toma la hora local de la computadora, funciona sin Internet y se ajusta al volver a la aplicación. Activa o desactiva «Mostrar reloj analógico junto a la foto» en Personalizar. Si aún no eliges foto, muestra la tarjeta «A tu ritmo».
 
-Todos los marcos y adornos están disponibles desde el principio. Al terminar una tarea, un producto o un compromiso aparece una invitación para elegir alguno de esos mismos detalles; puedes omitirla o desactivarla. No se desbloquean adornos nuevos ni hay puntos, rachas o aprobaciones automáticas.
+Todos los marcos y adornos están disponibles desde el principio. Al terminar una tarea, un producto o un compromiso aparece una invitación para elegir alguno de esos mismos detalles; puedes omitirla o desactivarla. Además, completar productos o compromisos permite elegir piezas especiales de Mis colecciones. No hay puntos, rachas ni aprobaciones automáticas.
 
 La foto, los marcos y los adornos se guardan únicamente en este navegador, separados de la bitácora. No se incluyen en respaldos ni reportes. Si cambias de navegador o borras sus datos, vuelve a elegirlos. El portarretratos con tu imagen aparece después de elegir la foto y no lleva texto al pie. Si el navegador bloquea su almacenamiento, la imagen se muestra durante esa sesión y Compás indica que no pudo conservar el cambio.
 
@@ -130,3 +130,10 @@ Escribe a teresa.marquez@ibero.mx. Repositorio: https://github.com/tmarquez-mx/C
 Abre Materiales-en-linea.txt para encontrar las ligas a la página de Compás, el mapa comentado, los tres recorridos animados, el video narrado y las comprobaciones. Puedes consultarlos cuando quieras entender una función; usan datos ficticios. Para abrir esas ligas necesitas internet. Estos materiales no son necesarios para abrir ni usar Compas.html.
 
 CSP | Universidad Iberoamericana Ciudad de México
+
+
+## Colecciones para tu rincón
+
+Al completar un producto de Mi ruta o resolver un compromiso obtienes una elección en Mis colecciones. Puedes elegir entre Mujeres que abrieron caminos, Tradiciones y debates y Pensar desde el Sur. La pieza se coloca junto a tu foto; puedes sustituirla por otra que ya tengas o retirarla sin perderla. Ahora no deja tu elección pendiente. Si desactivas las invitaciones, puedes seguir eligiendo desde Mis colecciones. Las tareas ToDo no conceden piezas y reabrir y completar el mismo producto o compromiso no concede una segunda elección.
+
+Las piezas y elecciones pendientes pertenecen a tu bitácora, se incluyen en su respaldo personal y quedan fuera de los reportes. La foto sigue guardándose sólo en el navegador. Usa Compás 0.3.14 o posterior para conservar las colecciones al abrir y volver a guardar un respaldo; versiones anteriores pueden omitirlas. Los avances ya completados antes de esta actualización no se convierten automáticamente en recompensas.

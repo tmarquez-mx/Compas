@@ -11,6 +11,7 @@ const html = fs.readFileSync(
 const core = html.match(/<script id="compas-core">([\s\S]*?)<\/script>/)[1],
   ui = html.match(/<script id="compas-ui">([\s\S]*?)<\/script>/)[1];
 const sandbox = {
+  state: { rewards: [] },
   TextEncoder,
   TextDecoder,
   Uint8Array,

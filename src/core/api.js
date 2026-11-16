@@ -1,4 +1,5 @@
 global.CompasCore = {
+    REWARD_COLLECTIONS, rewardPiece, earnRewards, chooseReward,
   calendarCandidates,
   calendarICS,
   MAX_TODO_IMPORT_BYTES,

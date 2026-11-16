@@ -28,6 +28,8 @@ function createState(projectId) {
     routePlan: emptyRoutePlan(),
     routeProgress: [],
     todos: [],
+    rewards: [],
+    selectedReward: "",
   };
 }
 function blank() {
@@ -303,6 +305,8 @@ function normalizeState(input) {
       project: { ...input.project, level: "" },
       routeProgress: [],
       todos: [],
+    rewards: [],
+    selectedReward: "",
     };
   const out = createState("");
   const string = (v, k, max = 16000) => {
@@ -344,6 +348,18 @@ function normalizeState(input) {
     if (!vals.includes(v)) throw new Error("Valor inválido en " + k + ".");
     return v;
   };
+  const rewardKeys = new Set();
+  if (input.rewards !== undefined && (!Array.isArray(input.rewards) || input.rewards.length > 3000)) throw new Error("Colección inválida.");
+  out.rewards = (input.rewards || []).map(r => {
+    if (!r || typeof r.key !== "string" || !/^(routeProgress|actions):[a-zA-Z0-9-]{1,80}$/.test(r.key) || rewardKeys.has(r.key)) throw new Error("Reconocimiento inválido o repetido.");
+    rewardKeys.add(r.key);
+    if (r.piece !== "" && !rewardPiece(r.piece)) throw new Error("Pieza desconocida.");
+    return {key:r.key, piece:r.piece, date:date(r.date,"reconocimiento")};
+  });
+  const owned = out.rewards.map(r=>r.piece).filter(Boolean);
+  if (new Set(owned).size !== owned.length) throw new Error("Pieza repetida.");
+  out.selectedReward = input.selectedReward || "";
+  if (out.selectedReward && !owned.includes(out.selectedReward)) throw new Error("La pieza seleccionada no pertenece a tu colección.");
   out.routePlan = validateRoutePlan(input.routePlan);
   out.isDemo = input.isDemo === true;
   out.project = pick(input.project, Object.keys(out.project));

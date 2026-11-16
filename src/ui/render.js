@@ -26,6 +26,7 @@ function render() {
     reportes: renderReports,
   };
   $("main").innerHTML = demoBanner() + celebrationBanner() + contents[view]();
+  renderRewardCorner();
   saveInfo();
   $("mobile-menu").textContent = "Más ▾";
   $("mobile-menu").classList.toggle(

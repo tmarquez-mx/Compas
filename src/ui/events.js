@@ -130,6 +130,9 @@ const actionHandlers = {
   project: projectForm,
   level: levelForm,
   appearance: (b, id) => appearanceDialog(),
+  rewards: () => rewardsDialog(),
+  "reward-choose": (b) => { if(mutate(s=>C.chooseReward(s,b.dataset.piece))) rewardsDialog(true); },
+  "reward-hide": () => { if(mutate(s=>{s.selectedReward="";})) rewardsDialog(true); },
   "dismiss-celebration": () => {
     celebration = "";
     render();

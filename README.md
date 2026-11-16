@@ -1,10 +1,10 @@
 # Compás
 
-## [⬇ Descargar Compás 0.3.13 para Windows y Mac (.ZIP)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
+## [⬇ Descargar Compás 0.3.14 para Windows y Mac (.ZIP)](https://github.com/tmarquez-mx/Compas/releases/latest/download/Compas-para-tesistas.zip)
 
 **Descomprime el ZIP y abre `Compas.html`. No necesitas instalar nada.**
 
-[Manual para empezar y continuar](docs/EMPEZAR.md) · [Cambios de esta versión](docs/RELEASE-v0.3.13.md) · [Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases)
+[Manual para empezar y continuar](docs/EMPEZAR.md) · [Cambios de esta versión](docs/RELEASE-v0.3.14.md) · [Versiones publicadas](https://github.com/tmarquez-mx/Compas/releases)
 
 **Organiza y da seguimiento a tu tesis.** Decisiones, acuerdos y próximos pasos, en un solo lugar.
 
@@ -33,7 +33,7 @@ Después de descargarlo, escribe a [posgrado.sociales@ibero.mx](mailto:posgrado.
 - **Coloquios y Asesoría de tesis:** conversaciones, comentarios y seguimiento de acuerdos.
 - **Diario:** páginas privadas con fecha para escribir ideas, dudas o cómo te fue.
 - **Reportes:** selección de avances para compartir como HTML, Excel o PDF mediante impresión.
-- **Personalizar:** cuatro temas; Sin marco, HomePad con reloj local y siete marcos con carácter. Flores, hojas, estrellas, velas, copas, globos, cumpleaños y confeti acompañan los bordes de la foto. Todos los detalles están disponibles desde el principio.
+- **Personalizar:** cuatro temas; Sin marco, HomePad con reloj local y siete marcos con carácter. Flores, hojas, estrellas, velas, copas, globos, cumpleaños y confeti acompañan los bordes de la foto. Los adornos básicos están disponibles desde el principio. **Mis colecciones** añade doce piezas de mujeres, tradiciones sociológicas y políticas y pensamiento desde el Sur: cada producto o compromiso completado permite elegir una y colocarla junto a la foto. Las piezas obtenidas viajan en el respaldo privado.
 
 Compás no calcula un porcentaje de tesis ni otorga aprobaciones académicas. Terminar una tarea no aprueba un producto ni cierra un compromiso. La revisión registrada por el tesista no equivale a una firma verificada.
 
@@ -45,7 +45,7 @@ El **respaldo JSON** contiene todo tu trabajo, incluido el diario y las notas pr
 
 Puedes conservar el JSON en una carpeta de Google Drive, OneDrive, Dropbox u otro servicio que ya tengas configurado. Su subida requiere Internet y la gestiona ese servicio; no crea sincronización entre dispositivos. Mantén una sola copia de trabajo.
 
-Para actualizar, descarga un respaldo desde tu versión actual, cierra sus pestañas, descomprime el nuevo ZIP y abre tu JSON mediante **Abrir respaldo**. Compás 0.3.13 abre formatos 1, 2 y 3. Los nuevos respaldos usan formato 3 y requieren Compás 0.3.9 o posterior para conservar la ruta adaptada. La foto y la apariencia permanecen en el navegador y quedan fuera del respaldo.
+Para actualizar, descarga un respaldo desde tu versión actual, cierra sus pestañas, descomprime el nuevo ZIP y abre tu JSON mediante **Abrir respaldo**. Compás 0.3.14 abre formatos 1, 2 y 3. Los nuevos respaldos usan formato 3 y requieren Compás 0.3.9 o posterior para conservar la ruta adaptada. La foto y la apariencia permanecen en el navegador y quedan fuera del respaldo.
 
 **No publiques respaldos personales ni datos de investigación en este repositorio o sus incidencias.** El [manual](docs/EMPEZAR.md) explica el guardado, la reapertura, las rutas y el intercambio con calendarios.
 

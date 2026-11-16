@@ -1,0 +1,16 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const html=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+const box={TextEncoder,TextDecoder,Uint8Array,DataView,Date,Math,JSON,Set,Map,Intl};vm.createContext(box);vm.runInContext(html.match(/<script id="compas-core">([\s\S]*?)<\/script>/)[1],box);const C=box.CompasCore;
+let before=C.demo(),after=C.clone(before);after.actions[0].status='resuelto';C.earnRewards(before,after);assert.equal(after.rewards.length,1);
+C.chooseReward(after,'arendt');assert.equal(after.selectedReward,'arendt');
+const restored=C.restore(C.backup(after));assert.equal(restored.rewards[0].piece,'arendt');assert.equal(restored.selectedReward,'arendt');
+let reopened=C.clone(after);reopened.actions[0].status='pendiente';C.earnRewards(after,reopened);let completed=C.clone(reopened);completed.actions[0].status='resuelto';C.earnRewards(reopened,completed);assert.equal(completed.rewards.length,1);
+assert.throws(()=>C.chooseReward(completed,'ostrom'));C.chooseReward(completed,'arendt');
+let task=C.clone(before);task.todos[0].done=true;C.earnRewards(before,task);assert.equal(task.rewards.length,0);
+let product=C.clone(before);product.routeProgress[0].status='resuelto';C.earnRewards(before,product);assert.equal(product.rewards.length,1);assert(product.rewards[0].key.startsWith('routeProgress:'));
+let newProduct=C.clone(before);newProduct.routeProgress.push({id:'new-product',status:'resuelto'});C.earnRewards(before,newProduct);assert.equal(newProduct.rewards.length,1);
+let legacy=C.clone(before);delete legacy.rewards;delete legacy.selectedReward;assert.equal(C.validate(legacy).rewards.length,0);
+let invalid=C.clone(after);invalid.rewards.push({...invalid.rewards[0]});assert.throws(()=>C.validate(invalid));invalid=C.clone(after);invalid.selectedReward='ostrom';assert.throws(()=>C.validate(invalid));
+const share=C.makeShare(after,{});assert(!JSON.stringify(share).includes('selectedReward'));assert(!JSON.stringify(share).includes('arendt'));
+assert.equal(C.REWARD_COLLECTIONS.length,3);assert.equal(C.REWARD_COLLECTIONS.flatMap(c=>c.pieces).length,12);
+console.log('Colecciones: compromiso, producto existente y nuevo, tareas excluidas, una elección por registro, propiedad, respaldo, migración, duplicados y privacidad verificados.');
